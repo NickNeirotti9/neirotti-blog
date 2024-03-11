@@ -142,7 +142,7 @@ const Home: React.FC = () => {
                 Science
               </Link>
               <Link
-                to={`/browse?filter=Technolgy&sort=az`}
+                to={`/browse?filter=Technology&sort=az`}
                 className={styles.link}
               >
                 Technology
