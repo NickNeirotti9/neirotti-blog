@@ -1,0 +1,68 @@
+/* General styling for the PostCard component */
+.postCard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color); /* Background color for the card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Adds shadow for depth */
+    margin: 15px; /* Spacing between cards */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures no content spills outside the card's rounded corners */
+    transition: transform 0.2s ease-in-out;  /*Smooth transform effect on hover */
+  }
+  
+  .postCard:hover h2{
+    /*transform: translateY(-5px);  Slightly raise the card on hover */
+    /*transform: rotateZ(3deg); #9EADC8 */
+    color: var(--theme-accent);
+
+  }
+  
+  /* Responsive video container */
+  .postCardVideo {
+    width: 100%; /* Video container takes full width of the card */
+    /* Height is dynamically adjusted via inline styles to maintain 16:9 aspect ratio */
+  }
+  
+  iframe {
+    border: none; /* Removes the default border around the iframe */
+  }
+  
+  /* Styling details below the video */
+  .postCardDetails {
+    padding: 20px; /* Spacing inside the card details area */
+  }
+  
+  .postCardDetails h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Spacing after the title */
+    font-size: 1.5em; /* Title size */
+    color: var(--text-color); /* Title color */
+  }
+  
+  .postCardDetails p {
+    margin: 4px 0; /* Spacing for paragraphs */
+    color: var(--text-color); /* Text color */
+    font-size: 0.9em; /* Text size */
+  }
+  /* Ensures 3 cards are displayed in a row on larger screens */
+  @media (min-width: 1024px) {
+    .postCard {
+      width: calc(33.333% - 30px); /* Three cards per row with spacing */
+      flex: none; /* Disable flex grow/shrink */
+    }
+  }
+  
+  /* Adjusts for medium-sized screens - two cards per row */
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .postCard {
+      width: calc(50% - 30px); /* Two cards per row with spacing */
+    }
+  }
+  
+  /* Single column layout for small screens */
+  @media (max-width: 767px) {
+    .postCard {
+      width: 100%; /* Full width cards on small screens */
+      margin: 15px 0; /* Adjusted margin for vertical stacking */
+    }
+  }

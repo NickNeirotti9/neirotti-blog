@@ -1,0 +1,209 @@
+/* General Layout */
+.browseContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    min-height: 60vh;
+  }
+  
+  /* Header Styles */
+  h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  
+  /* Controls Container */
+  .controlsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  
+  /* Category and Sorting Containers */
+  .categoryContainer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  /* Category Buttons */
+  .categoryContainer > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin: 0 10px; /* Ensure some space between categories */
+  }
+  
+  .categoryContainer button {
+    background-color: #084C61;
+    border: 1px solid var(--theme-accent);
+    color: var(--theme-accent);
+    border-radius: 40px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+  }
+  .categoryContainer button:hover {
+    background-color: #212529;
+  }
+  
+  /* Subcategories */
+  .subcategories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .subcategories label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .subcategories label {
+    white-space: nowrap;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+/* Dropdown Styles */
+.sortContainer {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align elements to the start (left) */  
+  }
+  
+  .sortContainer label {
+    font-size: 1rem; /* Match the font size with category buttons */
+    font-weight: bold; /* Match the font weight with category buttons */
+    margin-bottom: 5px; /* Space between the label and the dropdown */
+    display: inline-block; /* Make label a block element to match the width of the category buttons */
+    padding: 10px 15px; /* Match the padding with category buttons */
+
+    border-radius: 5px; /* Match border radius */
+    width: calc(100% - 30px);
+    text-align: center;
+  }
+  
+  .sortContainer select {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%; /* Allow the select to fit content width */
+    margin-top: 5px; /* Ensure a small space between label and select */
+  }
+  
+  
+  /* Posts Container */
+.postsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: stretch;
+}
+
+.primaryGroupWrapper,
+.secondaryGroupWrapper {
+  display: flex;
+  flex-direction: column; /* Stack the header and cards vertically */
+  align-items: center; /* Center-align the items if needed */
+  width: 100%;
+}
+
+.primaryGroupWrapper > h2 { 
+  width: 100%;
+  text-align: left;
+  font-size: 30px;
+  margin-left: 35px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+/* For secondary labels within secondaryGroupWrapper, adjust if they exist */
+.secondaryGroupWrapper > h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 1.5em; /* Adjust size for h3 */
+  margin: 0px;
+  margin-left: 35px;
+  margin-top: 10px;
+}
+
+.primaryGroupWrapper .postCardsRow,
+.secondaryGroupWrapper .postCardsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.primaryGroupWrapper > h2.centeredLabel { 
+    text-align: center;
+    margin-left: 0;
+}
+
+  .divider {
+    width: 100%;           /* Full width of the container */
+    border: 0;             /* Remove the default border */
+    height: 1px;           /* Set the height of the divider */
+    background-color: #ccc; /* Color of the divider */
+    margin-top: 20px;      /* Space above the divider */
+    margin-bottom: 20px;   /* Space below the divider */
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #084C61;
+    background-color: transparent;
+    color: #084C61;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #084C61;
+    color: white;
+  }
+  
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .controlsContainer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .categoryContainer,
+    .sortContainer {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

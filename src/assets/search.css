@@ -1,0 +1,23 @@
+/* search.css */
+.searchContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 60vh;
+  }
+  
+  .searchContainer h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive grid for smaller screens */
+  @media (max-width: 600px) {
+    .postsContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+
+  

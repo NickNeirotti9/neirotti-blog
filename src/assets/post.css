@@ -1,0 +1,123 @@
+.postPage .post {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .postPage .postHeader h1.postTitle {
+    font-size: 45px;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Continue prefixing all your styles with .postPage */
+  .postPage .postMeta {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  .postPage .postMeta time,
+  .postPage .postMeta span {
+    display: block;
+    margin: 4px 0;
+  }
+  
+  .postPage .postVideoContainer {
+    margin-bottom: 20px;
+  }
+  
+  .postPage .postVideo {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+  }
+  
+  .postPage .postDetailedContent h2,
+  .postPage .postSummaryPoints h2,
+  .postPage .postPracticalExamples h2,
+  .postPage .postResources h2 {
+    font-size: 30px;
+    color: var(--theme-primary);
+    margin-bottom: 15px;
+  }
+
+  .postPage .postDetailedContent p,
+  .postPage .postPracticalExamples p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-indent: 2em;    
+  }
+  .postPage .postDetailedContent li,
+  .postPage .postSummaryPoints ul li{
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  
+  .postResources h2 {
+    color: #333; /* Dark grey color for contrast */
+    margin-bottom: 16px;
+  }
+  
+  .resourceItem {
+    margin-bottom: 15px; /* Space between resource items */
+    padding: 10px;
+    border-left: 4px solid var(--theme-switch); /* A vibrant color for the border */
+    border-radius: 4px; /* Slightly rounded corners for each item */
+    display: block;
+  }
+  
+  .resourceItem:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last item */
+  }
+  
+  .resourceTitle {
+    color: var(--theme-switch); /* Match the border color */
+    font-weight: bold;
+    text-decoration: none; /* No underline */
+    font-size: 18px; /* Slightly larger font size */
+  }
+  
+  .resourceTitle:hover {
+    text-decoration: underline; /* Underline on hover for better interaction feedback */
+  }
+  
+  .postPage .postDetailedContent .resourceDescription {
+    color: var(--theme-switch3); /* Lighter text color for the description */
+    margin-top: 5px;
+    text-indent: 0;
+  }
+
+  .postQuotes {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-indent: 0;
+  }
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .related h2 {
+    font-size: 30px;
+    color: var(--theme-primary);
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    text-align: center;
+    padding-top: 0;
+  }
+.relatedContainer{
+padding: 50px;
+padding-top: 0px;
+padding-bottom: 25px;
+}
+  @media (max-width: 768px) {
+    .postPage .postVideo {
+      height: 300px;
+    }
+  }
+  

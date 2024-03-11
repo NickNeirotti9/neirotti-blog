@@ -1,0 +1,261 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #084C61;
+    color: white;
+    padding: 0px 30px;
+  }
+  
+  /*Fonts */
+  @font-face {
+    font-family: 'AnandaBlack'; /* Give a name to your font */
+    src: url('AnandaBlack.ttf') format('truetype'); /* Correct the format value */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .logo a {
+    color: var(--theme-accent);
+    font-size: 50px;
+    font-family: 'AnandaBlack', sans-serif;
+    text-decoration: none;
+  }
+  
+  .menu-and-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .menu .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu .dropbtn {
+    background-color: #084C61;
+    color: #9EADC8;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+  }
+  
+  .menu .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .menu .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .menu-and-toggle .menu .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .menu .dropdown:hover .dropbtn {
+    background-color: #212529;
+  }
+  
+  .search-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px; /* Example max width; adjust as needed */
+    width: 100%; /* Use full width of the container */
+  }
+  
+  /* Adjusted styling for the search input */
+  .search-input {
+    padding: 6px 40px 6px 10px; /* Right padding makes space for the button */
+    width: 100%; /* Use full width of the search-container */
+    border: 2px solid #084C61;
+    border-radius: 30px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    outline: none;
+  }
+  
+  .search-input::placeholder {
+    color: var(--theme-primary); /* Lighter color for placeholder text */
+  }
+  
+  .search-input:focus {
+    border-color: #9EADC8; /* Highlight color when focused */
+  }
+  
+  .search-button,
+  .clear-button {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px; /* Adjust as needed to position inside the search bar */
+    cursor: pointer;
+    color: var(--theme-primary); /* Adjust color to match your design */
+  }
+  
+  .search-button i,
+  .clear-button i {
+    font-size: 16px; /* Adjust size of the icon as needed */
+  }
+  
+  .search-button:hover,
+  .clear-button:hover {
+    color: var(--theme-accent); /* Optional: change color on hover */
+  }
+  
+  .clear-button {
+    right: 35px; /* Adjust this value to position the clear button before the search icon */
+  }
+  
+  .search-button {
+    right: 10px; /* Keep this for the search icon */
+  }
+  /* Visibility classes */
+  .visible {
+    display: block; /* Show the button */
+  }
+  
+  .hidden {
+    display: none; /* Hide the button */
+  }
+  
+  
+/* Theme toggle navbar */
+.theme-toggle-container {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px; /* Make sure the container has the same height as the switch */
+}
+
+.theme-icon {
+  font-size: 24px; /* Adjust the size to match your toggle height */
+  user-select: none; /* Prevent text selection */
+}
+
+/* The switch - the box around the slider */
+.theme-toggle-switch {
+  position: relative;
+  display: inline-block; /* Use inline-block for proper alignment */
+  width: 50px; /* Width of the switch */
+  height: 24px; /* Height of the switch */
+  margin: 0 10px; /* Add some space around the switch */
+}
+
+/* Hide default HTML checkbox */
+.theme-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Slider background */
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; /* Height of the slider circle */
+  width: 20px; /* Width of the slider circle */
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3; /* Color when checked */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; /* Focus style */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Slide animation */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+  
+
+  /* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  /* Reduce padding and font size inside the navbar */
+  .navbar {
+    padding: 0 15px;
+  }
+
+  /* Smaller logo font size */
+  .logo a {
+    font-size: 30px; /* Adjust to fit your design */
+  }
+
+  /* Adjust the layout of the search container */
+  .search-container {
+    margin-top: 10px; /* Add space above the search bar */
+    flex-grow: 1;
+    max-width: none; /* Allow it to take up available space */
+  }
+
+  /* Adjust input padding to make more room for text */
+  .search-input {
+    padding: 6px 30px 6px 10px; /* Adjust right padding */
+  }
+
+  /* Adjust icon sizes for better touch targets */
+  .search-button i,
+  .clear-button i {
+    font-size: 20px; /* Larger icons */
+  }
+
+  /* Adjust positions of the clear and search buttons if needed */
+  .clear-button {
+    right: 45px; /* Adjust this value as necessary */
+  }
+
+  .search-button {
+    right: 15px; /* Adjust this value as necessary */
+  }
+
+  /* Adjust the dropdown menu for better touch interaction */
+  .menu .dropdown-content {
+    width: 100%; /* Full width for easier touch targets */
+  }
+}

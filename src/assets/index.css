@@ -1,0 +1,83 @@
+/* Light theme variables */
+:root {
+  --background-color: #F5F5F5; /* Light background */
+  --text-color: black; /* Dark text */
+  --link-color: #0000ff; /* Example link color */
+  --theme-primary: #084C61;
+  --theme-secondary: #9EADC8;
+  --theme-accent: #E9B35D;
+  --theme-switch: #084C61;
+  --theme-switch2: #E9B35D;
+  --theme-switch3: #333;
+  --font-primary: 'Calibri', sans-serif; /* Primary font */
+  --font-secondary: 'Calibri', sans-serif; /* Secondary font */
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --background-color: #212529; /* Dark background */
+  --text-color: white; /* Light text */
+  --link-color: #4E9AFC; /* Example link color for dark mode */
+  --theme-primary: #9EADC8;
+  --theme-secondary: #084C61;
+  --theme-switch: #E9B35D;
+  --theme-switch2: #212529;
+  --theme-switch3: #888;
+  --font-primary: 'Calibri', sans-serif; /* Primary font */
+  --font-secondary: 'Calibri', sans-serif; /* Secondary font */
+}
+
+/* Apply your theme */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none; /* Removes underline from links */
+}
+
+/* Utility classes */
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.font-primary {
+  font-family: var(--font-primary) !important;
+}
+
+.font-secondary {
+  font-family: var(--font-secondary) !important;
+}
+
+/* Add custom styles for components here */
+
+
+
+/* Responsive design utilities */
+@media (max-width: 768px) {
+  .search-container {
+    flex-grow: 0;
+    margin: 0 10px; /* Adjust space around the search on smaller screens */
+  }
+}
+
+

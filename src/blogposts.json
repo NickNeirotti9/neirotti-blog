@@ -1,0 +1,247 @@
+[
+    {
+    "id": 1,
+    "title": "Learn to Love What You Have",
+    "author": "Nick Neirotti",
+    "hook": "Can we learn to embrace the present moment without judgment? How can we close the gap between what we have and what we want?",
+    "summaryPoints": ["Loving what you already have (and accepting what you don’t!!!) is the only way to remove yourself from the hedonic treadmill.", "Seek the silver linings in your setbacks by adopting an optimistic frame.", "Books such as 'Ishmael' by Daniel Quinn, 'The Rich and How They Got That Way' by Cynthia Crossen, and 'Zen Mind, Beginner's Mind' by Shunryū Suzuki have cemented the importance of this message and, most notably, altered my perception of money. They've inspired me to set goals I'm passionate about, free from the restricting question, 'How will this make me stupid rich?' I plan to talk more about these books and concepts in the near future."],    
+    "detailedContent": "We are evolutionarily programmed to seek others' approval and are equally prone to jealousy. People showcase idealized versions of their lives for admiration, which only exacerbates the culture of comparison and FOMO. Basing your worth and happiness on others' approval invariably leads to a desire for more and better. How can one be content when nothing seems good enough?\n\nThe hedonic treadmill theory suggests that, regardless of our circumstances—from losing a job to winning the lottery—we tend to return to a baseline level of happiness. While the pursuit of perpetual euphoria may be unrealistic, I've found certain practices that have elevated my general sense of contentment.\n\nOn my commute to class, I see a lot of faces. The disparity between expressions on a sunny day and a cloudy one is remarkable. It's as if you could predict the weather given a collection of headshots. However, stormy days are inevitable; are our emotions forever bound to circumstance? The first practice I advocate for is consistently seeking the silver lining in every storm cloud. This habit encourages us to recognize growth opportunities in all situations. By identifying the positives in challenging times, we condition our minds to value the present and discover joy in our journey.\n\nImagine life as an art gallery filled with paintings that depict your daily experiences.  As the manager of this fine establishment, you may have limited control over which paintings you acquire, but the way you frame them is entirely up to you. While some frames can detract from a painting's beauty, others can enhance it significantly. Here are a few framing perspectives you might consider:\n\n* Adventure Frame: See life as an exciting journey, embracing challenges and joys as part of a grand adventure.\n* Comedic Frame: “Laughter, and a lot of it, is the right response to the things which drive us to tears” - Seneca\n* Gratitude Frame: There are things to be thankful for in every situation.\n* Growth Frame: Challenging experiences are great opportunities for growth.\n* Incompetence vs. Malice: Attribute others' harmful actions to lack of ability rather than intentional harm. Be happily surprised when things go right.\n* Possibility Frame: Open-minded to the possibilities the situation might bring.\n* Storytelling Frame: “This is gonna make my autobiography go crazy, bro.”",
+    "resources": [
+    {"title": "The Stoic Path by William B. Irvine", "url": "https://dynamic.wakingup.com/pack/PK7REQC", "description": "Podcast series on the Waking Up app" },
+    {"title": "Hedonic Adaptation | Why You'll Never Have Enough In Life by MindfulThinks", "url": "https://www.youtube.com/watch?v=SdJSjj2A710", "description": "2 minute elaboration on hedonic treadmill theory"}
+    ],
+    "quotes": [
+      {"quote": "\"I used to dream about what I have now.\""},
+      {"quote": "\"If I am what I have, and if what I have is lost, who then am I?\" - Cynthia Crossen"},
+      {"quote": "\"The next time you're feeling sorry for yourself, remember there is someone far worse... Wouldn't it be great to have running water, your health, your situation, your relationships?\" - William B. Irvine"},
+      {"quote": "\"Wealth consists not in having great possessions, but in having few wants.\" - Cynthia Crossen"},
+      {"quote": "\"I hate it when people call themselves entrepreneurs when what they're really tring to do is launch a startup and then sell or go public, so they can cash in and move on.\" - Steve Jobs"},
+      {"quote": "\"Pleasure is not different from dificulty.\" -Shunryū Suzuki"}],
+    "youtubeID": "Z4IMKQDfxMU?si=f2937iqe60E6lzjC",
+    "subcategory": "Philosophy",
+    "subject": "Stoicism",
+    "datePosted": "2024-03-10T14:48:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 1,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Title 2",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Science",
+    "subject": "Chemistry",
+    "datePosted": "2023-07-25T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 2,
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Ttile 3",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+      {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+      {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Science",
+    "subject": "Chemistry",
+    "datePosted": "2023-08-27T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 3,
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Title 4",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+      {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+      {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Science",
+    "subject": "Chemistry",
+    "datePosted": "2024-01-20T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 4,
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Title 5",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Science",
+    "subject": "Physics",
+    "datePosted": "2024-01-24T11:30:00Z",
+    "lastUpdated": "2024-02-20T12:00:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 5,
+    "featured": true
+  },
+  {
+    "id": 6,
+    "title": "Title 6",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Philosophy",
+    "subject": "Free Will",
+    "datePosted": "2024-02-21T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 1,
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Title 7",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Fitness",
+    "subject": "Hypertrophy",
+    "datePosted": "2024-02-23T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 2,
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "Title 8",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Nutrition",
+    "subject": "Macronutrients",
+    "datePosted": "2024-02-25T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 3,
+    "featured": false
+  },
+  {
+    "id": 9,
+    "title": "Title 9",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Media Takeaways",
+    "subject": "Books",
+    "datePosted": "2024-02-27T11:30:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 4,
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Title 10",
+    "author": "Nick Neirotti",
+    "hook": "hook",
+    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
+    "detailedContent": "HTML or Markdown formatted text",
+    "practicalExamples": "HTML or Markdown formatted text",
+    "resources": [
+    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
+    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
+    ],
+    "quotes": [
+      {"quote": "", "author": ""},
+      {"quote": "", "author": ""}],
+    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
+    "subcategory": "Misc.",
+    "subject": "Music",
+    "datePosted": "2024-02-29T11:30:00Z",
+    "lastUpdated": "2024-02-20T12:00:00Z",
+    "status": "published",
+    "relatedPosts": [2, 3, 4],
+    "confidenceScore": 5,
+    "featured": false
+  }
+]
