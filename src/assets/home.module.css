@@ -1,96 +1,11 @@
 /* Home.module.css */
 .homepageContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
   
-  .halfWidthSections {
-    display: flex;
-    flex-direction: row; /* Ensure children are laid out horizontally */
-    justify-content: space-between; /* Distribute space between the children */
-    width: 100%; /* Take up the full width of its parent */
-    align-items: flex-start;
-    padding: 20px 0 0 0; /* Align items to the start of the flex container */
-  }
-
-  .section {
-    flex: 1; /* Each section will take up an equal amount of space */
-    padding: 0px 100px; /* This padding is equal to the container's left and right padding */
-  }
-  
-  .divider {
-    width: 1px; /* Thickness of the dividing line */
-    background-color: var(--line-color, var(--theme-accent)); /* Color of the line */
-    height: auto; /* Adjust the height as needed */
-    align-self: stretch; /* Stretch the divider to the container's height */
-  }
-  
-/* Styles for headings (h2) within sections */
-.section h2 {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  /* Styles for paragraphs (p) within sections */
-  .section p {
-    font-size: 18px;
-    font-weight: normal;
-    text-align: center;
-  }
-
-  /* Adjust the media query for responsive design */
-  @media (max-width: 768px) {
-    .homepageContent {
-      flex-direction: column;
-      padding: 20px;
-    }
-  
-    .section {
-      padding: 0; /* Reset padding for smaller screens */
-    }
-  
-    .divider {
-      display: none; /* Hide the divider on smaller screens */
-    }
-  }
-
-/* Styles for the video container */
-.videoContainer {
-    width: 100%; /* Ensure the container takes the full width of its parent */
-    position: relative; /* Necessary for absolute positioning of iframe */
-    overflow: hidden; /* Optional: in case of minor overflow issues */
-  }
-  
-  /* Styles for the transcript container */
-  .transcript {
-    width: 100%; /* Match the width of the video container for consistency */
-    overflow-y: auto; /* Makes the container scrollable if content exceeds its height */
-    /*border: 1px solid var(--theme-secondary);   Styling border for visual separation, adjust as needed */
-    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
-    /* padding: 15px;  Padding inside the transcript box for better readability */
-  }
-  .transcript > *:first-child {
-    margin-top: 0;
-  }
-  
-  /* Styles for the toggle button */
-  .buttonBelow {
-    display: block; /* Ensure the button takes up its own line */
-    width: auto; /* Adjust based on design preference */
-    margin: 20px auto; /* Center the button horizontally and add vertical spacing */
-    padding: 10px 20px; /* Padding for the button for better clickability */
-    cursor: pointer; /* Visual indicator that the element is clickable */
-    border: none; /* Remove default button border */
-    background-color: #084C61; /* Example background color, adjust as needed */
-    color: var(--theme-accent); /* Text color for the button */
-    border-radius: 40px; /* Rounded corners for the button */
-    font-size: 16px; /* Text size within the button */
-    border: 1px solid var(--theme-accent);
-    font-family: var(--font-primary);
-  }
   .aboutButton {
     display: inline-block; /* Adjusted from block to inline-block */
     width: auto; /* Optional: Ensures the button is only as wide as its content requires */
@@ -107,15 +22,6 @@
   .aboutButton:hover {
     /*opacity: 60%;*/
     background-color: #212529;
-  }
-  .buttonBelow:hover {
-    background-color: #212529;
-  }
-
-  .fadeTransition {
-    height: 100px; /* Adjust based on the desired fade effect size */
-    width: 100%;
-    background-image: linear-gradient(to bottom, var(--background-color), var(--theme-secondary));
   }
   
   .fullWidthSection {
@@ -145,19 +51,22 @@
   }
   
   .videoContainer2 {
-    flex-basis: 66.66%; /* 2/3 of the container */
+    /* Removed flex-basis and replaced with width */
+    width: 66.66%; /* Takes up 2/3 of the space */
     position: relative;
-    padding-top: 35.2%; /* (9 / 16) * 66.66% */
+    /* Maintain a 16:9 aspect ratio */
+    padding-top: calc(56.25% * 0.6666); /* 9/16 * 2/3 */
     height: 0; /* Collapse the div and let padding-top dictate the height */
   }
-  
-  .videoContainer2 iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+    
+    .videoContainer2 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
 
   .infoContainerLink {
     text-decoration: none; /* Removes the underline from the link */
@@ -172,12 +81,11 @@
   .infoContainer {
     flex-basis: 33.33%; /* 1/3 of the container */
     padding: 20px; /* Adjusted padding */
-    margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Align content to the top */
     align-items: center; /* Align items to the start */
-  
+    text-align: center; 
   }
   
   .infoContainer h2 {
@@ -310,11 +218,26 @@
   font-size: 22px;
   font-weight: bold;
 }
-/*
-.fadeBack {
-  height: 100px; /* Adjust based on the desired fade effect size 
-  width: 100%;
-  background-image: linear-gradient(to bottom, var(--theme-secondary), var(--background-color));
-}*/
 
+@media (max-width: 1024px) {
+  .latestSection {
+    flex-direction: column;
+  }
 
+  .videoContainer2 {
+    width: 100%; /* Full width on smaller screens */
+    padding-top: 56.25%; /* Maintain the 16:9 aspect ratio */
+  }
+  
+  .infoContainer {
+    /* Ensure the information container is full width below 768px */
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .categoriesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

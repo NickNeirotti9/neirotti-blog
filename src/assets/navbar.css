@@ -213,6 +213,11 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.hamburger {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  /* Styling for the hamburger icon */
+}
   
 
   /* Responsive adjustments for smaller screens */

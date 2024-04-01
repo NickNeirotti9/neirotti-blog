@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="logo">
         <button onClick={handleLogoClick} className="logoButton">
-          nick neirotti
+          existnchill
         </button>
       </div>
       <div className="footerLinks">

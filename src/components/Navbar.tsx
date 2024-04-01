@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/">neirotti</Link>
+        <Link to="/">existnchill</Link>
       </div>
       <form className="search-container" onSubmit={handleSearchSubmit}>
         <input

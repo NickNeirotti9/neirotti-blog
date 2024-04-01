@@ -1,30 +1,10 @@
 import React from "react";
-import ToggleVideoTranscript from "../components/ToggleVideoTranscript";
 import styles from "../assets/home.module.css";
 import { Link } from "react-router-dom";
 import PostCard from "../components/PostCard";
 import blogPostsData from "../blogposts.json";
 
 const Home: React.FC = () => {
-  const videoId = "PocmChPx15k?si=4iXeGYOrIWa4wvgl";
-  const transcriptText = (
-    <p>
-      Hey, thanks for being here. On this page I’ll be summarizing concepts in
-      short videos like this with a focus on actionable information and a bit of
-      the 'how' or 'why' behind it all. Find it interesting? Further elaboration
-      and resources await to jumpstart your exploration of the topic.
-      <br />
-      <br />
-      The certainty of the content covered will vary, with items widely regarded
-      as facts receiving a confidence score of 5, while my take on theoretical
-      concepts will likely just get a score of 1.
-      <br />
-      <br />
-      If you have any suggestions or feedback about the content or website, I'd
-      love to hear from you. Please feel encouraged to submit your thoughts
-      using the link in the footer.
-    </p>
-  );
   const mostRecentPost = blogPostsData.sort(
     (a, b) =>
       new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
@@ -41,42 +21,42 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.homepageContent}>
-      <div className={styles.halfWidthSections}>
-        <div className={styles.section}>
-          <h2>Hi, I'm Nick Neirotti</h2>
-          <p>
-            Welcome to my website! I think learning is super fun, but what’s
-            knowledge without a community to share it with?
-            <br></br>
-            <br></br>I'm not an expert on anything I plan to talk about here but
-            I rely on the shoulders of giants. Unfortunately, these giants
-            usually explain things in a way that takes extensive effort to grasp
-            practically.
-            <br></br>
-            <br></br>My goal is to simplify concepts I find interesting, often
-            stashed in time-consuming media or gated by cost. I hope you find
-            some of it valuable!
-          </p>
-          <div style={{ textAlign: "center" }}>
-            {" "}
-            {/* Inline style for demonstration */}
-            <Link to="/about" className={styles.aboutButton}>
-              About Me
-            </Link>
+      <div className={styles.fullWidthSection}>
+        <h2 className={styles.sectionTitle}>About the Page</h2>
+        <div className={styles.latestSection}>
+          <div className={styles.infoContainer}>
+            <p>
+              Welcome to my website! I think learning is super fun, but what’s
+              knowledge without a community to share it with?
+              <br></br>
+              <br></br>I'm not an expert on anything I plan to talk about here
+              but I rely on the shoulders of giants. Unfortunately, these giants
+              usually explain things in a way that takes extensive effort to
+              grasp practically.
+              <br></br>
+              <br></br>My goal is to simplify concepts I find interesting, often
+              stashed in time-consuming media or gated by cost. I hope you find
+              some of it valuable!
+            </p>
+            <div style={{ textAlign: "center" }}>
+              {" "}
+              {/* Inline style for demonstration */}
+              <Link to="/about" className={styles.learnMoreButton}>
+                About Me
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className={styles.divider}></div> {/* Divider added */}
-        <div className={styles.section}>
-          <h2>About the Page</h2>
-          <div className={styles.videoContainer}>
-            <ToggleVideoTranscript
-              videoId={videoId}
-              transcript={transcriptText}
-            />
+          <div className={styles.videoContainer2}>
+            <iframe
+              src="https://www.youtube.com/embed/PocmChPx15k?autoplay=0&rel=0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
-      {/* <div className={styles.fadeTransition}></div> */}
       <div className={styles.fullWidthSection}>
         <h2 className={styles.sectionTitle}>Latest</h2>
         <div className={styles.latestSection}>
@@ -232,7 +212,6 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </div>
-      {/* <div className={styles.fadeBack}></div> */}
     </div>
   );
 };
