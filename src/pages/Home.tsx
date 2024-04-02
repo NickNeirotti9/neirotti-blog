@@ -24,6 +24,15 @@ const Home: React.FC = () => {
       <div className={styles.fullWidthSection}>
         <h2 className={styles.sectionTitle}>About the Page</h2>
         <div className={styles.latestSection}>
+          <div className={styles.videoContainer2}>
+            <iframe
+              src="https://www.youtube.com/embed/PocmChPx15k?autoplay=0&rel=0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div>
           <div className={styles.infoContainer}>
             <p>
               Welcome to my website! I think learning is super fun, but what’s
@@ -45,15 +54,6 @@ const Home: React.FC = () => {
                 About Me
               </Link>
             </div>
-          </div>
-          <div className={styles.videoContainer2}>
-            <iframe
-              src="https://www.youtube.com/embed/PocmChPx15k?autoplay=0&rel=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
           </div>
         </div>
       </div>
