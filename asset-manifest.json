@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/neirotti-blog/static/css/main.1db286fc.css",
-    "main.js": "/neirotti-blog/static/js/main.35399d9a.js",
+    "main.css": "/neirotti-blog/static/css/main.1fdfbce7.css",
+    "main.js": "/neirotti-blog/static/js/main.52e99a10.js",
     "static/js/592.959e68db.chunk.js": "/neirotti-blog/static/js/592.959e68db.chunk.js",
     "static/media/AnandaBlack.ttf": "/neirotti-blog/static/media/AnandaBlack.eb04dce4c2b321e2ef0a.ttf",
     "index.html": "/neirotti-blog/index.html",
-    "main.1db286fc.css.map": "/neirotti-blog/static/css/main.1db286fc.css.map",
-    "main.35399d9a.js.map": "/neirotti-blog/static/js/main.35399d9a.js.map",
+    "main.1fdfbce7.css.map": "/neirotti-blog/static/css/main.1fdfbce7.css.map",
+    "main.52e99a10.js.map": "/neirotti-blog/static/js/main.52e99a10.js.map",
     "592.959e68db.chunk.js.map": "/neirotti-blog/static/js/592.959e68db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1db286fc.css",
-    "static/js/main.35399d9a.js"
+    "static/css/main.1fdfbce7.css",
+    "static/js/main.52e99a10.js"
   ]
 }
