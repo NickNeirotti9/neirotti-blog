@@ -5,12 +5,12 @@
     "author": "Nick Neirotti",
     "hook": "Can we learn to embrace the present moment without judgment? How can we close the gap between what we have and what we want?",
     "summaryPoints": ["Loving what you already have (and accepting what you don’t!!!) is the only way to remove yourself from the hedonic treadmill.", "Seek the silver linings in your setbacks by adopting an optimistic frame."],    
-    "detailedContent": "We are evolutionarily programmed to seek others' approval and are equally prone to jealousy. People showcase idealized versions of their lives for admiration, which only exacerbates the culture of comparison and FOMO. Basing your worth and happiness on others' approval invariably leads to a desire for more and better. How can one be content when nothing seems good enough?\n\nThe hedonic treadmill theory suggests that regardless of our circumstances, from losing a job to winning the lottery, we tend to return to a baseline level of happiness. This doesn’t mean you should quit your job with the expectation of being just as happy living on the streets. Goals and aspirations are important because they provide direction; however, it's misguided to believe that reaching the proverbial pot of gold at the end of the rainbow will finally make you happy. What's preventing you from feeling that way now?\n\nThe disparity between expressions on a sunny day and a cloudy one is remarkable. It's as if you could predict the weather given a collection of headshots. However, stormy days are inevitable; are our emotions forever bound to circumstance? The first practice I advocate for is consistently seeking the silver lining in every storm cloud. This habit encourages us to recognize growth opportunities in all situations. By identifying the positives in challenging times, we condition our minds to value the present and discover joy in our journey. Understand that there are things we can control and things we can't. Worrying about things beyond our reach is a waste of time and simply makes us feel bad for no reason.\n\nImagine life as an art gallery filled with paintings that depict your daily experiences.  As the manager of this fine establishment, you may have limited control over which paintings you acquire, but the way you frame them is entirely up to you. While some frames can detract from a painting's beauty, others can enhance it significantly. Here are a few framing perspectives you might consider:\n\n* Adventure Frame: See life as an exciting journey, embracing challenges and joys as part of a grand adventure.\n* Comedic Frame: “Laughter, and a lot of it, is the right response to the things which drive us to tears” - Seneca\n* Gratitude Frame: There are things to be thankful for in every situation.\n* Growth Frame: Challenging experiences are great opportunities for growth.\n* Incompetence vs. Malice: Attribute others' harmful actions to lack of ability rather than intentional harm. Be happily surprised when things go right.\n* Possibility Frame: Open-minded to the possibilities the situation might bring.\n* Storytelling Frame: “This is gonna make my autobiography go crazy, bro.”",
+    "detailedContent": "We are evolutionarily programmed to seek others' approval and are equally prone to jealousy. People showcase idealized versions of their lives for admiration, which only exacerbates the culture of comparison and FOMO. Basing your worth and happiness on others' approval invariably leads to a desire for more and better. How can one be content when nothing seems good enough?\n\nThe hedonic treadmill theory suggests that regardless of our circumstances, from losing a job to winning the lottery, we tend to return to a baseline level of happiness. This doesn’t mean you should quit your job with the expectation of being just as happy living on the streets. Goals and aspirations are important because they provide direction; however, it's misguided to believe that reaching the proverbial pot of gold at the end of the rainbow will finally make you happy. What's preventing you from feeling that way now?\n\nThe disparity between expressions on a sunny day and a cloudy one is remarkable. It's as if you could predict the weather given a collection of headshots. However, stormy days are inevitable; are our emotions forever bound to circumstance? The first practice I advocate for is consistently seeking the silver lining in every storm cloud. This habit encourages us to recognize growth opportunities in all situations. By identifying the positives in challenging times, we condition our minds to value the present and discover joy in our journey. Understand that there are things we can control and things we can't. Worrying about things beyond our reach is a waste of time and simply makes us feel bad for no reason.\n\nImagine life as an art gallery filled with paintings that depict your daily experiences.  As the manager of this fine establishment, you may have limited control over which paintings you acquire, but the way you frame them is entirely up to you. While some frames can detract from a painting's beauty, others can enhance it significantly. Here are a few framing perspectives you might consider:\n\n* Adventure Frame: See life as an exciting journey, embracing challenges and joys as part of a grand adventure.\n* Comedic Frame: “Laughter, and a lot of it, is the right response to the things which drive us to tears” - Seneca\n* Gratitude Frame: There are things to be thankful for in every situation.\n* Growth Frame: Challenging experiences are great opportunities for growth.\n* Incompetence vs. Malice: Attribute others' harmful actions to their lack of ability rather than intentional harm. Be happily surprised when things go right.\n* Possibility Frame: Open-minded to the possibilities the situation might bring.\n* Storytelling Frame: “This is gonna make my autobiography go crazy, bro.”",
     "resources": [
     {"title": "The Stoic Path by William B. Irvine", "url": "https://dynamic.wakingup.com/pack/PK7REQC", "description": "Podcast series on the Waking Up app" },
     {"title": "Hedonic Adaptation | Why You'll Never Have Enough In Life by MindfulThinks", "url": "https://www.youtube.com/watch?v=SdJSjj2A710", "description": "2 minute elaboration on hedonic treadmill theory"},
     {"title": "The Rich and How They Got That Way by Cynthia Crossen", "url": "https://www.goodreads.com/en/book/show/41635", "description": "Book analysing the wealthy of different generations"},
-    {"title": "Zen Mind, Beginner's Mind by Shunryū Suzuki", "url": "https://www.goodreads.com/book/show/402843.Zen_Mind_Beginner_s_Mind", "description": "Fantastic book on zen"}
+    {"title": "Zen Mind, Beginner's Mind by Shunryū Suzuki", "url": "https://www.goodreads.com/book/show/402843.Zen_Mind_Beginner_s_Mind", "description": "Fantastic book on Zen Buddhism"}
     ],
     "quotes": [
       {"quote": "\"I used to dream about what I have now.\""},
@@ -30,26 +30,22 @@
   },
   {
     "id": 2,
-    "title": "Title 2",
+    "title": "Mechanical Vibration",
     "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "detailedContent": "HTML or Markdown formatted text",
+    "hook": "Discover how mechanical vibrations impact engineering and daily life, from the stability of bridges to the quality of car rides.",
+    "detailedContent": "Simple Harmonic Motion (SHM) is a type of periodic movement where an object oscillates back and forth around an equilibrium point in a fixed pattern. This motion is characterized by a constant amplitude, the maximum distance from the equilibrium point; period, the time it takes to complete one cycle of motion; and angular frequency, which indicates how quickly the oscillation occurs. The key equations for SHM include $$x(t) = A\\cos(\\omega t + \\phi)$$ for the object's position over time, with \\( A \\) as amplitude, \\( \\omega \\) as angular frequency, and \\( \\phi \\) as the phase constant, alongside \\( \\omega = 2\\pi f = \\sqrt{\\frac{k}{m}} \\), where \\( f \\) is the frequency, \\( k \\) is the stiffness of the spring, and \\( m \\) is the mass of the object. SHM is invaluable for understanding mechanisms and systems that exhibit cyclical motion, leading to its application in designing precise timekeeping devices, optimizing vehicle suspension systems, and studying seismic waves, among others.",
     "practicalExamples": "HTML or Markdown formatted text",
     "resources": [
     {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
     {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
     ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
-    "subcategory": "Science",
-    "subject": "Chemistry",
-    "datePosted": "2023-07-25T11:30:00Z",
+    "youtubeID": "GIWmyYgN2Vw",
+    "subcategory": "Engineering",
+    "subject": "Mechanical",
+    "datePosted": "2024-04-03T11:30:00Z",
     "status": "published",
     "relatedPosts": [2, 3, 4],
-    "confidenceScore": 2,
+    "confidenceScore": 4,
     "featured": false
   },
   {

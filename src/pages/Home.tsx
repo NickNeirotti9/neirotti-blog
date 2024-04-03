@@ -35,8 +35,7 @@ const Home: React.FC = () => {
           </div>
           <div className={styles.infoContainer}>
             <p>
-              Welcome to my website! I think learning is super fun, but what’s
-              knowledge without a community to share it with?
+              Welcome to my website!
               <br></br>
               <br></br>I'm not an expert on anything I plan to talk about here
               but I rely on the shoulders of giants. Unfortunately, these giants
@@ -74,15 +73,6 @@ const Home: React.FC = () => {
             <p>{new Date(mostRecentPost.datePosted).toLocaleDateString()}</p>
 
             <Link
-              to={`/browse?filter=${encodeURIComponent(
-                mostRecentPost.subcategory
-              )}&sort=az`}
-              className={styles.filterLink}
-            >
-              {mostRecentPost.subcategory} / {mostRecentPost.subject}
-            </Link>
-
-            <Link
               to={`/post/${mostRecentPost.id}`}
               className={styles.latestTitle}
             >
@@ -109,65 +99,41 @@ const Home: React.FC = () => {
           <h2 className={styles.sectionTitle2}>Browse</h2>
           <div className={styles.categoriesContainer}>
             <div className={styles.category}>
-              <Link
-                to={`/browse?filter=STEM&sort=newest`}
-                className={styles.categoryTitle}
-              >
+              <Link to={`/browse?filter=STEM`} className={styles.categoryTitle}>
                 <h3>STEM</h3>
               </Link>
-              <Link
-                to={`/browse?filter=Science&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Science`} className={styles.link}>
                 Science
               </Link>
-              <Link
-                to={`/browse?filter=Technology&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Technology`} className={styles.link}>
                 Technology
               </Link>
-              <Link
-                to={`/browse?filter=Engineering&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Engineering`} className={styles.link}>
                 Engineering
               </Link>
-              <Link
-                to={`/browse?filter=Mathematics&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Mathematics`} className={styles.link}>
                 Mathematics
               </Link>
             </div>
 
             <div className={styles.category}>
               <Link
-                to={`/browse?filter=HEALTH&sort=newest`}
+                to={`/browse?filter=HEALTH`}
                 className={styles.categoryTitle}
               >
                 <h3>HEALTH</h3>
               </Link>
-              <Link
-                to={`/browse?filter=Nutrition&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Nutrition`} className={styles.link}>
                 Nutrition
               </Link>
-              <Link
-                to={`/browse?filter=Fitness&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Fitness`} className={styles.link}>
                 Fitness
               </Link>
-              <Link
-                to={`/browse?filter=Mindfulness&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Mindfulness`} className={styles.link}>
                 Mindfulness
               </Link>
               <Link
-                to={`/browse?filter=General Wellness&sort=az`}
+                to={`/browse?filter=General Wellness`}
                 className={styles.link}
               >
                 General Wellness
@@ -175,39 +141,27 @@ const Home: React.FC = () => {
             </div>
 
             <div className={styles.category}>
-              <Link
-                to={`/browse?filter=LIFE&sort=newest`}
-                className={styles.categoryTitle}
-              >
+              <Link to={`/browse?filter=LIFE`} className={styles.categoryTitle}>
                 <h3>LIFE</h3>
               </Link>
-              <Link
-                to={`/browse?filter=Philosophy&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Philosophy`} className={styles.link}>
                 Philosophy
               </Link>
-              <Link
-                to={`/browse?filter=Ecology&sort=az`}
-                className={styles.link}
-              >
+              <Link to={`/browse?filter=Ecology`} className={styles.link}>
                 Ecology
               </Link>
               <Link
-                to={`/browse?filter=Media Takeaways&sort=az`}
+                to={`/browse?filter=Media Takeaways`}
                 className={styles.link}
               >
                 Media Takeaways
               </Link>
-              <Link to={`/browse?filter=Misc.&sort=az`} className={styles.link}>
+              <Link to={`/browse?filter=Misc.`} className={styles.link}>
                 Misc.
               </Link>
             </div>
           </div>
-          <Link
-            to={`/browse?filter=Browse All&sort=newest`}
-            className={styles.aboutButton}
-          >
+          <Link to={`/browse?filter=Browse All`} className={styles.aboutButton}>
             Browse All
           </Link>
         </div>
