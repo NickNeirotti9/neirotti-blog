@@ -10,6 +10,12 @@ const Home: React.FC = () => {
       new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
   )[0];
 
+  const sortedPosts = blogPostsData.sort(
+    (a, b) =>
+      new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
+  );
+  const recentPosts = sortedPosts.slice(1, 4);
+
   // Construct the iframe src URL using the most recent post's youtubeID
   const iframeSrc = `https://www.youtube.com/embed/${mostRecentPost.youtubeID}?autoplay=0&rel=0`;
 
@@ -73,6 +79,15 @@ const Home: React.FC = () => {
             <p>{new Date(mostRecentPost.datePosted).toLocaleDateString()}</p>
 
             <Link
+              to={`/browse?filter=${encodeURIComponent(
+                mostRecentPost.subcategory
+              )}`}
+              className={styles.filterLink}
+            >
+              {mostRecentPost.subcategory} / {mostRecentPost.subject}
+            </Link>
+
+            <Link
               to={`/post/${mostRecentPost.id}`}
               className={styles.latestTitle}
             >
@@ -88,6 +103,11 @@ const Home: React.FC = () => {
               Learn More
             </Link>
           </div>
+        </div>
+        <div className="postsContainer">
+          {recentPosts.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
         </div>
         <h2 className={styles.sectionTitle2}>Featured</h2>
         <div className="postsContainer">
