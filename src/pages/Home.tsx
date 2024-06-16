@@ -167,9 +167,12 @@ const Home: React.FC = () => {
               <Link to={`/browse?filter=Philosophy`} className={styles.link}>
                 Philosophy
               </Link>
-              <Link to={`/browse?filter=Ecology`} className={styles.link}>
-                Ecology
-              </Link>
+              {/*<Link
+                to={`/browse?filter=Personal Development`}
+                className={styles.link}
+              >
+                Personal Development
+        </Link>*/}
               <Link
                 to={`/browse?filter=Media Takeaways`}
                 className={styles.link}

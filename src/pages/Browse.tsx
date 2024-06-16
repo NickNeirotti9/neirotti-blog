@@ -29,7 +29,12 @@ const categories = [
   },
   {
     name: "LIFE",
-    subcategories: ["Philosophy", "Ecology", "Media Takeaways", "Misc."],
+    subcategories: [
+      "Philosophy",
+      //"Personal Development",
+      "Media Takeaways",
+      "Misc.",
+    ],
   },
 ];
 
