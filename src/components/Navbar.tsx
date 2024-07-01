@@ -143,9 +143,7 @@ const Navbar: React.FC = () => {
             </button>
             <div className="dropdown-content">
               <Link to="/browse?filter=Philosophy">Philosophy</Link>
-              {/*} <Link to="/browse?filter=Personal Development">
-                Personal Development
-      </Link> */}
+              <Link to="/browse?filter=Psychology">Psychology</Link>
               <Link to="/browse?filter=Media Takeaways">Media Takeaways</Link>
               <Link to="/browse?filter=Misc.">Misc.</Link>
             </div>

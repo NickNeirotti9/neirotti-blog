@@ -1,0 +1,137 @@
+/* Define component-specific styles without affecting global variables or elements */
+
+.aboutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.aboutContent {
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.aboutTitle {
+  color: var(--primary-color);
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.aboutImage {
+  position: absolute;
+  top: -20px; /* Adjust this value to move the image up or down */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 150px;
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+.aboutDescription {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.dropdownSection {
+  margin-bottom: 10px;
+}
+
+.dropdownHeader {
+  background-color: #084C61;
+  color: var(--theme-accent);
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid var(--theme-accent);
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.dropdownHeader:hover {
+  background-color: #212529;
+}
+
+.dropdownContent {
+  background-color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .aboutContent {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    padding: 20px;
+  }
+
+  .aboutTitle {
+    font-size: 32px;
+  }
+
+  .aboutDescription {
+    font-size: 16px;
+  }
+
+  .dropdownHeader {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .dropdownContent {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutTitle {
+    font-size: 28px;
+  }
+
+  .aboutDescription {
+    font-size: 14px;
+  }
+
+  .dropdownHeader {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .dropdownContent {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

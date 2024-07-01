@@ -1,0 +1,29 @@
+/* src/assets/disclaimer.css */
+.disclaimer-outer {
+    padding: 30px; /* Add padding outside the container */
+      }
+
+.disclaimer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--theme-background);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .disclaimer-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--theme-accent);
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .disclaimer-text {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  

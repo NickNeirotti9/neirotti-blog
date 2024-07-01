@@ -9,8 +9,8 @@
   --theme-switch: #084C61;
   --theme-switch2: #E9B35D;
   --theme-switch3: #333;
-  --font-primary: 'Calibri', sans-serif; /* Primary font */
-  --font-secondary: 'Calibri', sans-serif; /* Secondary font */
+  --font-primary: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Primary font */
+  --font-secondary: 'Brandon Grotesque', sans-serif; /* Secondary font */
 }
 
 /* Dark theme variables */
@@ -23,8 +23,10 @@
   --theme-switch: #E9B35D;
   --theme-switch2: #212529;
   --theme-switch3: #888;
-  --font-primary: 'Calibri', sans-serif; /* Primary font */
-  --font-secondary: 'Calibri', sans-serif; /* Secondary font */
+  --font-primary: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Primary font */
+  --font-secondary: 'Brandon Grotesque', sans-serif; /* Secondary font */
+ /* --font-primary: 'Calibri', sans-serif;  Primary font 
+  --font-secondary: 'Calibri', sans-serif;  Secondary font */
 }
 
 /* Apply your theme */
@@ -41,6 +43,9 @@ body {
 a {
   color: var(--primary-color);
   text-decoration: none; /* Removes underline from links */
+}
+p, li {
+  font-family: var(--font-secondary);
 }
 
 /* Utility classes */

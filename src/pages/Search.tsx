@@ -13,7 +13,6 @@ interface Post {
   youtubeID: string;
   subcategory: string;
   subject: string;
-  confidenceScore: number;
   datePosted: string;
   featured: boolean;
 }

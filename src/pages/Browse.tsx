@@ -13,7 +13,6 @@ interface Post {
   youtubeID: string;
   subcategory: string;
   subject: string;
-  confidenceScore: number;
   datePosted: string;
   featured: boolean;
 }
@@ -29,12 +28,7 @@ const categories = [
   },
   {
     name: "LIFE",
-    subcategories: [
-      "Philosophy",
-      //"Personal Development",
-      "Media Takeaways",
-      "Misc.",
-    ],
+    subcategories: ["Philosophy", "Psychology", "Media Takeaways", "Misc."],
   },
 ];
 
@@ -64,18 +58,6 @@ const groupPostsBySubject = (posts: Post[]): PostGroup => {
       groups[subject] = []; // Initialize if not already present
     }
     groups[subject].push(post); // Add the post to the array for this subject
-  });
-  return groups;
-};
-
-const groupPostsByConfidence = (posts: Post[]): PostGroup => {
-  const groups: PostGroup = {};
-  posts.forEach((post) => {
-    const scoreLabel = `Confidence: ${post.confidenceScore}`;
-    if (!groups[scoreLabel]) {
-      groups[scoreLabel] = []; // Initialize if not already present
-    }
-    groups[scoreLabel].push(post); // Add the post to the array for this score label
   });
   return groups;
 };
@@ -224,11 +206,6 @@ const Browse = () => {
           b.subject.localeCompare(a.subject)
         );
         break;
-      case "confidence":
-        sorted = [...filtered].sort(
-          (a, b) => b.confidenceScore - a.confidenceScore
-        );
-        break;
       default:
         sorted = filtered;
     }
@@ -246,8 +223,6 @@ const Browse = () => {
       case "az":
       case "za":
         return groupPostsBySubject(currentPosts);
-      case "confidence":
-        return groupPostsByConfidence(currentPosts);
       default:
         return currentPosts;
     }
@@ -288,7 +263,6 @@ const Browse = () => {
               <option value="oldest">Date: Oldest first</option>
               <option value="az">Subject: A-Z</option>
               <option value="za">Subject: Z-A</option>
-              <option value="confidence">Confidence Score</option>
             </select>
           </div>
         </div>

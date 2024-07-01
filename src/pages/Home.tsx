@@ -10,12 +10,6 @@ const Home: React.FC = () => {
       new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
   )[0];
 
-  const sortedPosts = blogPostsData.sort(
-    (a, b) =>
-      new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
-  );
-  const recentPosts = sortedPosts.slice(1, 4);
-
   // Construct the iframe src URL using the most recent post's youtubeID
   const iframeSrc = `https://www.youtube.com/embed/${mostRecentPost.youtubeID}?autoplay=0&rel=0`;
 
@@ -42,11 +36,6 @@ const Home: React.FC = () => {
           <div className={styles.infoContainer}>
             <p>
               Welcome to my website!
-              <br></br>
-              <br></br>I'm not an expert on anything I plan to talk about here
-              but I rely on the shoulders of giants. Unfortunately, these giants
-              usually explain things in a way that takes extensive effort to
-              grasp practically.
               <br></br>
               <br></br>My goal is to simplify concepts I find interesting, often
               stashed in time-consuming media or gated by cost. I hope you find
@@ -94,7 +83,6 @@ const Home: React.FC = () => {
               <h2>{mostRecentPost.title}</h2>
             </Link>
             <p>{mostRecentPost.hook}</p>
-            <p>Confidence Score: {mostRecentPost.confidenceScore}</p>
 
             <Link
               to={`/post/${mostRecentPost.id}`}
@@ -104,11 +92,7 @@ const Home: React.FC = () => {
             </Link>
           </div>
         </div>
-        <div className="postsContainer">
-          {recentPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+
         <h2 className={styles.sectionTitle2}>Featured</h2>
         <div className="postsContainer">
           {featuredPosts.map((post) => (
@@ -167,12 +151,9 @@ const Home: React.FC = () => {
               <Link to={`/browse?filter=Philosophy`} className={styles.link}>
                 Philosophy
               </Link>
-              {/*<Link
-                to={`/browse?filter=Personal Development`}
-                className={styles.link}
-              >
-                Personal Development
-        </Link>*/}
+              <Link to={`/browse?filter=Psychology`} className={styles.link}>
+                Psychology
+              </Link>
               <Link
                 to={`/browse?filter=Media Takeaways`}
                 className={styles.link}

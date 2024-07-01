@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../assets/index.css";
-import "../assets/footer.css"; // Ensure the CSS file is named 'footer.css'
+import "../assets/footer.css";
 
 const Footer = () => {
   const handleLogoClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -19,17 +20,13 @@ const Footer = () => {
         </button>
       </div>
       <div className="footerLinks">
-        <a href="/suggestions" className="footerLink">
-          Suggestions
-        </a>
-        <span className="footerSeparator">|</span>
-        <a href="/contact" className="footerLink">
+        {/* <Link to="/contact" className="footerLink">
           Contact
-        </a>
-        <span className="footerSeparator">|</span>
-        <a href="/disclaimer" className="footerLink">
+        </Link> 
+        <span className="footerSeparator">|</span>*/}
+        <Link to="/disclaimer" className="footerLink">
           Disclaimer
-        </a>
+        </Link>
       </div>
     </footer>
   );

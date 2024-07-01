@@ -13,7 +13,7 @@
   
   /* Continue prefixing all your styles with .postPage */
   .postPage .postMeta {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-color);
     margin-bottom: 20px;
   }
@@ -38,21 +38,20 @@
   .postPage .postSummaryPoints h2,
   .postPage .postPracticalExamples h2,
   .postPage .postResources h2 {
-    font-size: 30px;
+    font-size: 38px;
     color: var(--theme-primary);
     margin-bottom: 15px;
   }
 
   .postPage .postDetailedContent p,
   .postPage .postPracticalExamples p{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 10px;
-    text-indent: 2em;    
+    margin-bottom: 10px;  
   }
   .postPage .postDetailedContent li,
   .postPage .postSummaryPoints ul li{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
   }
@@ -93,7 +92,7 @@
   }
 
   .postQuotes {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
     text-indent: 0;
@@ -103,7 +102,7 @@
     margin-right: 0;
   }
   .related h2 {
-    font-size: 30px;
+    font-size: 38px;
     color: var(--theme-primary);
     margin-bottom: 15px;
     padding-bottom: 0;
@@ -115,6 +114,41 @@ padding: 50px;
 padding-top: 0px;
 padding-bottom: 25px;
 }
+
+
+
+.postToc {
+  margin: 20px 0;
+  background-color: var(--theme-background);
+}
+
+.postToc h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 38px;
+    color: var(--theme-primary);
+}
+
+.postToc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.postToc li {
+  margin-bottom: 5px;
+}
+
+.postToc a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+
+}
+
+.postToc a:hover {
+  text-decoration: underline;
+}
+
   @media (max-width: 768px) {
     .postPage .postVideo {
       height: 300px;
