@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/neirotti-blog/static/css/main.73226553.css",
-    "main.js": "/neirotti-blog/static/js/main.75f3f4c7.js",
+    "main.js": "/neirotti-blog/static/js/main.e09aa6d6.js",
     "static/js/592.959e68db.chunk.js": "/neirotti-blog/static/js/592.959e68db.chunk.js",
     "static/media/AnandaBlack.ttf": "/neirotti-blog/static/media/AnandaBlack.eb04dce4c2b321e2ef0a.ttf",
     "static/media/frijolesSelf.png": "/neirotti-blog/static/media/frijolesSelf.9c612eb641a8f8ef4e4c.png",
     "index.html": "/neirotti-blog/index.html",
     "main.73226553.css.map": "/neirotti-blog/static/css/main.73226553.css.map",
-    "main.75f3f4c7.js.map": "/neirotti-blog/static/js/main.75f3f4c7.js.map",
+    "main.e09aa6d6.js.map": "/neirotti-blog/static/js/main.e09aa6d6.js.map",
     "592.959e68db.chunk.js.map": "/neirotti-blog/static/js/592.959e68db.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73226553.css",
-    "static/js/main.75f3f4c7.js"
+    "static/js/main.e09aa6d6.js"
   ]
 }
