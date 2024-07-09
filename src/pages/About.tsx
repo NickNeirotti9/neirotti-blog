@@ -21,11 +21,11 @@ const About: React.FC = () => {
           learning and teaching. I believe that education is a fundamental force
           that shapes our identities and societies. Making it accessible is
           crucial for the well-being of everyone. Here, I strive to summarize
-          interesting concepts simply, inspired by the elegance of Zen Buddhism.
-          In a world where your attention is constantly under siege by
-          time-wasting content, my goal is to provide a meaningful alternative.
-          I want you to leave this site feeling enriched, having spent your time
-          wisely, learning, and improving yourself.
+          interesting concepts simply. In a world where your attention is
+          constantly under siege by time-wasting content, my goal is to provide
+          a meaningful alternative. I want you to leave this site feeling
+          enriched, having spent your time wisely, learning, and improving
+          yourself.
         </p>
         <h2>Why These Categories?</h2>
         <div className={styles.dropdownSection}>

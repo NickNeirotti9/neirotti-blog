@@ -8,7 +8,7 @@
     "sections": [
       {
         "title": "Elaboration",
-        "content": "\tWe are evolutionarily programmed to seek others' approval and are equally prone to jealousy. People showcase idealized versions of their lives for admiration, which only exacerbates the culture of comparison and FOMO. Basing your worth and happiness on others' approval invariably leads to a desire for more and better. How can one be content when nothing seems good enough?\n\n\tThe hedonic treadmill theory suggests that regardless of our circumstances, from losing a job to winning the lottery, we tend to return to a baseline level of happiness. This doesn’t mean you should quit your job with the expectation of being just as happy living on the streets. Goals and aspirations are important because they provide direction; however, it's misguided to believe that reaching the proverbial pot of gold at the end of the rainbow will finally make you happy. What's preventing you from feeling that way now?\n\n\tThe disparity between expressions on a sunny day and a cloudy one is remarkable. It's as if you could predict the weather given a collection of headshots. However, stormy days are inevitable; are our emotions forever bound to circumstance? The first practice I advocate for is consistently seeking the silver lining in every storm cloud. This habit encourages us to recognize growth opportunities in all situations. By identifying the positives in challenging times, we condition our minds to value the present and discover joy in our journey. Understand that there are things we can control and things we can't. Worrying about things beyond our reach is a waste of time and simply makes us feel bad for no reason.\n\n\tImagine life as an art gallery filled with paintings that depict your daily experiences.  As the manager of this fine establishment, you may have limited control over which paintings you acquire, but the way you frame them is entirely up to you. While some frames can detract from a painting's beauty, others can enhance it significantly. Here are a few framing perspectives you might consider:\n\n* Adventure Frame: See life as an exciting journey, embracing challenges and joys as part of a grand adventure.\n* Comedic Frame: “Laughter, and a lot of it, is the right response to the things which drive us to tears” - Seneca\n* Gratitude Frame: There are things to be thankful for in every situation.\n* Growth Frame: Challenging experiences are great opportunities for growth.\n* Incompetence vs. Malice: \"When you wake up in the morning, tell yourself: the people I deal with today will be meddling, ungrateful, arrogant, dishonest, jealous and surly. They are like this because they can't tell good from evil. But I have seen the beauty of good, and the ugliness of evil, and have recognized that the wrongdoer has a nature related to my own - not of the same blood and birth, but the same mind, and possessing a share of the divine. And so none of them can hurt me.\" - Marcus Aurelius\n* Possibility Frame: Open-minded to the possibilities the situation might bring.\n* Storytelling Frame: “This is gonna make my autobiography go crazy, bro.” - Sr. Frijoles"
+        "content": "\tWe are evolutionarily programmed to seek others' approval and are equally prone to jealousy. People showcase idealized versions of their lives for admiration, which only exacerbates the culture of comparison and FOMO. Basing your worth and happiness on others' approval invariably leads to a desire for more and better. How can one be content when nothing seems good enough?\n\n\tThe hedonic treadmill theory suggests that regardless of our circumstances, from losing a job to winning the lottery, we tend to return to a baseline level of happiness. This doesn’t mean you should quit your job with the expectation of being just as happy living on the streets. Goals and aspirations are important because they provide direction among other things; however, it's misguided to believe that reaching the proverbial pot of gold at the end of the rainbow will finally make you happy. What's preventing you from feeling that way now?\n\n\tThe disparity between expressions on a sunny day and a cloudy one is remarkable. It's as if you could predict the weather given a collection of headshots. However, stormy days are inevitable; are our emotions forever bound to circumstance? The first practice I advocate for is consistently seeking the silver lining in every storm cloud. This habit encourages us to recognize growth opportunities in all situations. By identifying the positives in challenging times, we condition our minds to value the present and discover joy in our journey. Understand that there are things we can control and things we can't. Worrying about things beyond our reach is a waste of time and simply makes us feel bad for no reason.\n\n\tImagine life as an art gallery filled with paintings that depict your daily experiences.  As the manager of this fine establishment, you may have limited control over which paintings you acquire, but the way you frame them is entirely up to you. While some frames can detract from a painting's beauty, others can enhance it significantly. Here are a few framing perspectives you might consider:\n\n* Adventure Frame: See life as an exciting journey, embracing challenges and joys as part of a grand adventure.\n* Comedic Frame: “Laughter, and a lot of it, is the right response to the things which drive us to tears” - Seneca\n* Gratitude Frame: There are things to be thankful for in every situation.\n* Growth Frame: Challenging experiences are great opportunities for growth.\n* Incompetence vs. Malice: \"When you wake up in the morning, tell yourself: the people I deal with today will be meddling, ungrateful, arrogant, dishonest, jealous and surly. They are like this because they can't tell good from evil. But I have seen the beauty of good, and the ugliness of evil, and have recognized that the wrongdoer has a nature related to my own - not of the same blood and birth, but the same mind, and possessing a share of the divine. And so none of them can hurt me.\" - Marcus Aurelius\n* Possibility Frame: Open-minded to the possibilities the situation might bring.\n*Prospective Restrospection: Think nostalgically about the present because these are the good ol' days despite their shortcomings.\n* Storytelling Frame: “This is gonna make my autobiography go crazy, bro.” - Sr. Frijoles"
       }],
     "resources": [
     {"title": "Meditations by Marcus Aurelius, Gregory Hays", "url": "https://www.goodreads.com/book/show/57024113-meditations", "description": "A collection of personal writings by the Roman Emperor, offering profound reflections and practical guidance on Stoic philosophy, self-discipline, and virtuous living"},
@@ -27,36 +27,14 @@
     "subject": "Stoicism",
     "datePosted": "2024-04-01T14:48:00Z",
     "status": "published",
-    "relatedPosts": [2, 3, 4],
+    "relatedPosts": [2],
     "featured": true
   },
   {
     "id": 2,
-    "title": "Mechanical Vibration",
-    "author": "Nick Neirotti",
-    "hook": "Discover how mechanical vibrations impact engineering and daily life, from the stability of bridges to the quality of car rides.",
-    "sections": [
-      {
-        "title": "Elaboration",
-        "content": "Simple Harmonic Motion (SHM) is a type of periodic movement where an object oscillates back and forth around an equilibrium point in a fixed pattern. This motion is characterized by a constant amplitude, the maximum distance from the equilibrium point; period, the time it takes to complete one cycle of motion; and angular frequency, which indicates how quickly the oscillation occurs. The key equations for SHM include $$x(t) = A\\cos(\\omega t + \\phi)$$ for the object's position over time, with \\( A \\) as amplitude, \\( \\omega \\) as angular frequency, and \\( \\phi \\) as the phase constant, alongside \\( \\omega = 2\\pi f = \\sqrt{\\frac{k}{m}} \\), where \\( f \\) is the frequency, \\( k \\) is the stiffness of the spring, and \\( m \\) is the mass of the object. SHM is invaluable for understanding mechanisms and systems that exhibit cyclical motion, leading to its application in designing precise timekeeping devices, optimizing vehicle suspension systems, and studying seismic waves, among others."
-      }],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "youtubeID": "GIWmyYgN2Vw",
-    "subcategory": "Engineering",
-    "subject": "Mechanical",
-    "datePosted": "2024-04-03T11:30:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
-  },
-  {
-    "id": 3,
     "title": "Sleep Health",
     "author": "Nick Neirotti",
-    "hook": "Actionable tips to improve your sleep from light to diet to lifestyle.",
+    "hook": "Actionable tips to improve your sleep from light to lifestyle.",
     "sections": [
       {
         "title": "Understanding Sleep",
@@ -104,226 +82,7 @@
     "subject": "Sleep",
     "datePosted": "2024-05-21T11:30:00Z",
     "status": "published",
-    "relatedPosts": [2, 3, 4],
+    "relatedPosts": [1],
     "featured": true
-  },
-  {
-    "id": 4,
-    "title": "Title 4",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-      {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-      {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k",
-    "subcategory": "Science",
-    "subject": "Chemistry",
-    "datePosted": "2024-01-20T11:30:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
-  },
-  {
-    "id": 5,
-    "title": "Title 5",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k",
-    "subcategory": "Science",
-    "subject": "Physics",
-    "datePosted": "2024-01-24T11:30:00Z",
-    "lastUpdated": "2024-02-20T12:00:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": true
-  },
-  {
-    "id": 6,
-    "title": "Title 6",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
-    "subcategory": "Philosophy",
-    "subject": "Free Will",
-    "datePosted": "2024-02-21T11:30:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
-  },
-  {
-    "id": 7,
-    "title": "Title 7",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
-    "subcategory": "Fitness",
-    "subject": "Hypertrophy",
-    "datePosted": "2024-02-23T11:30:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
-  },
-  {
-    "id": 8,
-    "title": "Title 8",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
-    "subcategory": "Nutrition",
-    "subject": "Macronutrients",
-    "datePosted": "2024-02-25T11:30:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
-  },
-  {
-    "id": 9,
-    "title": "Title 9",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
-    "subcategory": "Media Takeaways",
-    "subject": "Books",
-    "datePosted": "2024-02-27T11:30:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
-  },
-  {
-    "id": 10,
-    "title": "Title 10",
-    "author": "Nick Neirotti",
-    "hook": "hook",
-    "summaryPoints": ["Point 1", "Point 2", "Point 3"],
-    "sections": [
-      {
-        "title": "Introduction",
-        "content": "React is a JavaScript library for building user interfaces.\n\n* It is maintained by Facebook.\n* It is widely used in the industry.\n\nReact allows developers to create large web applications that can update and render efficiently in response to data changes. **Key features** include:\n\n_Declarative_ views make your code more predictable and easier to debug.\n\n```js\nconst element = <h1>Hello, world!</h1>;\nReactDOM.render(element, document.getElementById('root'));\n```\n\nReact components implement a `render` method that takes input data and returns what to display.\n\nHere is an equation: [eq]E = mc^2[/eq]\n\nAnd here is an image: [img]https://reactjs.org/logo-og.png[/img]"
-      },
-      {
-        "title": "Practical Examples",
-        "content": "You can start by creating a simple component that renders 'Hello, World!' to the DOM."
-      }
-    ],
-    "resources": [
-    {"title": "Resource Title 1", "url": "https://example.com", "description": "Test"},
-    {"title": "Resource Title 2", "url": "https://example.com", "description": "Test"}
-    ],
-    "quotes": [
-      {"quote": "", "author": ""},
-      {"quote": "", "author": ""}],
-    "youtubeID": "PocmChPx15k?si=4iXeGYOrIWa4wvgl",
-    "subcategory": "Misc.",
-    "subject": "Music",
-    "datePosted": "2024-02-29T11:30:00Z",
-    "lastUpdated": "2024-02-20T12:00:00Z",
-    "status": "published",
-    "relatedPosts": [2, 3, 4],
-    "featured": false
   }
 ]
