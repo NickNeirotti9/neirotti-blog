@@ -1,6 +1,6 @@
 {
   "name": "neirotti-blog",
-  "homepage": "http://existnchill.com.s3-website-us-east-1.amazonaws.com",
+  "homepage": "http://existnchill.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
