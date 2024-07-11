@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   return (
-    <Router basename="/neirotti-blog">
+    <Router>
       <ScrollToTop />
       <Navbar />
       <Routes>
