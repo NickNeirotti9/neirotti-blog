@@ -6,6 +6,7 @@ phases:
       nodejs: 18.18.2 # Use the version of Node.js that your project requires
     commands:
       - echo Installing NPM dependencies...
+      - node --max-old-space-size=4096 -e 'require("events").EventEmitter.defaultMaxListeners = 30;'
       - npm install
   build:
     commands:
@@ -20,7 +21,3 @@ artifacts:
   files:
     - "**/*"
   base-directory: build
-
-cache:
-  paths:
-    - "node_modules/**/*"
