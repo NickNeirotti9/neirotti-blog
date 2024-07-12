@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18.18.2 # Use the version of Node.js that your project requires
+    commands:
+      - echo Installing NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building the React application...
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed, uploading to S3...
+      - aws s3 sync build/ s3://existnchill.com --delete
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: build
+
+cache:
+  paths:
+    - "node_modules/**/*"

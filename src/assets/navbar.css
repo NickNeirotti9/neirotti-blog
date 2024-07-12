@@ -5,6 +5,7 @@
     align-items: center;
     background-color: #084C61;
     color: white;
+    height: 80px;
     padding: 0px 30px;
   }
   
@@ -211,12 +212,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-.hamburger {
-  display: none; /* Hidden by default */
-  cursor: pointer;
-  /* Styling for the hamburger icon */
 }
   
 

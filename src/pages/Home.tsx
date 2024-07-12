@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     <div className={styles.homepageContent}>
       <div className={styles.fullWidthSection}>
         <h2 className={styles.sectionTitle}>About the Page</h2>
-        <div className={styles.latestSection}>
+        <div className={styles.aboutSection}>
           <div className={styles.videoContainer2}>
             <iframe
               src="https://www.youtube.com/embed/TuZIZ_UdWOQ?si=AIMy-PAvundr0EZk?autoplay=0&rel=0"
@@ -63,10 +63,8 @@ const Home: React.FC = () => {
               allowFullScreen
             ></iframe>
           </div>
-
           <div className={styles.infoContainer}>
             <p>{new Date(mostRecentPost.datePosted).toLocaleDateString()}</p>
-
             <Link
               to={`/browse?filter=${encodeURIComponent(
                 mostRecentPost.subcategory
@@ -93,12 +91,12 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <h2 className={styles.sectionTitle2}>Featured</h2>
+        {/* <h2 className={styles.sectionTitle2}>Featured</h2>
         <div className="postsContainer">
           {featuredPosts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
-        </div>
+        </div> */}
         <div className={styles.section2}>
           <h2 className={styles.sectionTitle2}>Browse</h2>
           <div className={styles.categoriesContainer}>

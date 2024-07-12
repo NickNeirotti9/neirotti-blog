@@ -7,8 +7,8 @@ const Disclaimer: React.FC = () => {
       <div className="disclaimer-container">
         <h2 className="disclaimer-title">Disclaimer</h2>
         <p className="disclaimer-text">
-          The information provided by [Your Company Name] (“we,” “us” or “our”)
-          on [website name] (the “Site”) is for general informational purposes
+          The information provided by existnchill (“we,” “us” or “our”) on
+          existnchill.com (the “Site”) is for general informational purposes
           only. All information on the Site is provided in good faith, however,
           we make no representation or warranty of any kind, express or implied,
           regarding the accuracy, adequacy, validity, reliability, availability
