@@ -5,9 +5,10 @@ phases:
     runtime-versions:
       nodejs: 18.18.2 # Use the version of Node.js that your project requires
     commands:
+      - echo Setting max listeners limit...
+      - node -e "require('events').EventEmitter.defaultMaxListeners = 100;"
       - echo Installing NPM dependencies...
-      - node -e "require('events').defaultMaxListeners = 200;"
-      - npm install
+      - npm ci
   build:
     commands:
       - echo Building the React application...
