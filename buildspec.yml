@@ -6,8 +6,8 @@ phases:
       nodejs: 18.18.2 # Use the version of Node.js that your project requires
     commands:
       - echo Installing NPM dependencies...
-      - ulimit -n 4096
       - node --max-old-space-size=4096 -e 'require("events").EventEmitter.defaultMaxListeners = 30;'
+      - sysctl fs.inotify.max_user_watches=524288
       - npm install
   build:
     commands:
