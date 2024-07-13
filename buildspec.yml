@@ -5,17 +5,13 @@ phases:
     runtime-versions:
       nodejs: 20.15.1
     commands:
-      - echo Setting max listeners limit...
       - node -e "require('events').EventEmitter.defaultMaxListeners = 100;"
-      - echo Installing NPM dependencies...
-      - npm install --verbose
+      - npm install
   build:
     commands:
-      - echo Building the React application...
       - npm run build
   post_build:
     commands:
-      - echo Build completed, uploading to S3...
       - aws s3 sync build/ s3://existnchill.com --delete
 
 artifacts:
