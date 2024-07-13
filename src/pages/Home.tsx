@@ -26,7 +26,7 @@ const Home: React.FC = () => {
         <div className={styles.aboutSection}>
           <div className={styles.videoContainer2}>
             <iframe
-              src="https://www.youtube.com/embed/TuZIZ_UdWOQ?si=AIMy-PAvundr0EZk?autoplay=0&rel=0"
+              src="https://www.youtube.com/embed/drsJuptygaQ?si=32J2Lx63s127_JjA?autoplay=0&rel=0"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               frameBorder="0"
