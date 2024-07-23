@@ -42,10 +42,11 @@ const renderParagraphs = (content: string) => {
               .replace(/`(.*?)`/g, "<code>$1</code>") // Inline code
               .replace(/\[eq\](.*?)\[\/eq\]/g, "<div class='equation'>$1</div>") // Equation
               .replace(/\[u\](.*?)\[\/u\]/g, "<u>$1</u>") // Underline
+              .replace(/\[img\](.*?)\[\/img\]/g, "<img src='$1' alt='image' />") // Image
               .replace(
-                /\[img\](.*?)\[\/img\]/g,
-                "<img src='$1' alt='image' />"
-              ); // Image
+                /\[link (.*?)\]\((.*?)\)/g,
+                "<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>"
+              ); // Custom link syntax
 
             return (
               <li
@@ -69,10 +70,11 @@ const renderParagraphs = (content: string) => {
               .replace(/`(.*?)`/g, "<code>$1</code>") // Inline code
               .replace(/\[eq\](.*?)\[\/eq\]/g, "<div class='equation'>$1</div>") // Equation
               .replace(/\[u\](.*?)\[\/u\]/g, "<u>$1</u>") // Underline
+              .replace(/\[img\](.*?)\[\/img\]/g, "<img src='$1' alt='image' />") // Image
               .replace(
-                /\[img\](.*?)\[\/img\]/g,
-                "<img src='$1' alt='image' />"
-              ); // Image
+                /\[link (.*?)\]\((.*?)\)/g,
+                "<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>"
+              );
 
             // Check if line should be indented
             const isIndented =

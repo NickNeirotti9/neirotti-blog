@@ -14,17 +14,11 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="logo">
+      <div className="footer-content">
         <button onClick={handleLogoClick} className="logoButton">
           existnchill
         </button>
-      </div>
-      <div className="footerLinks">
-        {/* <Link to="/contact" className="footerLink">
-          Contact
-        </Link> 
-        <span className="footerSeparator">|</span>*/}
-        <Link to="/disclaimer" className="footerLink">
+        <Link to="/disclaimer" className="footer-link">
           Disclaimer
         </Link>
       </div>

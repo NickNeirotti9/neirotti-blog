@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../assets/About.module.css";
-import myImage from "../assets/images/frijolesSelf.png";
+//import myImage from "../assets/images/aboutIMG.png";
+import myImage from "../assets/images/IMG_0004.png";
 
 const About: React.FC = () => {
   const [openSection, setOpenSection] = useState<string | null>(null);

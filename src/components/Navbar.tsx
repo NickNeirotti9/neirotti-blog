@@ -1,14 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/navbar.css";
 import "../assets/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar: React.FC = () => {
   const [theme, setTheme] = useState("dark");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [isInputFocused, setIsInputFocused] = useState(false); // New state to track input focus
+  const [isInputFocused, setIsInputFocused] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu visibility
+  const menuRef = useRef<HTMLDivElement>(null);
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   const navigate = useNavigate();
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -27,17 +34,25 @@ const Navbar: React.FC = () => {
 
   const navigateToSTEM = () => {
     navigate("/browse?filter=STEM");
+    setIsMenuOpen(false);
   };
   const navigateToHEALTH = () => {
     navigate("/browse?filter=HEALTH");
+    setIsMenuOpen(false);
   };
   const navigateToLIFE = () => {
     navigate("/browse?filter=LIFE");
+    setIsMenuOpen(false);
   };
 
   // Input change handler
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    setIsMenuOpen(false);
   };
 
   const handleSearchSubmit = (
@@ -50,6 +65,7 @@ const Navbar: React.FC = () => {
       navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
     }
     setIsInputFocused(false);
+    setIsSearchOpen(false);
   };
 
   // Clear search handler
@@ -66,64 +82,116 @@ const Navbar: React.FC = () => {
     setIsInputFocused(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsSearchOpen(false);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (
+      (menuRef.current && menuRef.current.contains(event.target as Node)) ||
+      (navbarRef.current && navbarRef.current.contains(event.target as Node)) ||
+      (searchRef.current && searchRef.current.contains(event.target as Node))
+    ) {
+      return;
+    }
+    closeMenu();
+    setIsSearchOpen(false);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen || isSearchOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen, isSearchOpen, handleClickOutside]);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navbarRef}>
+      <button className="search-toggle" onClick={toggleSearch}>
+        <FontAwesomeIcon icon={faSearch} />
+      </button>
+      <div
+        ref={searchRef}
+        className={`mobile-search-container ${isSearchOpen ? "open" : ""}`}
+      >
+        <form onSubmit={handleSearchSubmit}>
+          <div
+            className={`search-input-wrapper ${
+              isInputFocused ? "focused" : ""
+            }`}
+          >
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={handleInputChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              placeholder="Search..."
+              className="search-input"
+              aria-label="Search"
+              ref={searchInputRef}
+            />
+            <div className="icon-container">
+              {searchQuery && (
+                <button
+                  type="button"
+                  className="clear-button"
+                  onClick={handleClearSearch}
+                  aria-label="Clear search"
+                >
+                  <FontAwesomeIcon icon={faTimes} />
+                </button>
+              )}
+              <button
+                type="submit"
+                className="search-button"
+                aria-label="Search"
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
       <div className="logo">
         <Link to="/">existnchill</Link>
       </div>
-      <form className="search-container" onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleInputChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          placeholder="Search..."
-          className="search-input"
-          aria-label="Search"
-          ref={searchInputRef}
-        />
-        {/* Render the clear button only when there's a searchQuery and the input is not focused */}
-        {searchQuery && !isInputFocused && (
-          <button
-            type="button" // This should be "button" so it doesn't submit the form
-            className="clear-button visible" // Use "visible" class to show the button
-            onClick={handleClearSearch}
-            aria-label="Clear search"
-          >
-            <FontAwesomeIcon icon={faTimes} /> {/* Clear icon */}
-          </button>
-        )}
-        {/* Render the search button when the input is focused or there's a searchQuery */}
-        {isInputFocused || searchQuery ? (
-          <button
-            type="submit" // This should be "submit" to trigger form submission
-            className="search-button visible" // Use "visible" class to show the button
-            aria-label="Search"
-          >
-            <FontAwesomeIcon icon={faSearch} /> {/* Search icon */}
-          </button>
-        ) : (
-          <button
-            type="submit" // Still "submit", because this button is always in a state that can submit the form
-            className="search-button hidden" // Use "hidden" class to hide the button
-            aria-label="Search"
-          >
-            <FontAwesomeIcon icon={faSearch} /> {/* Search icon */}
-          </button>
-        )}
-      </form>
-      <div className="menu-and-toggle">
+
+      <button className="dropdown-toggle" onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <div
+        ref={menuRef}
+        className={`menu-and-toggle ${isMenuOpen ? "open" : ""}`}
+      >
         <div className="menu">
           <div className="dropdown">
             <button className="dropbtn" onClick={navigateToSTEM}>
               STEM
             </button>
             <div className="dropdown-content">
-              <Link to="/browse?filter=Science">Science</Link>
-              <Link to="/browse?filter=Technology">Technology</Link>
-              <Link to="/browse?filter=Engineering">Engineering</Link>
-              <Link to="/browse?filter=Mathematics">Mathematics</Link>
+              <Link to="/browse?filter=Science" onClick={closeMenu}>
+                Science
+              </Link>
+              <Link to="/browse?filter=Technology" onClick={closeMenu}>
+                Technology
+              </Link>
+              <Link to="/browse?filter=Engineering" onClick={closeMenu}>
+                Engineering
+              </Link>
+              <Link to="/browse?filter=Mathematics" onClick={closeMenu}>
+                Mathematics
+              </Link>
             </div>
           </div>
           <div className="dropdown">
@@ -131,10 +199,18 @@ const Navbar: React.FC = () => {
               HEALTH
             </button>
             <div className="dropdown-content">
-              <Link to="/browse?filter=Nutrition">Nutrition</Link>
-              <Link to="/browse?filter=Fitness">Fitness</Link>
-              <Link to="/browse?filter=Mindfulness">Mindfulness</Link>
-              <Link to="/browse?filter=General Wellness">General Wellness</Link>
+              <Link to="/browse?filter=Nutrition" onClick={closeMenu}>
+                Nutrition
+              </Link>
+              <Link to="/browse?filter=Fitness" onClick={closeMenu}>
+                Fitness
+              </Link>
+              <Link to="/browse?filter=Mindfulness" onClick={closeMenu}>
+                Mindfulness
+              </Link>
+              <Link to="/browse?filter=General Wellness" onClick={closeMenu}>
+                General Wellness
+              </Link>
             </div>
           </div>
           <div className="dropdown">
@@ -142,10 +218,18 @@ const Navbar: React.FC = () => {
               LIFE
             </button>
             <div className="dropdown-content">
-              <Link to="/browse?filter=Philosophy">Philosophy</Link>
-              <Link to="/browse?filter=Psychology">Psychology</Link>
-              <Link to="/browse?filter=Media Takeaways">Media Takeaways</Link>
-              <Link to="/browse?filter=Misc.">Misc.</Link>
+              <Link to="/browse?filter=Philosophy" onClick={closeMenu}>
+                Philosophy
+              </Link>
+              <Link to="/browse?filter=Psychology" onClick={closeMenu}>
+                Psychology
+              </Link>
+              <Link to="/browse?filter=Media Takeaways" onClick={closeMenu}>
+                Media Takeaways
+              </Link>
+              <Link to="/browse?filter=Misc." onClick={closeMenu}>
+                Misc.
+              </Link>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ const Search: React.FC = () => {
   const [searchResults, setSearchResults] = useState<Post[]>([]);
   const searchQuery = searchParams.get("query") || "";
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(2);
+  const [postsPerPage] = useState(5);
 
   useEffect(() => {
     // Perform the search

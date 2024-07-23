@@ -1,41 +1,40 @@
+/* index.css or footer.css */
+
 .footer {
-    text-align: center;
-    padding: 30px;
-    padding-top: 10px;
-    background-color: #084C61;
-  }
-  
-/* footer.css */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  background-color: #084C61;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .logoButton {
-    background: none;
-    border: none;
-    color: var(--theme-accent); /* Adjust the color as needed */
-    font-size: 50px; /* Adjust the size as needed */
-    font-family: 'AnandaBlack', sans-serif; /* Ensure the font matches your design */
-    cursor: pointer;
-    padding: 0;
-    display: inline; /* Adjust as needed to fit your layout */
-  }
-  
-  .logoButton:hover,
-  .logoButton:focus {
-    outline: none;
-    /* Consider changing the color or adding other styles for hover/focus states */
-  }
-  
-  
-  .footerLinks {
-    margin-top: 10px; /* Spacing between logo and links */
-  }
-  
-  .footerLink {
-    color: var(--theme-accent);
-    text-decoration: none;
-    padding: 0 10px; /* Spacing around links */
-  }
-  
-  .footerSeparator {
-    color: var(--theme-accent);
-    margin: 0 5px; /* Spacing around separator */
-  }
-  
+  background: none;
+  border: none;
+  color: var(--theme-accent);
+  font-size: 50px;
+  font-family: 'AnandaBlack', sans-serif;
+  cursor: pointer;
+  margin-top: -15px;
+}
+
+.footer-link {
+  color: var(--theme-accent);
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font-primary); /* Ensure it uses the primary font */
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
