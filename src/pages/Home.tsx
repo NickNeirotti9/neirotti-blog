@@ -91,12 +91,12 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* <h2 className={styles.sectionTitle2}>Featured</h2>
+        <h2 className={styles.sectionTitle2}>Featured</h2>
         <div className="postsContainer">
           {featuredPosts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
-        </div> */}
+        </div>
         <div className={styles.section2}>
           <h2 className={styles.sectionTitle2}>Browse</h2>
           <div className={styles.categoriesContainer}>
@@ -152,11 +152,8 @@ const Home: React.FC = () => {
               <Link to={`/browse?filter=Psychology`} className={styles.link}>
                 Psychology
               </Link>
-              <Link
-                to={`/browse?filter=Media Takeaways`}
-                className={styles.link}
-              >
-                Media Takeaways
+              <Link to={`/browse?filter=Productivity`} className={styles.link}>
+                Productivity
               </Link>
               <Link to={`/browse?filter=Misc.`} className={styles.link}>
                 Misc.

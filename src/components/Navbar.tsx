@@ -224,8 +224,8 @@ const Navbar: React.FC = () => {
               <Link to="/browse?filter=Psychology" onClick={closeMenu}>
                 Psychology
               </Link>
-              <Link to="/browse?filter=Media Takeaways" onClick={closeMenu}>
-                Media Takeaways
+              <Link to="/browse?filter=Productivity" onClick={closeMenu}>
+                Productivity
               </Link>
               <Link to="/browse?filter=Misc." onClick={closeMenu}>
                 Misc.

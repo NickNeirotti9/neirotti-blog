@@ -28,7 +28,7 @@ const categories = [
   },
   {
     name: "LIFE",
-    subcategories: ["Philosophy", "Psychology", "Media Takeaways", "Misc."],
+    subcategories: ["Philosophy", "Psychology", "Productivity", "Misc."],
   },
 ];
 
@@ -38,14 +38,11 @@ type PostGroup = Record<string, Post[]>;
 const groupPostsByDate = (posts: Post[]): PostGroup => {
   const groups: PostGroup = {};
   posts.forEach((post) => {
-    const monthYear = new Date(post.datePosted).toLocaleString("default", {
-      month: "long",
-      year: "numeric",
-    });
-    if (!groups[monthYear]) {
-      groups[monthYear] = []; // Initialize if not already present
+    const year = new Date(post.datePosted).getFullYear().toString(); // Extract the year
+    if (!groups[year]) {
+      groups[year] = []; // Initialize if not already present
     }
-    groups[monthYear].push(post);
+    groups[year].push(post);
   });
   return groups;
 };
@@ -268,8 +265,29 @@ const Browse = () => {
         </div>
       </div>
       <div className="postsContainer">
-        {Object.entries(sortedAndFilteredPosts as PostGroup).map(
-          ([label, posts]) => (
+        {/* Convert the grouped posts into an array of [yearOrSubject, Post[]], 
+          then sort based on current sort option if needed. */}
+        {(() => {
+          const entries = Object.entries(sortedAndFilteredPosts as PostGroup);
+
+          let sortedEntries;
+          if (sortOption === "newest") {
+            // Newest first means highest year first
+            sortedEntries = entries.sort(
+              ([yearA], [yearB]) => parseInt(yearB) - parseInt(yearA)
+            );
+          } else if (sortOption === "oldest") {
+            // Oldest first means lowest year first
+            sortedEntries = entries.sort(
+              ([yearA], [yearB]) => parseInt(yearA) - parseInt(yearB)
+            );
+          } else {
+            // For A-Z or Z-A sorts, we're grouping by subject, so no need
+            // to reorder group labels by numeric value (years).
+            sortedEntries = entries;
+          }
+
+          return sortedEntries.map(([label, posts]) => (
             <div className="primaryGroupWrapper" key={label}>
               <h2>{label}</h2>
               <div className="postCardsRow">
@@ -279,8 +297,8 @@ const Browse = () => {
               </div>
               <hr className="divider" />
             </div>
-          )
-        )}
+          ));
+        })()}
       </div>
       <Pagination
         itemsPerPage={postsPerPage}
