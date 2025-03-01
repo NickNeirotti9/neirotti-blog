@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Learn to Love What You Have",
     "author": "Nick Neirotti",
-    "hook": "My life would be so much better with just a little more money!",
+    "hook": "My life would be so much better with just a little more [...]!",
     "summaryPoints": ["Loving what you already have (and accepting what you don’t!!!) is the only way to remove yourself from the hedonic treadmill.", "Seek the silver linings in your setbacks by adopting an optimistic frame."],    
     "sections": [
       {
@@ -39,7 +39,7 @@
     "id": 2,
     "title": "How Computers Talk",
     "author": "Nick Neirotti",
-    "hook": "Sorry professor, I submitted the homework but the OSI model failed me (bad lie)",
+    "hook": "Sorry professor, I submitted the homework but the OSI model failed me (lie)",
     "sections": [
       {
         "title": "Background",
@@ -104,7 +104,7 @@
     "id": 3,
     "title": "Sleep Health",
     "author": "Nick Neirotti",
-    "hook": "You just look like you want to be re-energized in the morning lol",
+    "hook": "You like sleep too? Thats crazy",
     "sections": [
       {
         "title": "Understanding Sleep",
@@ -161,7 +161,7 @@
     "id": 4,
     "title": "Life is Absurd: The Philosophy of Albert Camus",
     "author": "Nick Neirotti",
-    "hook": "Wait nothing matters? That can't be right",
+    "hook": "Wait, nothing matters? That can't be right",
     "sections": [
       {
         "title": "Introduction",
@@ -208,7 +208,7 @@
     "id": 5,
     "title": "What Causes Weather?",
     "author": "Nick Neirotti",
-    "hook": "Does wind just spawn in? Somebody clue me in fr",
+    "hook": "Does wind just spawn in? Somebody clue me in",
     "sections": [
       {
         "title": "Introduction",
@@ -316,7 +316,7 @@
     "id": 7,
     "title": "The Ultimate Guide to Conventional Energy",
     "author": "Nick Neirotti",
-    "hook": "Coal, natural gas, petroleum, nuclear. How the heck do you power my life??",
+    "hook": "Coal, natural gas, petroleum, nuclear. How the heck do you power phone?",
     "sections": [
       {
         "title": "Introduction",
