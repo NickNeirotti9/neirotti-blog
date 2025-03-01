@@ -74,7 +74,7 @@ const Browse = () => {
     const filter = searchParams.get("filter");
 
     if (filter) {
-      if (filter === "Browse All") {
+      if (filter === "ALL") {
         // When filter is "Browse All", select all categories and subcategories
         const allCategories = new Set(categories.map((c) => c.name));
         const allSubcategories = new Set(

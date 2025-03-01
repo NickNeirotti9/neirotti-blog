@@ -40,9 +40,21 @@ body {
   
 }
 
+#page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Content wrapper for dynamic content */
+#content-wrap {
+  flex: 1; /* Allows the content to grow and fill available space */
+}
+
 a {
   color: var(--primary-color);
-  text-decoration: none; /* Removes underline from links */
+  text-decoration: none;
+  border-bottom: none;
 }
 p, li {
   font-family: var(--font-secondary);

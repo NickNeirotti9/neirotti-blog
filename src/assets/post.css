@@ -55,6 +55,11 @@
     line-height: 1.6;
     margin-bottom: 10px;
   }
+
+  .postPage .postDetailedContent li:last-child,
+.postPage .postSummaryPoints ul li:last-child {
+  margin-bottom: 0; /* Remove margin for the last item */
+}
   
   
   .postResources h2 {
@@ -74,15 +79,17 @@
     margin-bottom: 0; /* Remove bottom margin for the last item */
   }
   
-  .resourceTitle {
+  .postDetailedContent .resourceTitle {
     color: var(--theme-switch); /* Match the border color */
     font-weight: bold;
     text-decoration: none; /* No underline */
     font-size: 18px; /* Slightly larger font size */
+    border-bottom: none;
   }
   
-  .resourceTitle:hover {
+  .postDetailedContent .resourceTitle:hover {
     text-decoration: underline; /* Underline on hover for better interaction feedback */
+    border-bottom: none;
   }
   
   .postPage .postDetailedContent .resourceDescription {
@@ -122,7 +129,8 @@ padding-bottom: 25px;
   background-color: var(--theme-background);
 }
 
-.postToc h2 {
+.postToc h2,
+.spotifyEmbed h2 {
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 38px;
@@ -149,15 +157,49 @@ padding-bottom: 25px;
   text-decoration: underline;
 }
 
-a {
-  text-decoration: none; /* Remove underline by default */
-  color: inherit; /* Ensure the link inherits the text color */
+.postDetailedContent a {
+  color: var(--theme-switch); /* Match the border color */
+    font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
 }
 
-.post a:hover {
-  text-decoration: underline; /* Underline on hover */
+.postDetailedContent a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
 }
 
+.postTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  font-family: var(--font-secondary);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Table Header */
+.postTable th {
+  background-color: var(--theme-primary);
+  color: var(--background-color);
+  text-align: center;
+  padding: 12px;
+  border: 2px solid var(--theme-switch3);
+}
+
+/* Table Cells */
+.postTable td {
+  border: 2px solid var(--theme-switch3);
+  padding: 10px;
+}
+
+/* Alternate Row Coloring */
+.postTable tr:nth-child(even) {
+  background-color: var(--theme-secondary);
+  color: var(--text-color);
+}
 
   @media (max-width: 768px) {
     .postPage .postVideo {

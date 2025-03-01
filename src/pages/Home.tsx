@@ -160,7 +160,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
           </div>
-          <Link to={`/browse?filter=Browse All`} className={styles.aboutButton}>
+          <Link to={`/browse?filter=ALL`} className={styles.aboutButton}>
             Browse All
           </Link>
         </div>

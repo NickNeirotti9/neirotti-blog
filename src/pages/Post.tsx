@@ -11,6 +11,7 @@ interface IPost {
   subcategory: string;
   subject: string;
   youtubeID: string;
+  spotifyURL: string;
   summaryPoints?: string[];
   sections: { title: string; content: string }[];
   resources: { url: string; title: string; description: string }[];
@@ -20,6 +21,81 @@ interface IPost {
   featured: boolean;
 }
 
+const formatText = (text: string) => {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // Convert **bold** to <b>bold</b>
+    .replace(/\[\[bold\]\](.*?)\[\[\/bold\]\]/g, "<b>$1</b>") // Support [[bold]]
+    .replace(/_(.*?)_/g, "<i>$1</i>") // Italic
+    .replace(/`(.*?)`/g, "<code>$1</code>") // Inline code
+    .replace(/\[eq\](.*?)\[\/eq\]/g, "<div class='equation'>$1</div>") // Equations
+    .replace(/\[u\](.*?)\[\/u\]/g, "<u>$1</u>") // Underline
+    .replace(/\[img\](.*?)\[\/img\]/g, "<img src='$1' alt='image' />") // Images
+    .replace(
+      /\[link (.*?)\]\((.*?)\)/g,
+      "<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>"
+    )
+    .replace(
+      /\[center\](.*?)\[\/center\]/g,
+      "<div style='text-align: center;'>$1</div>"
+    ) // Centered Text
+    .replace(/\[sub\](.*?)\[\/sub\]/g, "<sub>$1</sub>") // Subscript
+    .replace(/\[sup\](.*?)\[\/sup\]/g, "<sup>$1</sup>") // Superscript
+    .replace(
+      /(?:\n|^)\*(.*?)$/gm,
+      (match, p1) => `<li>${p1.trim()}</li>` // Convert * item into <li>item</li>
+    );
+};
+
+const renderTable = (content: string) => {
+  const lines = content.trim().split("\n");
+  if (lines.length < 2 || !lines[0].includes("|")) return null;
+
+  // Ensure all rows have the same number of columns as the header
+  const headers = lines[0]
+    .split("|")
+    .map((col) => col.trim())
+    .filter((col) => col !== ""); // Remove empty columns
+
+  const rows = lines.slice(1).map(
+    (line) =>
+      line
+        .split("|")
+        .map((col) => col.trim())
+        .filter((col) => col !== "") // Remove empty columns
+  );
+
+  return (
+    <table className="postTable">
+      <thead>
+        <tr>
+          {headers.map((col, i) => (
+            <th
+              key={`th-${i}`}
+              dangerouslySetInnerHTML={{
+                __html: formatText(col),
+              }}
+            />
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, rowIndex) => (
+          <tr key={`tr-${rowIndex}`}>
+            {row.map((col, colIndex) => (
+              <td
+                key={`td-${rowIndex}-${colIndex}`}
+                dangerouslySetInnerHTML={{
+                  __html: formatText(col.replace(/<br\s*\/?>/g, "\n")),
+                }}
+              />
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
 const renderParagraphs = (content: string) => {
   const contentParts = content.split("\n\n");
   const contentElements: JSX.Element[] = [];
@@ -27,26 +103,26 @@ const renderParagraphs = (content: string) => {
   contentParts.forEach((part, index) => {
     if (part.trim() === "[hr]") {
       contentElements.push(<hr key={`hr-${index}`} />);
+    } else if (part.includes("|")) {
+      const tableElement = renderTable(part);
+      if (tableElement) {
+        contentElements.push(
+          <div key={`table-${index}`} className="tableWrapper">
+            {tableElement}
+          </div>
+        );
+        return;
+      }
     } else {
       // Handle parts that may contain [hr] within the text
       const subParts = part.split("[hr]");
       subParts.forEach((subPart, subIndex) => {
-        if (subPart.trim() === "") {
-          contentElements.push(<hr key={`hr-${index}-${subIndex}`} />);
-        } else if (subPart.trim().startsWith("*")) {
+        if (subPart.trim().startsWith("*")) {
           const bulletPoints = subPart.split("\n").map((bullet, idx) => {
             // Apply formatting
-            const formattedBullet = bullet
-              .replace(/_(.*?)_/g, "<i>$1</i>") // Italic
-              .replace(/\[\[bold\]\](.*?)\[\[\/bold\]\]/g, "<b>$1</b>") // Bold
-              .replace(/`(.*?)`/g, "<code>$1</code>") // Inline code
-              .replace(/\[eq\](.*?)\[\/eq\]/g, "<div class='equation'>$1</div>") // Equation
-              .replace(/\[u\](.*?)\[\/u\]/g, "<u>$1</u>") // Underline
-              .replace(/\[img\](.*?)\[\/img\]/g, "<img src='$1' alt='image' />") // Image
-              .replace(
-                /\[link (.*?)\]\((.*?)\)/g,
-                "<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>"
-              ); // Custom link syntax
+            const formattedBullet = formatText(
+              bullet.replace(/^\*/, "").trim()
+            );
 
             return (
               <li
@@ -61,21 +137,28 @@ const renderParagraphs = (content: string) => {
           contentElements.push(
             <ul key={`list-${index}-${subIndex}`}>{bulletPoints}</ul>
           );
+        } else if (/^\d+(\.|\))/.test(subPart.trim())) {
+          const numberedPoints = subPart.split("\n").map((numLine, idx) => {
+            // Remove the leading "1." or "1)" from each line
+            const formattedNumber = formatText(
+              numLine.replace(/^\d+(\.|\))/, "").trim()
+            );
+
+            return (
+              <li
+                key={`${index}-${subIndex}-${idx}`}
+                dangerouslySetInnerHTML={{ __html: formattedNumber }}
+              />
+            );
+          });
+
+          contentElements.push(
+            <ol key={`numlist-${index}-${subIndex}`}>{numberedPoints}</ol>
+          );
         } else {
           const lines = subPart.split("\n").map((line, idx) => {
             // Apply formatting
-            const formattedLine = line
-              .replace(/_(.*?)_/g, "<i>$1</i>") // Italic
-              .replace(/\[\[bold\]\](.*?)\[\[\/bold\]\]/g, "<b>$1</b>") // Bold
-              .replace(/`(.*?)`/g, "<code>$1</code>") // Inline code
-              .replace(/\[eq\](.*?)\[\/eq\]/g, "<div class='equation'>$1</div>") // Equation
-              .replace(/\[u\](.*?)\[\/u\]/g, "<u>$1</u>") // Underline
-              .replace(/\[img\](.*?)\[\/img\]/g, "<img src='$1' alt='image' />") // Image
-              .replace(
-                /\[link (.*?)\]\((.*?)\)/g,
-                "<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>"
-              );
-
+            const formattedLine = formatText(line);
             // Check if line should be indented
             const isIndented =
               formattedLine.startsWith("\t") ||
@@ -154,13 +237,33 @@ const Post: React.FC = () => {
   });
 
   // Generate Table of Contents
-  const tocItems = post.sections.map((section, index) => (
-    <li key={index}>
-      <a href={`#${generateIdFromTitle(section.title)}`} className="toc-link">
-        {index + 1}) {section.title}
-      </a>
-    </li>
-  ));
+  const tocItems = post.sections.map((section, index) => {
+    // Check if the title starts with a subchapter format (e.g., "5.1", "5.1.1")
+    const subchapterMatch = section.title.match(/^(\d+(\.\d+)*)/);
+    const isSubchapter = !!subchapterMatch;
+
+    // Correct the main numbering by only counting main chapters dynamically
+    const mainIndex = post.sections
+      .slice(0, index + 1) // Look at all sections up to current index
+      .filter((sec) => !/^\d+\.\d+/.test(sec.title)).length; // Count only main chapters
+
+    const displayNumber = isSubchapter ? subchapterMatch[1] : mainIndex; // Use extracted subchapter or main index
+
+    return (
+      <li
+        key={index}
+        style={{
+          marginLeft: subchapterMatch
+            ? `${(subchapterMatch[1].split(".").length - 1) * 20}px`
+            : "0px",
+        }}
+      >
+        <a href={`#${generateIdFromTitle(section.title)}`} className="toc-link">
+          {displayNumber}) {section.title.replace(/^(\d+(\.\d+)*)\s*/, "")}
+        </a>
+      </li>
+    );
+  });
 
   if (post.quotes && post.quotes.length > 0) {
     tocItems.push(
@@ -183,10 +286,15 @@ const Post: React.FC = () => {
   }
 
   if (post.resources && post.resources.length > 0) {
+    // Count only main chapters (excluding subchapters like 5.1, 5.1.1)
+    const mainChaptersCount = post.sections.filter(
+      (sec) => !/^\d+\.\d+/.test(sec.title)
+    ).length;
+
     tocItems.push(
       <li key="resources">
         <a href="#resources-references" className="toc-link">
-          {tocItems.length + 1}) Resources & References
+          {mainChaptersCount + 1}) Resources & References
         </a>
       </li>
     );
@@ -231,6 +339,22 @@ const Post: React.FC = () => {
             title={post.title}
           ></iframe>
         </div>
+        <br></br>
+        {post.spotifyURL && (
+          <div className="spotifyEmbed">
+            <h2>Podcast:</h2>
+            <iframe
+              src={`https://open.spotify.com/embed/episode/${
+                post.spotifyURL?.split("/").pop()?.split("?")[0] || ""
+              }`}
+              width="100%"
+              height="152"
+              frameBorder="0"
+              allow="encrypted-media"
+              title={`Spotify podcast episode ${post.title}`}
+            ></iframe>
+          </div>
+        )}
 
         <nav className="postToc">
           <h2>Table of Contents</h2>
@@ -244,7 +368,18 @@ const Post: React.FC = () => {
               id={generateIdFromTitle(section.title)}
               className="postSection"
             >
-              <h2>{section.title}</h2>
+              <h2
+                style={{
+                  fontSize: section.title.match(/^\d+\.\d+\.\d+/)
+                    ? "26px"
+                    : section.title.match(/^\d+\.\d+/)
+                    ? "32px"
+                    : "38px",
+                }}
+              >
+                {section.title.replace(/^(\d+(\.\d+)*)\s*/, "")}
+              </h2>
+
               {renderParagraphs(section.content)}
             </section>
           ))}

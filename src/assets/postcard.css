@@ -44,6 +44,9 @@
     color: var(--text-color); /* Text color */
     font-size: 0.9em; /* Text size */
   }
+  .hook-margin{
+    margin: 12px 0;
+  }
   /* Ensures 3 cards are displayed in a row on larger screens */
   @media (min-width: 1024px) {
     .postCard {

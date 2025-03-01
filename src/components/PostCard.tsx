@@ -54,7 +54,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       </div>
       <div className="postCardDetails">
         <h2>{post.title}</h2>
-        <p>{post.hook}</p>
+        <p className="hook-margin">{post.hook}</p>
         <p>Category: {`${post.subcategory} / ${post.subject}`}</p>
         <p>Date Posted: {new Date(post.datePosted).toLocaleDateString()}</p>
       </div>

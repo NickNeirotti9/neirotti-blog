@@ -7,36 +7,23 @@ const Disclaimer: React.FC = () => {
       <div className="disclaimer-container">
         <h2 className="disclaimer-title">Disclaimer</h2>
         <p className="disclaimer-text">
-          The information provided by existnchill (“we,” “us” or “our”) on
-          existnchill.com (the “Site”) is for general informational purposes
-          only. All information on the Site is provided in good faith, however,
-          we make no representation or warranty of any kind, express or implied,
-          regarding the accuracy, adequacy, validity, reliability, availability
-          or completeness of any information on the Site.
+          Hey there! The content on this website is for informational and
+          educational purposes only. While I do my best to keep everything
+          accurate and up-to-date, I'm not perfect so some mistakes might sneak
+          in (sorry).
         </p>
         <p className="disclaimer-text">
-          UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS
-          OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR
-          RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE
-          AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN
-          RISK.
+          If you’re making any big decisions based on what you find here, please
+          double-check with a professional in the relevant field.
         </p>
         <p className="disclaimer-text">
-          The Site may contain (or you may be sent through the Site) links to
-          other websites or content belonging to or originating from third
-          parties or links to websites and features in banners or other
-          advertising. Such external links are not investigated, monitored, or
-          checked for accuracy, adequacy, validity, reliability, availability or
-          completeness by us.
+          Everything on this site—text, images, videos, and more—belongs to
+          existnchill unless otherwise noted. If you’d like to use anything,
+          just ask first! I’m all for creative remixes and meaningful additions,
+          but reposting for profit isn't cool. Also, my content may not be used
+          for AI or ML training without my explicit permission.
         </p>
-        <p className="disclaimer-text">
-          WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR
-          THE ACCURACY OR RELIABILITY OF ANY INFORMATION OFFERED BY THIRD-PARTY
-          WEBSITES LINKED THROUGH THE SITE OR ANY WEBSITE OR FEATURE LINKED IN
-          ANY BANNER OR OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR IN ANY
-          WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND
-          THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
-        </p>
+        <p className="disclaimer-text">Thanks for stopping by!</p>
       </div>
     </div>
   );

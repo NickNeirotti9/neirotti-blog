@@ -32,16 +32,8 @@ const Navbar: React.FC = () => {
     document.body.dataset.theme = savedTheme;
   }, []);
 
-  const navigateToSTEM = () => {
-    navigate("/browse?filter=STEM");
-    setIsMenuOpen(false);
-  };
-  const navigateToHEALTH = () => {
-    navigate("/browse?filter=HEALTH");
-    setIsMenuOpen(false);
-  };
-  const navigateToLIFE = () => {
-    navigate("/browse?filter=LIFE");
+  const navigateToBROWSE = () => {
+    navigate("/browse?filter=ALL");
     setIsMenuOpen(false);
   };
 
@@ -176,59 +168,18 @@ const Navbar: React.FC = () => {
       >
         <div className="menu">
           <div className="dropdown">
-            <button className="dropbtn" onClick={navigateToSTEM}>
-              STEM
+            <button className="dropbtn" onClick={navigateToBROWSE}>
+              BROWSE
             </button>
             <div className="dropdown-content">
-              <Link to="/browse?filter=Science" onClick={closeMenu}>
-                Science
+              <Link to="/browse?filter=STEM" onClick={closeMenu}>
+                STEM
               </Link>
-              <Link to="/browse?filter=Technology" onClick={closeMenu}>
-                Technology
+              <Link to="/browse?filter=HEALTH" onClick={closeMenu}>
+                HEALTH
               </Link>
-              <Link to="/browse?filter=Engineering" onClick={closeMenu}>
-                Engineering
-              </Link>
-              <Link to="/browse?filter=Mathematics" onClick={closeMenu}>
-                Mathematics
-              </Link>
-            </div>
-          </div>
-          <div className="dropdown">
-            <button className="dropbtn" onClick={navigateToHEALTH}>
-              HEALTH
-            </button>
-            <div className="dropdown-content">
-              <Link to="/browse?filter=Nutrition" onClick={closeMenu}>
-                Nutrition
-              </Link>
-              <Link to="/browse?filter=Fitness" onClick={closeMenu}>
-                Fitness
-              </Link>
-              <Link to="/browse?filter=Mindfulness" onClick={closeMenu}>
-                Mindfulness
-              </Link>
-              <Link to="/browse?filter=General Wellness" onClick={closeMenu}>
-                General Wellness
-              </Link>
-            </div>
-          </div>
-          <div className="dropdown">
-            <button className="dropbtn" onClick={navigateToLIFE}>
-              LIFE
-            </button>
-            <div className="dropdown-content">
-              <Link to="/browse?filter=Philosophy" onClick={closeMenu}>
-                Philosophy
-              </Link>
-              <Link to="/browse?filter=Psychology" onClick={closeMenu}>
-                Psychology
-              </Link>
-              <Link to="/browse?filter=Productivity" onClick={closeMenu}>
-                Productivity
-              </Link>
-              <Link to="/browse?filter=Misc." onClick={closeMenu}>
-                Misc.
+              <Link to="/browse?filter=LIFE" onClick={closeMenu}>
+                LIFE
               </Link>
             </div>
           </div>

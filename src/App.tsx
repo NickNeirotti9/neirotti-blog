@@ -13,20 +13,24 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/browse" element={<Browse />} />
-        <Route path="/post/:id" element={<Post />} />
-        <Route path="/disclaimer" element={<Disclaimer />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div id="page-container">
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <div id="content-wrap">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/browse" element={<Browse />} />
+            <Route path="/post/:id" element={<Post />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </div>
   );
 };
 
