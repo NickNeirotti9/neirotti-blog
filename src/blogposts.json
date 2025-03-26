@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Learn to Love What You Have",
     "author": "Nick Neirotti",
-    "hook": "My life would be so much better with just a little more [...]!",
+    "hook": "How to Embrace The Present Without Judgement.",
     "summaryPoints": ["Loving what you already have (and accepting what you don’t!!!) is the only way to remove yourself from the hedonic treadmill.", "Seek the silver linings in your setbacks by adopting an optimistic frame."],    
     "sections": [
       {
@@ -39,7 +39,7 @@
     "id": 2,
     "title": "How Computers Talk",
     "author": "Nick Neirotti",
-    "hook": "Sorry professor, I submitted the homework but the OSI model failed me (lie)",
+    "hook": "Packets? Ports? Protocols? Demystified.",
     "sections": [
       {
         "title": "Background",
@@ -104,7 +104,7 @@
     "id": 3,
     "title": "Sleep Health",
     "author": "Nick Neirotti",
-    "hook": "You like sleep too? Thats crazy",
+    "hook": "Actionable Tips from Light to Lifestyle!",
     "sections": [
       {
         "title": "Understanding Sleep",
@@ -155,13 +155,13 @@
     "datePosted": "2024-07-30T11:30:00Z",
     "status": "published",
     "relatedPosts": [2,4,5],
-    "featured": true
+    "featured": false
   },
   {
     "id": 4,
     "title": "Life is Absurd: The Philosophy of Albert Camus",
     "author": "Nick Neirotti",
-    "hook": "Wait, nothing matters? That can't be right",
+    "hook": "Why Nothing Makes Sense — and Why That’s Okay.",
     "sections": [
       {
         "title": "Introduction",
@@ -181,7 +181,7 @@
       },
       {
         "title": "On Religion",
-        "content": "\tReligion often serves as a refuge for those who find the experience of the absurd too uncomfortable to live with. Many turn to religious doctrines as a way to escape the existential standoff as they provide answers about the meaning of life that can be comforting. However, Camus criticizes this retreat into faith, arguing that it stems more from a sense of terror than from reasoned conviction. According to Camus, faith represents an inauthentic evasion of the absurd situation as it is built on assumptions that transcend verifiable human experience, relying instead on beliefs that one cannot confirm through sensory or empirical observation. By embracing faith, it seems that people deny the inherent uncertainty of truth and deceive themselves, living in contradiction to their genuine insights from lived experience. For Camus, truly confronting the absurd does not involve fabricating meaning where there is none. It requires acknowledging and embracing the meaninglessness of existence as the only authentic response to the absurd. Thus, while religion may offer a sense of meaning or hope, it ultimately prevents individuals from engaging with the true nature of the human condition.\n\tFurthermore, the awareness of life's inherent meaninglessness should not lead to despair but to a more intense experience of life's moments. Without the illusion of a promised afterlife or higher purpose, one can finally begin to see that today is the ultimate heaven, not tomorrow. Because our lives will invariably end and there is no rational evidence of a continuance, we should seize each day with a sense of urgency. The shift from seeking eternal answers to reveling in the now does not diminish the quality of life but, paradoxically, enhances it, not out of fear or desperation, but from a place of freedom and choice. While religion might offer community, ethical guidance, faith, and psychological benefits similar to meditation, it comes at the cost of social division and willful ignorance—costs that, unlike the benefits, cannot be easily replaced. The way I see it, it's better to have unanswerable questions than unquestionable answers.\n\tThat being said, my perspective on the existential questions of life doesn’t mean I hold disdain for religion or those who embrace it. There is an immense wealth of history, culture, and wisdom to be found within the world’s religious traditions, and I recognize that I can't say with certainty that a deity doesn't exist. For that reason, I draw inspiration from various religions, appreciating their cultural significance, ethical frameworks, and perspectives on the meaning of life. I understand why many people choose to follow a faith and respect that decision. However, I struggle with those who assert that there is only one true religion or who use religious belief as a basis for division, hatred, or rash decision-making. We live in a world where the beauty of diverse perspectives should be celebrated, not condemned. Moreover, I’m aware that my ability to reflect on life’s meaning is a privilege of education and circumstance—many people face challenges where the comfort and structure of religion are essential for guiding them along a good path. In these cases, religion can provide a readily availible beacon of hope and stability in ways that philosophical inquiry might not. Therefore, while I may not subscribe to a particular faith, I respect the role that religion plays in the lives of millions, as long as it fosters empathy, understanding, and the well-being of others."
+        "content": "\tReligion often serves as a refuge for those who find the experience of the absurd too uncomfortable to live with. Many turn to religious doctrines as a way to escape the existential standoff as they provide answers about the meaning of life that can be comforting. However, Camus criticizes this retreat into faith, arguing that it stems more from a sense of terror than from reasoned conviction. According to Camus, faith represents an inauthentic evasion of the absurd situation as it is built on assumptions that transcend verifiable human experience, relying instead on beliefs that one cannot confirm through sensory or empirical observation. By embracing faith, it seems that people deny the inherent uncertainty of truth and deceive themselves, living in contradiction to their genuine insights from lived experience. For Camus, truly confronting the absurd does not involve fabricating meaning where there is none. It requires acknowledging and embracing the meaninglessness of existence as the only authentic response to the absurd. Thus, while religion may offer a sense of meaning or hope, it ultimately prevents individuals from engaging with the true nature of the human condition.\n\tFurthermore, the awareness of life's inherent meaninglessness should not lead to despair but to a more intense experience of life's moments. Without the illusion of a promised afterlife or higher purpose, one can finally begin to see that today is the ultimate heaven, not tomorrow. Because our lives will invariably end and there is no rational evidence of a continuance, we should seize each day with a sense of urgency. The shift from seeking eternal answers to reveling in the now does not diminish the quality of life but, paradoxically, enhances it, not out of fear or desperation, but from a place of freedom and choice. While religion might offer community, ethical guidance, faith, and psychological benefits similar to meditation, it often comes at the cost of social division and willful ignorance—costs that, unlike the benefits, cannot be easily replaced. The way I see it, it's better to have unanswerable questions than unquestionable answers.\n\tThat being said, my perspective on the existential questions of life doesn’t mean I hold disdain for religion or those who embrace it. There is an immense wealth of history, culture, and wisdom to be found within the world’s religious traditions, and I recognize that I can't say with certainty that a deity doesn't exist. For that reason, I draw inspiration from various religions, appreciating their cultural significance, ethical frameworks, and perspectives on the meaning of life. I understand why many people choose to follow a faith and respect that decision. However, I struggle with those who assert that there is only one true religion or who use religious belief as a basis for division, hatred, or rash decision-making. We live in a world where the beauty of diverse perspectives should be celebrated, not condemned. Moreover, I’m aware that my ability to reflect on life’s meaning is a privilege of education and circumstance—many people face challenges where the comfort and structure of religion are essential for guiding them along a good path. In these cases, religion can provide a readily availible beacon of hope and stability in ways that philosophical inquiry might not. Therefore, while I may not subscribe to a particular faith, I respect the role that religion plays in the lives of millions, as long as it fosters empathy, understanding, and the well-being of others."
       },
       {
         "title": "On Psychological Realism",
@@ -208,7 +208,7 @@
     "id": 5,
     "title": "What Causes Weather?",
     "author": "Nick Neirotti",
-    "hook": "Does wind just spawn in? Somebody clue me in",
+    "hook": "Equilibrium in Motion: The Science Behind the Storm.",
     "sections": [
       {
         "title": "Introduction",
@@ -281,7 +281,7 @@
     "id": 6,
     "title": "Surf’s Up and Taoism: The Wisdom of Chicken Joe",
     "author": "Nick Neirotti",
-    "hook": "You just gotta go with the grain bro",
+    "hook": "One and the Same but Different in Name.",
     "sections": [
       {
         "title": "Introduction",
@@ -310,13 +310,13 @@
     "datePosted": "2024-11-03T14:48:00Z",
     "status": "published",
     "relatedPosts": [1,4,5],
-    "featured": false
+    "featured": true
   },
   {
     "id": 7,
-    "title": "The Ultimate Guide to Conventional Energy",
+    "title": "The Truth About Conventional Energy",
     "author": "Nick Neirotti",
-    "hook": "Coal, natural gas, petroleum, nuclear. How do you even power?",
+    "hook": "A Complete Guide to Coal, Oil, Gas, and Nuclear Power.",
     "sections": [
       {
         "title": "Introduction",

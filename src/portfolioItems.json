@@ -1,0 +1,177 @@
+[
+    {
+      "slug": "shade-runner-2025",
+      "title": "Shade Runner 2025",
+      "youtubeID": "tiBkrZWUvCc",
+      "dateFrom": "2025-03-03",
+      "dateTo": "2025-03-5",
+      "description": "The goal of this project was to improve sleep health by way of timed light exposure. The system opens and closes blinds dynamically using a Raspberry Pi, ESP32, and a motorized pulley mechanism. ",
+      "sections": [
+        {
+          "title": "Abstract",
+          "content": "\tThe Shade Runner is a low-cost, ceiling-mounted automated curtain system designed to improve sleep and wakefulness through intentional light exposure. Using an ESP32 connected to a motor and pulley system, the device opens or closes the users’ shades based on defined times or real-time sunrise and sunset data pulled from an online API. A Raspberry Pi runs a Flask web app that allows users to select and control their preferred mode. This natural sunlight exposure effectively anchors your circadian rhythm, decreasing grogginess in the morning and boosting energy throughout the day."
+        },
+        {
+          "title": "Introduction",
+          "content": "\tIn city environments, artificial lights such as streetlamps often force people to close their blinds to maintain optimal sleep conditions. However, this prevents them from experiencing natural sunrise cues, which are vital for regulating the body’s circadian rhythm. Studies show that early light exposure — even through closed eyelids — can help increase total sleep time and cause individuals to feel tired earlier, supporting better longevity and vitality. Inspired by this research and a personal desire to improve my own sleep hygiene, this project aims to automate the opening and closing of window blinds based on either fixed times or real-time solar data. \n\tThe system consists of an ESP32 microcontroller, a motor driver, and a 6V motor enclosed in a 3D-printed mount secured to the ceiling. A pulley system drives the blinds using string tensioned around a return wheel. The ESP32 receives commands over WiFi from a Raspberry Pi, which hosts a web interface built with Flask. Users can either manually set times or automate control based on their local sunrise and sunset, with optional time offsets to suit various lifestyles. This system demonstrates a simple and scalable approach to integrating IoT into home automation to promote better sleep and wake cycles."
+        },
+        {
+            "title": "Background & Literature Review",
+            "content": "\tShade Runner was designed to improve sleep quality by automating light exposure in the sleep environment. Biology research has consistently shown that light is a critical cue for aligning the body’s internal clock. Specifically, morning light helps synchronize circadian rhythms, while evening light suppresses melatonin production which can cause sleep disturbances and misalignment of the natural sleep-wake cycle [1].\n\tRecent studies confirm that even through closed eyelids, light can activate the cells in your eyes responsible for advancing the circadian clock, making it possible to influence sleep physiology without the user being fully awake [2]. This presents a unique opportunity: using a system like the proposed to block light at night while introducing real light in the morning which is something commercial artificial sunrise lamps try to simulate.\n\tAdditionally, research from the NIH describes Delayed Sleep–Wake Phase Disorder (DSWPD) as a condition increasingly affecting young adults, especially due to screen exposure and inconsistent sleep patterns. DSWPD is linked to fatigue, poor concentration, and increased risk of depression [3]. Light exposure, particularly in the early morning, has been shown to shift the circadian phase earlier, improving sleep quality and reducing symptoms in individuals with DSWPD [4]. These findings underscore the value of a system that dynamically controls light exposure. While other solutions exist, not many address both nighttime light blocking and real sunlight exposure upon waking. Shade Runner fills this gap by using real sunlight to deliver an optimized sleep environment."
+        },
+        {
+            "title": "Methods and Implementation",
+            "content": ""
+        },
+        {
+            "title": "4.1 System Overview",
+            "content": "\tThe user selects either manual wake/bed times or an automatic sunrise/sunset mode with time offset. These preferences are set through a local Flask web app hosted on a Raspberry Pi. Once submitted, the Pi communicates wirelessly with an ESP32 microcontroller mounted on the ceiling near the blinds, triggering a DC motor to rotate in the appropriate direction via a motor driver."
+        },
+        {
+            "title": "4.2 Hardware Components",
+            "content": "*ESP32 S3 WROOM-1: Handles Wi-Fi communication and controls the motor based on received times. Powered by 4xAA batteries (1.2V each, rechargeable).\nDRV8833 Motor Driver: Drives the 6V DC motor in both directions. Connected to the ESP32 and powered by a separate 9V battery.\n6V DC Geared Motor: Rotates a 3D-printed pulley to move the curtain string.\nRaspberry Pi 4B: Hosts the Flask application and handles scheduling logic and API requests.\nCustom 3D-Printed Enclosures and Pulleys: One box contains the motor, driver, ESP, and batteries. A second printed guide pulley adds tension to ensure consistent belt tracking.\nString + Rubber Band Pulley Groove: Used as a low-cost, effective drive system to convert rotary motion into linear curtain movement."
+        },
+        {
+            "title": "4.3 Software & Communication",
+            "content": "Flask Web App (Python): Provides a local interface accessible on any device connected to the same network. Users can choose between two modes:\n\n*Manual: Directly enter wake and bed times.\nSunrise/Sunset: Uses sunrise-sunset.org API to fetch solar times based on location, with an optional offset in minutes.\n\nESP32 Firmware (via Arduino IDE): Receives and parses the POST request from the Pi, saves sunrise and sunset times, and continuously checks system time (via NTP) to trigger the motor when necessary.\nCommunication Protocol: Simple HTTP POST request from Flask app to ESP32 over Wi-Fi using JSON payload.\nYou can find this code on my [link GitHub Repo](https://github.com/NickNeirotti9/InternetOfThings/tree/main/ShadeRunner)"
+        },
+        {
+            "title": "Conclusions & Future Improvements",
+            "content": "\tThis project proved the design and implementation of an automated blind control system that aligns natural light exposure with the user's circadian rhythm. This project raises a few questions for future research. Can light sensors be integrated to allow real-time adjustment based on actual light intensity rather than time alone? And, how effective actually is this system in improving sleep quality over time?\n\tWhile I’d consider this project a success there is lots of room for improvement. For starters, I’d implement stall detection and limit switches to ensure that the amount the blinds move is consistent. Second, I’d power the entire system with a centralized battery with the ability to charge with solar power. I’d also improve the mechanical design and implement the software with smart home systems like Alexa to include voice activation."
+        },
+        {
+            "title": "Resources & References",
+            "content": "[link [1] A. Huberman, “Master Your Sleep & Be More Alert When Awake,” Huberman Lab Podcast, Jan. 11, 2021.](https://www.youtube.com/watch?v=nm1TxQj9IsQ)<br>[link [2] Centers for Disease Control and Prevention (CDC), “Effects of Light on Sleep and Alertness,” NIOSH.](https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod2/19.html)<br>[link [3] Futenma, K., et al., “Delayed sleep-wake phase disorder and its related sleep behaviors in the young generation,” Frontiers in Psychiatry, 2023.](https://pmc.ncbi.nlm.nih.gov/articles/PMC10235460/)<br>[link [4] Blume, C., et al., “Effects of light on human circadian rhythms, sleep and mood,” Somnology, vol. 23, no. 3, pp. 147–156, 2019.](https://pmc.ncbi.nlm.nih.gov/articles/PMC6751071/)"
+        }
+      ]
+    },
+    {
+      "slug": "existnchill-webdev",
+      "title": "Existnchill Website",
+      "image": "Favicon.png",
+      "dateFrom": "2024-06-02",
+      "dateTo": "",
+      "description": "Project details on the way...",
+      "sections": [
+      {
+          "title": "",
+          "content": ""
+      },
+      {
+          "title": "",
+          "content": ""
+      },
+      {
+          "title": "",
+          "content": ""
+      },
+      {
+          "title": "",
+          "content": ""
+      }
+    ],
+      "summaryPoints": [],
+      "resources": []
+    },
+    {
+      "slug": "speaker",
+      "title": "Speaker",
+      "youtubeID": "tAnm3F0wMsE",
+      "dateFrom": "2022-11-29",
+      "dateTo": "2022-12-10",
+      "description": "Project details on the way...",
+      "sections": [
+      {
+          "title": "",
+          "content": ""
+      }
+      ],
+      "summaryPoints": [],
+      "resources": []
+    },
+    {
+      "slug": "trebuchet",
+      "title": "Trebuchet",
+      "image": "trebuchet.jpg",
+      "dateFrom": "2023-10-17",
+      "dateTo": "2023-12-09",
+      "description": "Project details on the way...",
+      "sections": [
+        {
+            "title": "",
+            "content": ""
+        }
+      ],
+      "summaryPoints": [],
+      "resources": []
+    },
+    {
+      "slug": "fitzera",
+      "title": "Fitzera",
+      "image": "fitzera.PNG",
+      "dateFrom": "2023-06-20",
+      "dateTo": "2023-07-24",
+      "description": "Project details on the way...",
+      "sections": [
+        {
+            "title": "",
+            "content": ""
+        }
+      ],
+      "summaryPoints": [],
+      "resources": []
+    },
+    {
+      "slug": "steering-wheel",
+      "title": "Baja Steering Wheel",
+      "image": "steeringwheel.jpg",
+      "dateFrom": "2022-02-05",
+      "dateTo": "2022-02-10",
+      "description": "Project details on the way...",
+      "sections": [
+        {
+            "title": "",
+            "content": ""
+        },
+        {
+            "title": "",
+            "content": ""
+        }
+      ],
+      "summaryPoints": [],
+      "resources": []
+    },
+    {
+      "slug": "suspension",
+      "title": " Baja Suspension",
+      "image": "bajasuspension.jpg",
+      "dateFrom": "2021-10-04",
+      "dateTo": "2022-12-19",
+      "description": "Project details on the way...",
+      "sections": [
+        {
+            "title": "",
+            "content": ""
+        }
+      ],
+      "summaryPoints": [],
+      "resources": []
+    },
+    {
+      "slug": "reeflex",
+      "title": "Reeflex AUV",
+      "image": "Reeflex.jpg",
+      "dateFrom": "2024-08-20",
+      "dateTo": "",
+      "description": "Project details on the way...",
+      "sections": [
+        {
+            "title": "",
+            "content": ""
+        }
+      ],
+      "summaryPoints": [],
+      "resources": []
+    }
+  ]
+  

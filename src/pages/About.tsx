@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../assets/About.module.css";
+import { Link } from "react-router-dom";
 //import myImage from "../assets/images/aboutIMG.png";
 import myImage from "../assets/images/IMG_0004.png";
 
@@ -25,6 +26,9 @@ const About: React.FC = () => {
           rationality, and open-mindedness. I hope your experience reflects that
           vision.
         </p>
+        <Link to="/portfolio" className={styles.learnMoreButton}>
+          My Portfolio
+        </Link>
         <h2>Why These Categories?</h2>
         <div className={styles.dropdownSection}>
           <button

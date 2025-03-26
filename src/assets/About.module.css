@@ -86,6 +86,29 @@
   font-size: 16px;
 }
 
+.learnMoreButton {
+  display: inline-block; /* Adjusted from block to inline-block */
+  width: auto; /* Optional: Ensures the button is only as wide as its content requires */
+  padding: 10px 20px; /* Adjust padding as needed for space around the text */
+  cursor: pointer;
+  background-color: #084C61;
+  color: var(--theme-accent);
+  border: 1px solid var(--theme-accent);
+  border-radius: 40px;
+  font-size: 16px;
+  text-align: center; /* Ensures the text inside the button is centered */
+  font-family: var(--font-primary);
+  margin-top: -25px;
+}
+  .learnMoreButton:hover {
+    /*opacity: 60%;*/
+    background-color: #212529;
+  }
+.learnMoreButton:hover {
+  /*opacity: 60%;*/
+  background-color: #212529;
+}
+
 @media (max-width: 1024px) {
   .aboutContent {
     padding: 30px;

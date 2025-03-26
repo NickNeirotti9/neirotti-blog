@@ -22,7 +22,7 @@ const Search: React.FC = () => {
   const [searchResults, setSearchResults] = useState<Post[]>([]);
   const searchQuery = searchParams.get("query") || "";
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(5);
+  const [postsPerPage] = useState(6);
 
   useEffect(() => {
     // Perform the search
@@ -33,6 +33,7 @@ const Search: React.FC = () => {
             post.subcategory
               .toLowerCase()
               .includes(searchQuery.toLowerCase()) ||
+            post.hook.toLowerCase().includes(searchQuery.toLowerCase()) ||
             post.subject.toLowerCase().includes(searchQuery.toLowerCase())
         )
       : [];
