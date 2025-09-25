@@ -32,6 +32,19 @@ const Navbar: React.FC = () => {
     document.body.dataset.theme = savedTheme;
   }, []);
 
+  // Close on Escape
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+        setIsSearchOpen(false);
+        searchInputRef.current?.blur();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const navigateToBROWSE = () => {
     navigate("/browse?filter=ALL");
     setIsMenuOpen(false);
@@ -178,8 +191,8 @@ const Navbar: React.FC = () => {
               <Link to="/browse?filter=HEALTH" onClick={closeMenu}>
                 HEALTH
               </Link>
-              <Link to="/browse?filter=LIFE" onClick={closeMenu}>
-                LIFE
+              <Link to="/browse?filter=MIND" onClick={closeMenu}>
+                MIND
               </Link>
             </div>
           </div>

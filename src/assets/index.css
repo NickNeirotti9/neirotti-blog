@@ -1,6 +1,6 @@
 /* Light theme variables */
 :root {
-  --background-color: #F5F5F5; /* Light background */
+  --background-color: #F5F5F5; /* Light background. Considered switching to: #e7e5df */
   --text-color: black; /* Dark text */
   --link-color: #0000ff; /* Example link color */
   --theme-primary: #084C61;

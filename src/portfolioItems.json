@@ -122,45 +122,9 @@
       "resources": []
     },
     {
-      "slug": "steering-wheel",
-      "title": "Baja Steering Wheel",
-      "image": "steeringwheel.jpg",
-      "dateFrom": "2022-02-05",
-      "dateTo": "2022-02-10",
-      "description": "Project details on the way...",
-      "sections": [
-        {
-            "title": "",
-            "content": ""
-        },
-        {
-            "title": "",
-            "content": ""
-        }
-      ],
-      "summaryPoints": [],
-      "resources": []
-    },
-    {
-      "slug": "suspension",
-      "title": " Baja Suspension",
-      "image": "bajasuspension.jpg",
-      "dateFrom": "2021-10-04",
-      "dateTo": "2022-12-19",
-      "description": "Project details on the way...",
-      "sections": [
-        {
-            "title": "",
-            "content": ""
-        }
-      ],
-      "summaryPoints": [],
-      "resources": []
-    },
-    {
       "slug": "reeflex",
       "title": "Reeflex AUV",
-      "image": "Reeflex.jpg",
+      "youtubeID": "Z7mbmbDMyDA",
       "dateFrom": "2024-08-20",
       "dateTo": "",
       "description": "Project details on the way...",

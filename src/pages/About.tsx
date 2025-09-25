@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import styles from "../assets/About.module.css";
-import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faSpotify,
+  faLetterboxd,
+} from "@fortawesome/free-brands-svg-icons";
+//import { Link } from "react-router-dom";
 //import myImage from "../assets/images/aboutIMG.png";
 import myImage from "../assets/images/IMG_0004.png";
 
@@ -19,16 +25,58 @@ const About: React.FC = () => {
           <img className={styles.aboutImage} src={myImage} alt="About me" />
         </div>
         <p className={styles.aboutDescription}>
-          Hey! I'm Nick, and I created this platform out of my passion for
-          learning and teaching. I believe that education is a fundamental force
-          that shapes our identities and societies, making its accessibility
-          crucial for everyone's well-being. Here, I strive to inspire empathy,
-          rationality, and open-mindedness. I hope your experience reflects that
-          vision.
+          Hey! I'm Nick Neirotti, and I created this platform out of my passion
+          for learning and teaching. I believe that education is a fundamental
+          force that shapes our identities and societies, making its
+          accessibility crucial for everyone's well-being. Here, I strive to
+          inspire empathy, rationality, and open-mindedness. I hope your
+          experience reflects that vision.
         </p>
-        <Link to="/portfolio" className={styles.learnMoreButton}>
+        {/* <Link to="/portfolio" className={styles.learnMoreButton}>
           My Portfolio
-        </Link>
+        </Link> */}
+        <div className={styles.socialLinks}>
+          <a
+            href="https://www.linkedin.com/in/nickneirotti"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+          <a
+            href="https://open.spotify.com/user/nert118"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Spotify"
+          >
+            <FontAwesomeIcon icon={faSpotify} size="2x" />
+          </a>
+          <a
+            href="https://letterboxd.com/nert118"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon icon={faLetterboxd} size="2x" />
+          </a>
+          <a
+            href="https://venmo.com/nert118"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Venmo"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 448 512"
+              fill="currentColor"
+            >
+              <path d="M373.8 32c47.8 0 74.2 30.5 74.2 92.4 0 121.1-92.7 261.4-168.8 356.2H158.6L113.5 32h105.1l23.9 241.5c28.4-45.2 63.6-116.5 63.6-167.2 0-26.3-4.5-42.5-11.9-57.4h79.6z" />
+            </svg>
+          </a>
+        </div>
         <h2>Why These Categories?</h2>
         <div className={styles.dropdownSection}>
           <button
@@ -75,11 +123,11 @@ const About: React.FC = () => {
         <div className={styles.dropdownSection}>
           <button
             className={styles.dropdownHeader}
-            onClick={() => toggleSection("LIFE")}
+            onClick={() => toggleSection("MIND")}
           >
-            LIFE
+            MIND
           </button>
-          {openSection === "LIFE" && (
+          {openSection === "MIND" && (
             <p className={styles.dropdownContent}>
               Life is a complex and fascinating journey, and understanding our
               existence can foster greater empathy and liberate us from many of

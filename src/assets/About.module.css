@@ -139,6 +139,35 @@
   }
 }
 
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  justify-content: center;
+}
+
+.socialLinks a {
+  color: inherit; /* or choose brand colors */
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.socialLinks a:nth-child(2):hover {
+  color: #1db954; /* Spotify green */
+}
+
+.socialLinks a:nth-child(3):hover {
+  color: #ff8000;
+}
+
+.socialLinks a:nth-child(4):hover {
+  color: #3d95ce;
+}
+
+
 @media (max-width: 480px) {
   .aboutTitle {
     font-size: 28px;

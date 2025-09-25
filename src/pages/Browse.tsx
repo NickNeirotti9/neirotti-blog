@@ -24,11 +24,11 @@ const categories = [
   },
   {
     name: "HEALTH",
-    subcategories: ["Nutrition", "Fitness", "Mindfulness", "General Wellness"],
+    subcategories: ["Nutrition", "Fitness", "Lifestyle", "Body Systems"],
   },
   {
-    name: "LIFE",
-    subcategories: ["Philosophy", "Psychology", "Productivity", "Misc."],
+    name: "MIND",
+    subcategories: ["Philosophy", "Psychology", "Consciousness", "Reflections"],
   },
 ];
 

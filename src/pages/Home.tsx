@@ -131,20 +131,17 @@ const Home: React.FC = () => {
               <Link to={`/browse?filter=Fitness`} className={styles.link}>
                 Fitness
               </Link>
-              <Link to={`/browse?filter=Mindfulness`} className={styles.link}>
-                Mindfulness
+              <Link to={`/browse?filter=Lifestyle`} className={styles.link}>
+                Lifestyle
               </Link>
-              <Link
-                to={`/browse?filter=General Wellness`}
-                className={styles.link}
-              >
-                General Wellness
+              <Link to={`/browse?filter=Body`} className={styles.link}>
+                Body Systems
               </Link>
             </div>
 
             <div className={styles.category}>
-              <Link to={`/browse?filter=LIFE`} className={styles.categoryTitle}>
-                <h3>LIFE</h3>
+              <Link to={`/browse?filter=MIND`} className={styles.categoryTitle}>
+                <h3>MIND</h3>
               </Link>
               <Link to={`/browse?filter=Philosophy`} className={styles.link}>
                 Philosophy
@@ -152,11 +149,11 @@ const Home: React.FC = () => {
               <Link to={`/browse?filter=Psychology`} className={styles.link}>
                 Psychology
               </Link>
-              <Link to={`/browse?filter=Productivity`} className={styles.link}>
-                Productivity
+              <Link to={`/browse?filter=Consciousness`} className={styles.link}>
+                Consciousness
               </Link>
-              <Link to={`/browse?filter=Misc.`} className={styles.link}>
-                Misc.
+              <Link to={`/browse?filter=Reflections`} className={styles.link}>
+                Reflections
               </Link>
             </div>
           </div>
