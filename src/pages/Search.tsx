@@ -59,12 +59,13 @@ const Search: React.FC = () => {
 
   return (
     <div className="searchContainer">
-      <h1>Search Results for: {searchQuery}</h1>
+      <span className="eyebrow searchEyebrow">Search Results</span>
+      <h1>{searchQuery ? `"${searchQuery}"` : "All posts"}</h1>
       <div className="postsContainer">
         {currentPosts.length > 0 ? (
           currentPosts.map((post) => <PostCard key={post.id} post={post} />)
         ) : (
-          <p>No results found.</p>
+          <p className="noResults">No results found. Try a different term.</p>
         )}
       </div>
       <Pagination

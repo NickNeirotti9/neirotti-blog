@@ -5,38 +5,40 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 0 20px 0;
+  padding: 40px 20px 60px;
   background-color: var(--background-color);
   color: var(--text-color);
+  box-sizing: border-box;
 }
 
 .aboutContent {
-  background: var(--secondary-color);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  background: var(--surface-color);
+  padding: 36px;
   text-align: center;
   width: 100%;
   max-width: 600px;
 }
 
 .aboutTitle {
-  color: var(--primary-color);
-  font-size: 40px;
-  font-weight: bold;
-  margin-top: 0;
+  color: var(--text-color);
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 8px;
   margin-bottom: 20px;
 }
 
 .imageWrapper {
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 30px;
+  border: 5px solid var(--border-color);
+  box-shadow: 8px 8px 0 var(--shadow-color);
+  background-color: var(--color-mustard);
 }
 
 .aboutImage {
@@ -46,7 +48,7 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 350px;
+  width: 260px;
   height: auto;
   object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
@@ -57,56 +59,57 @@
 }
 
 .dropdownSection {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  text-align: left;
 }
 
 .dropdownHeader {
-  background-color: #084C61;
-  color: var(--theme-accent);
-  font-size: 16px;
-  padding: 10px 20px;
-  border: 1px solid var(--theme-accent);
-  border-radius: 40px;
+  background-color: var(--color-teal);
+  color: #f9f2e4;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 12px 20px;
+  border: 3px solid var(--border-color);
+  border-radius: 999px;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   width: 100%;
 }
 
 .dropdownHeader:hover {
-  background-color: #212529;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.dropdownHealth {
+  background-color: var(--color-brick);
+}
+
+.dropdownMind {
+  background-color: var(--color-mustard);
+  color: #1a1a1e;
 }
 
 .dropdownContent {
   background-color: var(--background-color);
-  padding: 10px 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+  padding: 14px 20px;
+  border: 2px solid var(--border-color);
+  border-top: none;
+  margin-top: -3px;
   font-size: 16px;
+  line-height: 1.6;
 }
 
 .learnMoreButton {
-  display: inline-block; /* Adjusted from block to inline-block */
-  width: auto; /* Optional: Ensures the button is only as wide as its content requires */
-  padding: 10px 20px; /* Adjust padding as needed for space around the text */
-  cursor: pointer;
-  background-color: #084C61;
-  color: var(--theme-accent);
-  border: 1px solid var(--theme-accent);
-  border-radius: 40px;
+  display: inline-block;
+  width: auto;
+  padding: 10px 20px;
   font-size: 16px;
-  text-align: center; /* Ensures the text inside the button is centered */
-  font-family: var(--font-primary);
   margin-top: -25px;
-}
-  .learnMoreButton:hover {
-    /*opacity: 60%;*/
-    background-color: #212529;
-  }
-.learnMoreButton:hover {
-  /*opacity: 60%;*/
-  background-color: #212529;
 }
 
 @media (max-width: 1024px) {
@@ -130,12 +133,12 @@
 
   .dropdownHeader {
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 10px 16px;
   }
 
   .dropdownContent {
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 10px 16px;
   }
 }
 

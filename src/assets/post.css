@@ -3,51 +3,74 @@
     margin: 20px auto;
     padding: 20px;
   }
-  
+
   .postPage .postHeader h1.postTitle {
-    font-size: 45px;
+    font-size: 46px;
     color: var(--text-color);
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 14px;
   }
-  
+
   /* Continue prefixing all your styles with .postPage */
   .postPage .postMeta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
     font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 20px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
   }
-  
-  .postPage .postMeta time,
-  .postPage .postMeta span {
-    display: block;
-    margin: 4px 0;
+
+  .postPage .postMeta time {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.03em;
   }
-  
+
+  .postPage .postMeta span.postCategory {
+    margin: 0;
+  }
+
   .postPage .postVideoContainer {
     margin-bottom: 20px;
   }
-  
+
   .postPage .postVideo {
     width: 100%;
     height: 450px;
-    border-radius: 8px;
+    border: 3px solid var(--border-color);
+    box-shadow: 8px 8px 0 var(--shadow-color);
   }
-  
+
   .postPage .postDetailedContent h2,
   .postPage .postSummaryPoints h2,
   .postPage .postPracticalExamples h2,
   .postPage .postResources h2 {
-    font-size: 38px;
-    color: var(--theme-primary);
+    font-size: 36px;
+    color: var(--text-color);
     margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .postPage .postDetailedContent h2::after,
+  .postPage .postSummaryPoints h2::after,
+  .postPage .postResources h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 6px;
+    background-color: var(--color-mustard);
+    margin-top: 6px;
   }
 
   .postPage .postDetailedContent p,
   .postPage .postPracticalExamples p{
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
   }
   .postPage .postDetailedContent li,
   .postPage .postSummaryPoints ul li{
@@ -60,40 +83,42 @@
 .postPage .postSummaryPoints ul li:last-child {
   margin-bottom: 0; /* Remove margin for the last item */
 }
-  
-  
+
+
   .postResources h2 {
-    color: #333; /* Dark grey color for contrast */
     margin-bottom: 16px;
   }
-  
+
   .resourceItem {
     margin-bottom: 15px; /* Space between resource items */
-    padding: 10px;
-    border-left: 4px solid var(--theme-switch); /* A vibrant color for the border */
-    border-radius: 4px; /* Slightly rounded corners for each item */
+    padding: 14px 16px;
+    background-color: var(--surface-color);
+    border: 3px solid var(--border-color);
+    border-left-width: 8px;
+    border-left-color: var(--color-teal);
+    box-shadow: 5px 5px 0 var(--shadow-color);
     display: block;
   }
-  
+
   .resourceItem:last-child {
     margin-bottom: 0; /* Remove bottom margin for the last item */
   }
-  
+
   .postDetailedContent .resourceTitle {
-    color: var(--theme-switch); /* Match the border color */
+    color: var(--color-terracotta-deep);
     font-weight: bold;
     text-decoration: none; /* No underline */
     font-size: 18px; /* Slightly larger font size */
     border-bottom: none;
   }
-  
+
   .postDetailedContent .resourceTitle:hover {
     text-decoration: underline; /* Underline on hover for better interaction feedback */
     border-bottom: none;
   }
-  
+
   .postPage .postDetailedContent .resourceDescription {
-    color: var(--theme-switch3); /* Lighter text color for the description */
+    color: var(--text-muted); /* Lighter text color for the description */
     margin-top: 5px;
     text-indent: 0;
   }
@@ -105,12 +130,29 @@
     text-indent: 0;
   }
   blockquote {
-    margin-left: 0;
-    margin-right: 0;
+    position: relative;
+    margin: 0 0 18px 0;
+    padding: 12px 14px 12px 34px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-style: normal;
+    background-color: var(--surface-color);
+    border-left: 6px solid var(--color-mustard);
+    box-shadow: 5px 5px 0 var(--shadow-color);
+  }
+  blockquote::before {
+    content: "\201C";
+    position: absolute;
+    left: 6px;
+    top: -6px;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--color-mustard);
+    font-family: Georgia, serif;
   }
   .related h2 {
-    font-size: 38px;
-    color: var(--theme-primary);
+    font-size: 36px;
+    color: var(--text-color);
     margin-bottom: 15px;
     padding-bottom: 0;
     text-align: center;
@@ -126,15 +168,20 @@ padding-bottom: 25px;
 
 .postToc {
   margin: 20px 0;
-  background-color: var(--theme-background);
+  background-color: var(--surface-color);
+  border: 3px solid var(--border-color);
+  border-left-width: 8px;
+  border-left-color: var(--color-terracotta);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  padding: 18px 22px;
 }
 
 .postToc h2,
 .spotifyEmbed h2 {
   margin-top: 0;
   margin-bottom: 15px;
-  font-size: 38px;
-    color: var(--theme-primary);
+  font-size: 26px;
+  color: var(--text-color);
 }
 
 .postToc ul {
@@ -150,15 +197,18 @@ padding-bottom: 25px;
   text-decoration: none;
   color: var(--text-color);
   font-size: 16px;
+  font-family: var(--font-display);
+  font-weight: 500;
 
 }
 
 .postToc a:hover {
+  color: var(--color-terracotta);
   text-decoration: underline;
 }
 
 .postDetailedContent a {
-  color: var(--theme-switch); /* Match the border color */
+  color: var(--color-terracotta-deep); /* Match the border color */
     font-weight: bold;
   text-decoration: none;
   border-bottom: 1px dashed currentColor;
@@ -175,29 +225,30 @@ padding-bottom: 25px;
   margin: 20px 0;
   font-size: 16px;
   text-align: left;
-  font-family: var(--font-secondary);
-  background-color: var(--background-color);
+  font-family: var(--font-body);
+  background-color: var(--surface-color);
   color: var(--text-color);
+  border: 3px solid var(--border-color);
 }
 
 /* Table Header */
 .postTable th {
-  background-color: var(--theme-primary);
-  color: var(--background-color);
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
   text-align: center;
   padding: 12px;
-  border: 2px solid var(--theme-switch3);
+  border: 2px solid var(--border-color);
 }
 
 /* Table Cells */
 .postTable td {
-  border: 2px solid var(--theme-switch3);
+  border: 2px solid var(--border-color);
   padding: 10px;
 }
 
 /* Alternate Row Coloring */
 .postTable tr:nth-child(even) {
-  background-color: var(--theme-secondary);
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -206,4 +257,3 @@ padding-bottom: 25px;
       height: 300px;
     }
   }
-  

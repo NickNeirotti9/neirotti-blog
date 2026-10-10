@@ -37,6 +37,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className={styles.portfolioContainer}>
+      <span className={`eyebrow ${styles.portfolioEyebrow}`}>Portfolio</span>
       <h1 className={styles.portfolioTitle}>Nick Neirotti</h1>
       <p className={styles.portfolioDescription}>
         Welcome to my portfolio! Here are some selected projects showcasing my
@@ -49,7 +50,7 @@ const Portfolio: React.FC = () => {
           return (
             <div
               key={index}
-              className={styles.portfolioItem}
+              className={`${styles.portfolioItem} card-hard card-hard-hover`}
               onClick={() => handleCardClick(item.slug)}
             >
               <h3 className={styles.itemTitle}>{item.title}</h3>

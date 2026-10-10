@@ -120,6 +120,7 @@ const Navbar: React.FC = () => {
   }, [isMenuOpen, isSearchOpen, handleClickOutside]);
 
   return (
+    <>
     <nav className="navbar" ref={navbarRef}>
       <button className="search-toggle" onClick={toggleSearch}>
         <FontAwesomeIcon icon={faSearch} />
@@ -211,6 +212,8 @@ const Navbar: React.FC = () => {
         </div>
       </div>
     </nav>
+    <div className="torn-divider" aria-hidden="true"></div>
+    </>
   );
 };
 export default Navbar;

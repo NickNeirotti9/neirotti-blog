@@ -4,7 +4,8 @@ import "../assets/disclaimer.css";
 const Disclaimer: React.FC = () => {
   return (
     <div className="disclaimer-outer">
-      <div className="disclaimer-container">
+      <div className="disclaimer-container card-hard">
+        <span className="eyebrow disclaimer-eyebrow">Fine print</span>
         <h2 className="disclaimer-title">Disclaimer</h2>
         <p className="disclaimer-text">
           Hey there! The content on this website is for informational and

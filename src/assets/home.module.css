@@ -4,174 +4,159 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
 }
-  
-  .aboutButton {
-    display: inline-block; /* Adjusted from block to inline-block */
-    width: auto; /* Optional: Ensures the button is only as wide as its content requires */
-    padding: 10px 20px; /* Adjust padding as needed for space around the text */
-    cursor: pointer;
-    background-color: #084C61;
-    color: var(--theme-accent);
-    border: 1px solid var(--theme-accent);
-    border-radius: 40px;
-    font-size: 16px;
-    text-align: center; /* Ensures the text inside the button is centered */
-    font-family: var(--font-primary);
-  }
-  .aboutButton:hover {
-    /*opacity: 60%;*/
-    background-color: #212529;
-  }
-  
-  .fullWidthSection {
-    display: flex;
-    flex-direction: column; /* Ensure children are laid out horizontally */
-    justify-content: space-between; /* Distribute space between the children */
-    width: 100%; /* Ensure it takes the full width of the page */
-    /* background-color: var(--theme-secondary); /* Example background color */
-    padding-left: 50px; /* Adjust the padding value as needed */
-    padding-right: 50px;
-    box-sizing: border-box;
-  }
 
-  .sectionTitle {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 30px;
-  }
-  
-  .aboutSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Align items at the start of the flex container */
-    margin: 15px;
-  }
-  .latestSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Align items at the start of the flex container */
-    margin: 15px;
-    flex-direction: row-reverse;
-  }
-  
-  .videoContainer2 {
-    /* Removed flex-basis and replaced with width */
-    width: 66.66%; /* Takes up 2/3 of the space */
-    position: relative;
-    /* Maintain a 16:9 aspect ratio */
-    padding-top: 36.2%; /* 9/16 * 2/3 */
-    height: 0; /* Collapse the div and let padding-top dictate the height */
-  }
-    
-    .videoContainer2 iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 8px;
-    }
-    
+/* Large soft diagonal color field behind the hero — nods to the angular
+   concrete beams in the reference imagery, without competing with text. */
+.heroBlock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 520px;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, var(--color-teal) 0%, transparent 42%),
+    linear-gradient(-30deg, var(--color-mustard) 0%, transparent 38%);
+  opacity: 0.16;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+}
 
-  .infoContainerLink {
-    text-decoration: none; /* Removes the underline from the link */
-    color: inherit; /* Inherits the color so it doesn't look like a traditional link */
-    align-items: flex-start;
-  }
+.aboutButton {
+  display: inline-block;
+  width: auto;
+  padding: 12px 28px;
+  font-size: 15px;
+}
 
-  .infoContainerLink :hover{
-    opacity: 80%;
-  }
+.fullWidthSection {
+  display: flex;
+  flex-direction: column; /* Ensure children are laid out horizontally */
+  justify-content: space-between; /* Distribute space between the children */
+  width: 100%; /* Ensure it takes the full width of the page */
+  padding-left: 50px; /* Adjust the padding value as needed */
+  padding-right: 50px;
+  box-sizing: border-box;
+}
 
-  .infoContainer {
-    flex-basis: 33.33%; /* 1/3 of the container */
-    padding: 20px; /* Adjusted padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    align-items: center; /* Align items to the start */
-    text-align: center; 
-  }
-  
-  .infoContainer h2 {
-    font-size: 24px; /* Adjusted for better hierarchy */
-    margin-bottom: 8px; /* Space between title and hook */
-    color: var(--theme-switch); /* Dark color for the title for contrast */
-    font-weight: 600; /* Slightly less bold than before for readability */
-  }
-  
-  .infoContainer p {
-    margin-bottom: 8px;
-    margin-top: 8px;
-    text-align: center;
-    color: var(--text-color); /* Dark gray for readability */
-    line-height: 1.5; /* Line height for better readability */
-  }
-  
-  .filterLink {
-    align-items: flex-start;
-    width: auto;
-    text-decoration: none;
-    text-align: center;
-    color: var(--text-color); /* Text color */
-    background-color: var(--background-color); /* Button background color */
-    padding: 5px 10px; /* Top & bottom padding and left & right padding */
-    border: 1px solid var(--text-color);  /*Border color and width */
-    border-radius: 25px; /* Fully rounded ends for the pill shape */
-    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
-    display: inline-block; /* Align buttons inline */
-    cursor: pointer;
-    margin-top: 8px;
-  }
-  
-  .filterLink:hover {
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
 
-    color: var(--theme-primary);
-    border-color: var(--theme-primary);
-  }
-  
-  .latestTitle:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--theme-accent);
-  }
+.sectionTitle {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 6px;
+}
 
-  .learnMoreButton {
-    display: inline-block; /* Adjusted from block to inline-block */
-    width: auto; /* Optional: Ensures the button is only as wide as its content requires */
-    padding: 10px 20px; /* Adjust padding as needed for space around the text */
-    cursor: pointer;
-    background-color: #084C61;
-    color: var(--theme-accent);
-    border: 1px solid var(--theme-accent);
-    border-radius: 40px;
-    font-size: 16px;
-    text-align: center; /* Ensures the text inside the button is centered */
-    font-family: var(--font-primary);
-    margin-top: 8px;
-  }
-  .learnMoreButton:hover {
-    /*opacity: 60%;*/
-    background-color: #212529;
+.aboutSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items at the start of the flex container */
+  margin: 15px;
+}
+.latestSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items at the start of the flex container */
+  margin: 15px;
+  flex-direction: row-reverse;
+}
+
+.videoContainer2 {
+  width: 66.66%; /* Takes up 2/3 of the space */
+  position: relative;
+  padding-top: 37.5%; /* 9/16 * 2/3 — matches this element's 66.66% width */
+  height: 0; /* Collapse the div and let padding-top dictate the height */
+  border: 3px solid var(--border-color);
+  box-shadow: 8px 8px 0 var(--shadow-color);
+  background: #000;
+}
+
+  .videoContainer2 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
 
-  .sectionTitle2 {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 30px;
-  }
+.infoContainerLink {
+  text-decoration: none; /* Removes the underline from the link */
+  color: inherit; /* Inherits the color so it doesn't look like a traditional link */
+  align-items: flex-start;
+}
+
+.infoContainerLink :hover{
+  opacity: 80%;
+}
+
+.infoContainer {
+  flex-basis: 33.33%; /* 1/3 of the container */
+  padding: 20px; /* Adjusted padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Align items to the start */
+  text-align: center;
+}
+
+.infoContainer h2 {
+  font-size: 24px; /* Adjusted for better hierarchy */
+  margin-bottom: 8px; /* Space between title and hook */
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.infoContainer p {
+  margin-bottom: 8px;
+  margin-top: 8px;
+  text-align: center;
+  color: var(--text-color); /* Dark gray for readability */
+  line-height: 1.5; /* Line height for better readability */
+}
+
+.filterLink {
+  margin-top: 8px;
+}
+
+.latestTitle:hover h2{
+  color: var(--color-terracotta);
+}
+
+.learnMoreButton {
+  display: inline-block;
+  width: auto;
+  padding: 12px 28px;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+
+.sectionTitle2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
 
 /* Styles for paragraphs (p) within sections */
 .section2 p {
   font-size: 18px;
   font-weight: normal;
-} 
-  
+}
+
 .section2 {
   text-align: center;
   flex: 1;
@@ -182,27 +167,62 @@
 .categoriesContainer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items at the start of the container */
+  align-items: stretch;
   flex-wrap: wrap; /* Allows items to wrap as needed */
-  margin-bottom: 20px;
+  gap: 24px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
+/* Bold color-blocked category cards, one hue per pillar */
 .category {
-  flex: 1; /* Each category will take equal space */
+  flex: 1;
+  min-width: 220px;
   display: flex;
-  flex-direction: column; /* Stack links vertically */
-  align-items: center; /* Center-align the items */
-  padding-left: 10px;
-  padding-right: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 20px 24px;
   box-sizing: border-box;
-  min-width: 0; /* Prevent flex items from growing past their content size */
+  border: 3px solid var(--border-color);
+  box-shadow: 7px 7px 0 var(--shadow-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--shadow-color);
+}
+
+.categoryStem {
+  background-color: var(--color-teal);
+}
+
+.categoryHealth {
+  background-color: var(--color-brick);
+}
+
+.categoryMind {
+  background-color: var(--color-mustard);
+}
+
+.categoryStem .link,
+.categoryHealth .link,
+.categoryStem .categoryTitle h3,
+.categoryHealth .categoryTitle h3 {
+  color: #f9f2e4;
+}
+
+.categoryMind .link,
+.categoryMind .categoryTitle h3 {
+  color: #1a1a1e;
 }
 
 .categoryTitle h3 {
-  color: var(--theme-switch);
   font-size: 30px;
-  font-weight: bold;
-  margin: 0 0 10px 0; /* Add some space between the category title and its subcategories */
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .categoryTitle h3:hover{
   text-decoration: underline;
@@ -211,8 +231,9 @@
 .link {
   margin-bottom: 10px; /* Spacing between links */
   text-decoration: none;
-  font-size: 18px;
-  font-weight: normal;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: var(--font-body);
 }
 
 .link:hover {
@@ -220,7 +241,7 @@
 }
 
 .linksContainer h3 {
-  color: var(--theme-switch); /* Replace 'blue' with any color you'd like */
+  color: var(--theme-switch);
   margin-top: 15px;
   margin-bottom: 0px;
   font-size: 22px;
@@ -239,7 +260,7 @@
     width: 100%; /* Full width on smaller screens */
     padding-top: 56.25%; /* Maintain the 16:9 aspect ratio */
   }
-  
+
   .infoContainer {
     /* Ensure the information container is full width below 768px */
     width: 100%;
@@ -249,6 +270,6 @@
 @media only screen and (max-width: 560px) {
   .categoriesContainer {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 }

@@ -6,120 +6,175 @@
     margin: 20px;
     min-height: 60vh;
   }
-  
+
   /* Header Styles */
   h1 {
     margin: 20px 0;
     text-align: center;
     font-size: 2.5rem;
   }
-  
+
   /* Controls Container */
   .controlsContainer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+    max-width: 1200px;
     margin-bottom: 20px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
+    border-bottom: 3px solid var(--border-color);
+    padding-bottom: 20px;
     flex-wrap: wrap;
   }
-  
+
   /* Category and Sorting Containers */
   .categoryContainer {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
   }
-  
+
   /* Category Buttons */
-  .categoryContainer > div {
+  .categoryGroup {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-grow: 1;
-    margin: 0 10px; /* Ensure some space between categories */
+    min-width: 220px;
   }
-  
-  .categoryContainer button {
-    background-color: #084C61;
-    border: 1px solid var(--theme-accent);
-    color: var(--theme-accent);
-    border-radius: 40px;
+
+  .categoryButton {
+    background-color: var(--surface-color);
+    border: 3px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 999px;
     padding: 10px 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-family: var(--font-display);
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     width: 100%;
     cursor: pointer;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
   }
-  .categoryContainer button:hover {
-    background-color: #212529;
+  .categoryButton:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--shadow-color);
   }
-  
-  /* Subcategories */
+
+  .categoryButton-stem.active {
+    background-color: var(--color-teal);
+    color: #f9f2e4;
+  }
+  .categoryButton-health.active {
+    background-color: var(--color-brick);
+    color: #f9f2e4;
+  }
+  .categoryButton-mind.active {
+    background-color: var(--color-mustard);
+    color: #1a1a1e;
+  }
+
+  /* Subcategories rendered as toggle chips */
   .subcategories {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
     justify-content: space-between;
     width: 100%;
   }
-  
-  .subcategories label {
+
+  .subcategoryLabel {
     display: flex;
     align-items: center;
+    gap: 6px;
     cursor: pointer;
-  }
-  
-  .subcategories label {
     white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 6px 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 999px;
+    background-color: var(--background-color);
+    box-shadow: 3px 3px 0 var(--shadow-color);
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
   }
-  
+
+  .subcategoryLabel:has(input:checked) {
+    border-color: var(--border-color);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--shadow-color);
+  }
+
+  /* Checked subcategory chips all share ONE tint of their parent category's
+     hue — lighter/brighter than the category button itself, so a group
+     reads as two related tones (button + chip), not four different shades. */
+  .categoryGroup-stem .subcategoryLabel:has(input:checked) {
+    background-color: var(--color-teal);
+    color: #f9f2e4;
+    filter: brightness(1.4) saturate(0.9);
+  }
+  .categoryGroup-health .subcategoryLabel:has(input:checked) {
+    background-color: var(--color-brick);
+    color: #f9f2e4;
+    filter: brightness(1.4) saturate(0.9);
+  }
+  .categoryGroup-mind .subcategoryLabel:has(input:checked) {
+    background-color: var(--color-mustard);
+    color: #1a1a1e;
+    filter: brightness(1.4) saturate(0.9);
+  }
+
   input[type="checkbox"] {
     margin-right: 5px;
     cursor: pointer;
+    accent-color: var(--color-terracotta);
   }
-  
+
 /* Dropdown Styles */
 .sortContainer {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align elements to the start (left) */  
+    align-items: flex-start; /* Align elements to the start (left) */
+    min-width: 220px;
   }
-  
-  .sortContainer label {
-    font-size: 1rem; /* Match the font size with category buttons */
-    font-weight: bold; /* Match the font weight with category buttons */
-    margin-bottom: 5px; /* Space between the label and the dropdown */
-    display: inline-block; /* Make label a block element to match the width of the category buttons */
-    padding: 10px 15px; /* Match the padding with category buttons */
 
-    border-radius: 5px; /* Match border radius */
-    width: calc(100% - 30px);
-    text-align: center;
+  .sortContainer label {
+    font-size: 0.85rem; /* Match the font size with category buttons */
+    font-family: var(--font-display);
+    font-weight: 700; /* Match the font weight with category buttons */
+    letter-spacing: 0.1em;
+    margin-bottom: 8px; /* Space between the label and the dropdown */
+    display: inline-block; /* Make label a block element to match the width of the category buttons */
+    text-align: left;
   }
-  
+
   .sortContainer select {
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 3px solid var(--border-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
     font-size: 1rem;
     cursor: pointer;
     width: 100%; /* Allow the select to fit content width */
-    margin-top: 5px; /* Ensure a small space between label and select */
+    box-shadow: 4px 4px 0 var(--shadow-color);
   }
-  
-  
-  /* Posts Container */
-.postsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: stretch;
-}
+
+
+  /* Posts Container — base flex rules live in index.css so they apply
+     however the page was reached; this just caps the width here. */
+  .browseContainer .postsContainer {
+    max-width: 1200px;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
 
 .primaryGroupWrapper,
 .secondaryGroupWrapper {
@@ -129,13 +184,14 @@
   width: 100%;
 }
 
-.primaryGroupWrapper > h2 { 
+.primaryGroupWrapper > h2 {
   width: 100%;
   text-align: left;
   font-size: 30px;
   margin-left: 35px;
   margin-bottom: 10px;
   margin-top: 20px;
+  color: var(--color-terracotta);
 }
 
 /* For secondary labels within secondaryGroupWrapper, adjust if they exist */
@@ -156,7 +212,7 @@
   width: 100%;
 }
 
-.primaryGroupWrapper > h2.centeredLabel { 
+.primaryGroupWrapper > h2.centeredLabel {
     text-align: center;
     margin-left: 0;
 }
@@ -164,45 +220,23 @@
   .divider {
     width: 100%;           /* Full width of the container */
     border: 0;             /* Remove the default border */
-    height: 1px;           /* Set the height of the divider */
-    background-color: #ccc; /* Color of the divider */
+    height: 3px;           /* Set the height of the divider */
+    background-color: var(--border-color); /* Color of the divider */
+    opacity: 0.15;
     margin-top: 20px;      /* Space above the divider */
     margin-bottom: 20px;   /* Space below the divider */
   }
 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .pagination button {
-    padding: 5px 10px;
-    margin: 0 5px;
-    border: 1px solid #084C61;
-    background-color: transparent;
-    color: #084C61;
-    cursor: pointer;
-  }
-  
-  .pagination button.active {
-    background-color: #084C61;
-    color: white;
-  }
-  
-  
-  
   /* Responsive Design */
   @media (max-width: 768px) {
     .controlsContainer {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
     }
-  
+
     .categoryContainer,
     .sortContainer {
       width: 100%;
       margin-bottom: 10px;
     }
   }
-  

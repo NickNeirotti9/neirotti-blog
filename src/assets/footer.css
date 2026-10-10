@@ -5,8 +5,58 @@
   justify-content: center;
   align-items: center;
   height: 160px;
-  background-color: #084C61;
+  background-color: var(--navbar-bg);
+  border-top: 5px solid var(--navbar-border);
   position: relative;
+  overflow: hidden;
+}
+
+.footer-motif {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  cursor: default;
+}
+
+.footer-motif:hover {
+  animation: sun-spin 3s linear infinite;
+}
+
+@keyframes sun-spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.footer-motif-2 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  cursor: default;
+}
+
+.footer-motif-2:hover {
+  animation: sun-spin-reverse 3s linear infinite;
+}
+
+@keyframes sun-spin-reverse {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(-360deg);
+  }
 }
 
 .footer-content {
@@ -15,26 +65,40 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .logoButton {
   background: none;
   border: none;
-  color: var(--theme-accent);
-  font-size: 50px;
+  color: var(--color-mustard);
+  font-size: 46px;
   font-family: 'AnandaBlack', sans-serif;
   cursor: pointer;
   margin-top: -15px;
 }
 
 .footer-link {
-  color: var(--theme-accent);
+  color: var(--navbar-text);
   text-decoration: none;
-  font-size: 16px;
-  font-family: var(--font-primary); /* Ensure it uses the primary font */
+  font-size: 14px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   margin-top: 10px; /* Adjust margin as needed */
+  border-bottom: 2px solid transparent;
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+  color: var(--color-terracotta);
+  border-bottom-color: var(--color-terracotta);
+}
+
+@media (max-width: 600px) {
+  .footer-motif,
+  .footer-motif-2 {
+    display: none;
+  }
 }

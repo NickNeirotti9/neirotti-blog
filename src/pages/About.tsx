@@ -19,7 +19,8 @@ const About: React.FC = () => {
 
   return (
     <div className={styles.aboutContainer}>
-      <div className={styles.aboutContent}>
+      <div className={`${styles.aboutContent} card-hard`}>
+        <span className="eyebrow">Hey there</span>
         <h1 className={styles.aboutTitle}>About Me</h1>
         <div className={styles.imageWrapper}>
           <img className={styles.aboutImage} src={myImage} alt="About me" />
@@ -80,7 +81,7 @@ const About: React.FC = () => {
         <h2>Why These Categories?</h2>
         <div className={styles.dropdownSection}>
           <button
-            className={styles.dropdownHeader}
+            className={`${styles.dropdownHeader} ${styles.dropdownStem}`}
             onClick={() => toggleSection("STEM")}
           >
             STEM
@@ -100,7 +101,7 @@ const About: React.FC = () => {
 
         <div className={styles.dropdownSection}>
           <button
-            className={styles.dropdownHeader}
+            className={`${styles.dropdownHeader} ${styles.dropdownHealth}`}
             onClick={() => toggleSection("HEALTH")}
           >
             HEALTH
@@ -122,7 +123,7 @@ const About: React.FC = () => {
 
         <div className={styles.dropdownSection}>
           <button
-            className={styles.dropdownHeader}
+            className={`${styles.dropdownHeader} ${styles.dropdownMind}`}
             onClick={() => toggleSection("MIND")}
           >
             MIND

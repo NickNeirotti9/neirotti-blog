@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Learn to Love What You Have",
     "author": "Nick Neirotti",
-    "hook": "How to embrace the present without judgement",
+    "hook": "Hedonism shmedonism",
     "summaryPoints": ["Loving what you already have (and accepting what you don’t!!!) is the only way to remove yourself from the hedonic treadmill.", "Seek the silver linings in your setbacks by adopting an optimistic frame."],    
     "sections": [
       {
@@ -39,7 +39,7 @@
     "id": 2,
     "title": "How Computers Talk",
     "author": "Nick Neirotti",
-    "hook": "Packets? Ports? Protocols? Demystified",
+    "hook": "Packets? Ports? Protocols?",
     "sections": [
       {
         "title": "Background",
@@ -104,7 +104,7 @@
     "id": 3,
     "title": "Sleep Health",
     "author": "Nick Neirotti",
-    "hook": "Actionable tips from light to lifestyle",
+    "hook": "You up?",
     "sections": [
       {
         "title": "Understanding Sleep",
@@ -161,7 +161,7 @@
     "id": 4,
     "title": "Life is Absurd: The Philosophy of Albert Camus",
     "author": "Nick Neirotti",
-    "hook": "Why nothing makes sense — and why that’s okay",
+    "hook": "Nothing matters... What now?",
     "sections": [
       {
         "title": "Introduction",
@@ -208,7 +208,7 @@
     "id": 5,
     "title": "What Causes Weather?",
     "author": "Nick Neirotti",
-    "hook": "Equilibrium in motion: the science behind the storm",
+    "hook": "*opens weather app*",
     "sections": [
       {
         "title": "Introduction",
@@ -281,7 +281,7 @@
     "id": 6,
     "title": "Surf’s Up and Taoism: The Wisdom of Chicken Joe",
     "author": "Nick Neirotti",
-    "hook": "One and the same but different in name",
+    "hook": "Exist n' chill broh.",
     "sections": [
       {
         "title": "Introduction",
@@ -530,7 +530,7 @@
       },
       {
         "title": "1.6 General Actionable Takeaways",
-        "content":"*Start with 5–10 minutes of light cardio\nFollow with 4–6 dynamic stretches or mobility drills that match your planned movements\nAvoid prolonged static stretching pre-lift; if used, keep it under 30s per muscle and follow with dynamic work\nUse the warm-up to check in with your body—adjust the session if something feels off\nContinuously increase the stress placed on the body via more weight, more reps, better technique, or new challenges\nUse periodization to structure overload and avoid plateaus and burnout. Ie. 4–6 week accumulation phases followed by 1 deload week (alternating hypertrophy/strength)"
+        "content":"*Start with 5–10 minutes of light cardio\nFollow with 4–6 dynamic stretches or mobility drills that match your planned movements\nAvoid prolonged static stretching pre-lift; if used, keep it under 30s per muscle and follow with dynamic work\nUse the warm-up to check in with your body—adjust the session if something feels off\nContinuously increase the stress placed on the body via more weight, more reps, better technique, or new challenges (progressive overload)\nUse periodization to structure overload and avoid plateaus and burnout. e.g. 4–6 week accumulation phases followed by 1 deload week (alternating hypertrophy/strength)"
       },
       {
         "title": "Muscular Hypertrophy",
@@ -562,7 +562,7 @@
       },
       {
         "title": "2.7 Hypertrophy Actionable Takeaways",
-        "content":"*Train all joints through their full ROM over a given week\nPrioritize compound lifts but include isolation work to target underdeveloped muscles\nReps should have a controlled eccentric, brief pause, and a powerful concentric\nAny rep range works but 6-12 hits a nice sweet spot\nTake working sets within ~2 reps of failure, using full failure selectively\n12–20 hard sets per muscle per week split across at least 2 training sessions\n1-2 minute rest times (or as needed) between sets with sessions capped around 1 hour in duration"
+        "content":"*Train all joints through their full ROM over a given week\nPrioritize compound lifts but include isolation work to target underdeveloped muscles\nReps should have a controlled eccentric, brief pause, and a powerful concentric tempo\nAny rep range works if taken close to failure but 6-12 hits a nice sweet spot\nTake working sets within ~2 reps of failure, using full failure selectively\n12–20 hard sets per muscle per week split across at least 2 training sessions\n1-2 minute rest times (or as needed) between sets with sessions capped around 1 hour in duration"
       },
       {
         "title": "Strength",
@@ -598,7 +598,7 @@
       },
       {
         "title": "3.8 Strength Actionable Takeaways",
-        "content":"*Use high intensities (80–95% 1RM) in the 1–5 rep range\nCombine heavy strength work with lighter explosive lifts or plyometrics for power\nAim for 4-12 high intensity sets per muscle group per week\nRest at least 3 minutes between sets, the more the merrier\n Incorporate “Greasing the Groove” by practicing key lifts at low reps, submaximal loads, and high frequency (e.g. 1–5 reps, 50–70% 1RM, several times per day\nConsider supersetting non-overlapping lifts to save on time, but avoid excessive CNS fatigue with sufficient rest time"
+        "content":"*Use high intensities (80–95% 1RM) in the 1–5 rep range\nCombine heavy strength work with lighter explosive lifts or plyometrics for power\nAim for 4-12 high intensity sets per muscle group per week\nRest at least 3 minutes between sets, the more the merrier\n Incorporate “Greasing the Groove” by practicing key lifts at low reps, submaximal loads, and high frequency (e.g. 1–5 reps, 50–70% 1RM, several times per day)\nConsider supersetting non-overlapping lifts to save on time, but avoid excessive CNS fatigue with sufficient rest time"
       },
       {
         "title": "Recovery",

@@ -3,11 +3,12 @@ import styles from "../assets/home.module.css";
 import { Link } from "react-router-dom";
 import PostCard from "../components/PostCard";
 import blogPostsData from "../blogposts.json";
+import { getCategorySlug } from "../data/categories";
 
 const Home: React.FC = () => {
   const mostRecentPost = blogPostsData.sort(
     (a, b) =>
-      new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
+      new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime(),
   )[0];
 
   // Construct the iframe src URL using the most recent post's youtubeID
@@ -21,8 +22,12 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.homepageContent}>
+      <div className={styles.heroBlock} aria-hidden="true"></div>
       <div className={styles.fullWidthSection}>
-        <h2 className={styles.sectionTitle}>About the Page</h2>
+        <div className={styles.sectionHeading}>
+          <span className="eyebrow">Welcome</span>
+          <h2 className={styles.sectionTitle}>About the Page</h2>
+        </div>
         <div className={styles.aboutSection}>
           <div className={styles.videoContainer2}>
             <iframe
@@ -44,7 +49,10 @@ const Home: React.FC = () => {
             <div style={{ textAlign: "center" }}>
               {" "}
               {/* Inline style for demonstration */}
-              <Link to="/about" className={styles.learnMoreButton}>
+              <Link
+                to="/about"
+                className={`${styles.learnMoreButton} btn-hard`}
+              >
                 About Me
               </Link>
             </div>
@@ -52,7 +60,10 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className={styles.fullWidthSection}>
-        <h2 className={styles.sectionTitle}>Latest</h2>
+        <div className={styles.sectionHeading}>
+          <span className="eyebrow">From The Channel</span>
+          <h2 className={styles.sectionTitle}>Latest</h2>
+        </div>
         <div className={styles.latestSection}>
           <div className={styles.videoContainer2}>
             <iframe
@@ -67,9 +78,9 @@ const Home: React.FC = () => {
             <p>{new Date(mostRecentPost.datePosted).toLocaleDateString()}</p>
             <Link
               to={`/browse?filter=${encodeURIComponent(
-                mostRecentPost.subcategory
+                mostRecentPost.subcategory,
               )}`}
-              className={styles.filterLink}
+              className={`tag tag-${getCategorySlug(mostRecentPost.subcategory)} ${styles.filterLink}`}
             >
               {mostRecentPost.subcategory} / {mostRecentPost.subject}
             </Link>
@@ -84,23 +95,29 @@ const Home: React.FC = () => {
 
             <Link
               to={`/post/${mostRecentPost.id}`}
-              className={styles.learnMoreButton}
+              className={`${styles.learnMoreButton} btn-hard`}
             >
               Learn More
             </Link>
           </div>
         </div>
 
-        <h2 className={styles.sectionTitle2}>Featured</h2>
+        <div className={styles.sectionHeading}>
+          <span className="eyebrow">Worth A Watch</span>
+          <h2 className={styles.sectionTitle2}>Featured</h2>
+        </div>
         <div className="postsContainer">
           {featuredPosts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
         </div>
         <div className={styles.section2}>
-          <h2 className={styles.sectionTitle2}>Browse</h2>
+          <div className={styles.sectionHeading}>
+            <span className="eyebrow">Find Your Thing</span>
+            <h2 className={styles.sectionTitle2}>Browse</h2>
+          </div>
           <div className={styles.categoriesContainer}>
-            <div className={styles.category}>
+            <div className={`${styles.category} ${styles.categoryStem}`}>
               <Link to={`/browse?filter=STEM`} className={styles.categoryTitle}>
                 <h3>STEM</h3>
               </Link>
@@ -118,7 +135,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
 
-            <div className={styles.category}>
+            <div className={`${styles.category} ${styles.categoryHealth}`}>
               <Link
                 to={`/browse?filter=HEALTH`}
                 className={styles.categoryTitle}
@@ -139,7 +156,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
 
-            <div className={styles.category}>
+            <div className={`${styles.category} ${styles.categoryMind}`}>
               <Link to={`/browse?filter=MIND`} className={styles.categoryTitle}>
                 <h3>MIND</h3>
               </Link>
@@ -157,7 +174,10 @@ const Home: React.FC = () => {
               </Link>
             </div>
           </div>
-          <Link to={`/browse?filter=ALL`} className={styles.aboutButton}>
+          <Link
+            to={`/browse?filter=ALL`}
+            className={`${styles.aboutButton} btn-hard`}
+          >
             Browse All
           </Link>
         </div>

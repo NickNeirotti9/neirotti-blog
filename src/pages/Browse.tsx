@@ -5,6 +5,7 @@ import blogPostsData from "../blogposts.json";
 import Pagination from "../components/Pagination";
 import "../assets/index.css";
 import "../assets/browse.css";
+import { categories } from "../data/categories";
 
 interface Post {
   id: number;
@@ -16,21 +17,6 @@ interface Post {
   datePosted: string;
   featured: boolean;
 }
-
-const categories = [
-  {
-    name: "STEM",
-    subcategories: ["Science", "Technology", "Engineering", "Mathematics"],
-  },
-  {
-    name: "HEALTH",
-    subcategories: ["Nutrition", "Fitness", "Lifestyle", "Body Systems"],
-  },
-  {
-    name: "MIND",
-    subcategories: ["Philosophy", "Psychology", "Consciousness", "Reflections"],
-  },
-];
 
 // Type for the groupings
 type PostGroup = Record<string, Post[]>;
@@ -230,25 +216,36 @@ const Browse = () => {
       <h1>Browse Posts</h1>
       <div className="controlsContainer">
         <div className="categoryContainer">
-          {categories.map(({ name, subcategories }) => (
-            <div key={name}>
-              <button onClick={() => toggleCategory(name, subcategories)}>
-                {name}
-              </button>
-              <div className="subcategories">
-                {subcategories.map((sub) => (
-                  <label key={sub} className="subcategoryLabel">
-                    <input
-                      type="checkbox"
-                      checked={selectedSubcategories.has(sub)}
-                      onChange={() => toggleSubcategory(sub)}
-                    />{" "}
-                    {sub}
-                  </label>
-                ))}
+          {categories.map(({ name, slug, subcategories }) => {
+            const selectedCount = subcategories.filter((sub) =>
+              selectedSubcategories.has(sub)
+            ).length;
+            const isActive = selectedCount > subcategories.length / 2;
+            return (
+              <div key={name} className={`categoryGroup categoryGroup-${slug}`}>
+                <button
+                  className={`categoryButton categoryButton-${slug} ${
+                    isActive ? "active" : ""
+                  }`}
+                  onClick={() => toggleCategory(name, subcategories)}
+                >
+                  {name}
+                </button>
+                <div className="subcategories">
+                  {subcategories.map((sub) => (
+                    <label key={sub} className="subcategoryLabel">
+                      <input
+                        type="checkbox"
+                        checked={selectedSubcategories.has(sub)}
+                        onChange={() => toggleSubcategory(sub)}
+                      />{" "}
+                      {sub}
+                    </label>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
           <div className="sortContainer">
             <label htmlFor="sortSelect">SORT BY</label>
             <select

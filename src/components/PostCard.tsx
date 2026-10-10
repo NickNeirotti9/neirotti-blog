@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/postcard.css";
+import { getCategorySlug } from "../data/categories";
 
 interface Post {
   id: number;
@@ -53,10 +54,14 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         />
       </div>
       <div className="postCardDetails">
+        <span className={`tag tag-${getCategorySlug(post.subcategory)}`}>
+          {post.subcategory} / {post.subject}
+        </span>
         <h2>{post.title}</h2>
         <p className="hook-margin">{post.hook}</p>
-        <p>Category: {`${post.subcategory} / ${post.subject}`}</p>
-        <p>Date Posted: {new Date(post.datePosted).toLocaleDateString()}</p>
+        <p className="postCardDate">
+          {new Date(post.datePosted).toLocaleDateString()}
+        </p>
       </div>
     </div>
   );

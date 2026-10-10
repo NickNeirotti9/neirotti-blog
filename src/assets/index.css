@@ -1,49 +1,114 @@
-/* Light theme variables */
+/* ==========================================================================
+   Design tokens — "brutalist collage" palette
+   Warm paper + ink-black structure, with terracotta/teal/mustard accents.
+   Chrome (navbar/footer) stays a fixed ink-navy band across both themes;
+   the content area (paper/ink) swaps for light/dark.
+   ========================================================================== */
 :root {
-  --background-color: #F5F5F5; /* Light background. Considered switching to: #e7e5df */
-  --text-color: black; /* Dark text */
-  --link-color: #0000ff; /* Example link color */
-  --theme-primary: #084C61;
-  --theme-secondary: #9EADC8;
-  --theme-accent: #E9B35D;
-  --theme-switch: #084C61;
-  --theme-switch2: #E9B35D;
-  --theme-switch3: #212529;
-  --font-primary: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Primary font */
-  --font-secondary: 'Brandon Grotesque', sans-serif; /* Secondary font */
+  /* Brand hues */
+  --color-terracotta: #d6532b;
+  --color-terracotta-deep: #b8431f;
+  --color-teal: #12615f;
+  --color-teal-bright: #1c8884;
+  --color-mustard: #e8a93d;
+  --color-mustard-deep: #c98a22;
+  --color-brick: #a8321f;
+  --color-violet: #5c3f6b;
+
+  /* Fixed chrome (navbar / footer) — constant across light & dark */
+  --navbar-bg: #14151a;
+  --navbar-text: #f1e8d8;
+  --navbar-border: var(--color-terracotta);
+
+  --shadow-color: #1a1a1e;
+
+  /* Light ("paper") theme */
+  --background-color: #f1e8d8;
+  --surface-color: #fbf4e7;
+  --text-color: #1a1a1e;
+  --text-muted: #57503f;
+  --link-color: var(--color-terracotta-deep);
+  --border-color: #1a1a1e;
+
+  --theme-primary: var(--color-terracotta);
+  --theme-secondary: var(--color-teal);
+  --theme-accent: var(--color-mustard);
+  --theme-switch: var(--color-terracotta);
+  --theme-switch2: var(--color-mustard);
+  --theme-switch3: var(--text-muted);
+
+  /* Back-compat aliases for a few older var names */
+  --primary-color: var(--theme-primary);
+  --secondary-color: var(--surface-color);
+  --accent-color: var(--color-mustard);
+  --card-bg: var(--surface-color);
+  --theme-background: var(--surface-color);
+
+  --font-primary: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-secondary: "Inter", "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
 }
 
-/* Dark theme variables */
+/* Dark ("night") theme — content area only; navbar/footer stay fixed */
 [data-theme="dark"] {
-  --background-color: #212529; /* Dark background */
-  --text-color: white; /* Light text */
-  --link-color: #4E9AFC; /* Example link color for dark mode */
-  --theme-primary: #9EADC8;
-  --theme-secondary: #084C61;
-  --theme-switch: #E9B35D;
-  --theme-switch2: #212529;
-  --theme-switch3: #888;
-  --font-primary: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Primary font */
-  --font-secondary: 'Brandon Grotesque', sans-serif; /* Secondary font */
- /* --font-primary: 'Calibri', sans-serif;  Primary font 
-  --font-secondary: 'Calibri', sans-serif;  Secondary font */
+  --shadow-color: #000000;
+
+  /* Kept clearly lighter than --navbar-bg (#14151a, fixed) so the torn
+     divider under the navbar and every hard offset shadow stay visible
+     instead of blending into a near-identical near-black background. */
+  --background-color: #23262f;
+  --surface-color: #2d313d;
+  --text-color: #f1e8d8;
+  --text-muted: #b9b2a0;
+  --link-color: var(--color-terracotta);
+  --border-color: #f1e8d8;
+
+  --color-terracotta: #e8703f;
+  --color-terracotta-deep: #f0885c;
+  --color-teal: #2fa39c;
+  --color-teal-bright: #47c2ba;
+  --color-mustard: #f0bb55;
+  --color-mustard-deep: #f5cb78;
+  --color-brick: #e06a4f;
+  --color-violet: #9678ac;
+
+  --theme-primary: var(--color-terracotta);
+  --theme-secondary: var(--color-teal-bright);
+  --theme-accent: var(--color-mustard);
+  --theme-switch: var(--color-terracotta);
+  --theme-switch2: var(--color-mustard);
+  --theme-switch3: var(--text-muted);
+
+  --primary-color: var(--theme-primary);
+  --secondary-color: var(--surface-color);
+  --accent-color: var(--color-mustard);
+  --card-bg: var(--surface-color);
+  --theme-background: var(--surface-color);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Apply your theme */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--font-primary);
+  font-family: var(--font-body);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  position: relative;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Full viewport height */
+  position: relative;
+  z-index: 1;
 }
 
 /* Content wrapper for dynamic content */
@@ -51,13 +116,28 @@ body {
   flex: 1; /* Allows the content to grow and fill available space */
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-mustard);
+  outline-offset: 2px;
+}
+
 a {
-  color: var(--primary-color);
+  color: var(--link-color);
   text-decoration: none;
   border-bottom: none;
 }
 p, li {
-  font-family: var(--font-secondary);
+  font-family: var(--font-body);
 }
 
 /* Utility classes */
@@ -85,9 +165,165 @@ p, li {
   font-family: var(--font-secondary) !important;
 }
 
-/* Add custom styles for components here */
+/* ==========================================================================
+   Shared "brutalist collage" component classes — reused across pages so the
+   hard-shadow / thick-border language stays consistent everywhere.
+   ========================================================================== */
 
+/* Small bold uppercase label used above headings, e.g. "LATEST" / "FEATURED" */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+}
 
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 3px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* Hard-edged card: thick ink border + offset drop shadow, common to
+   PostCard, portfolio items, about/contact/disclaimer panels, etc. */
+.card-hard {
+  background-color: var(--surface-color);
+  border: 3px solid var(--border-color);
+  box-shadow: 7px 7px 0 var(--shadow-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-hard-hover:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--shadow-color);
+}
+
+/* Bold button used across pages (About, Home, dropdowns). Pair with a
+   layout-specific module class for width/margin. */
+.btn-hard {
+  display: inline-block;
+  cursor: pointer;
+  background-color: var(--color-terracotta);
+  color: #f9f2e4;
+  border: 3px solid var(--border-color);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0 var(--shadow-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-hard:hover {
+  background-color: var(--color-terracotta-deep);
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--shadow-color);
+}
+
+.btn-hard:active {
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.btn-hard-outline {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+/* Category color coding — used for tags/pills and category blocks so
+   STEM / HEALTH / MIND read consistently everywhere. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 999px;
+  color: #fff;
+  background-color: var(--text-muted);
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.tag-stem {
+  background-color: var(--color-teal);
+  color: #f7f2e6;
+}
+
+.tag-health {
+  background-color: var(--color-brick);
+  color: #f7f2e6;
+}
+
+.tag-mind {
+  background-color: var(--color-mustard);
+  color: #1a1a1e;
+}
+
+/* Halftone dot texture strip — decorative accent behind titles/dividers */
+.halftone-band {
+  background-image: radial-gradient(var(--dot-color, var(--border-color)) 1.4px, transparent 1.6px);
+  background-size: 9px 9px;
+  opacity: 0.5;
+}
+
+/* Torn-paper divider: jagged clip-path strip, flat on one edge, torn on the
+   other — used to seam the ink-navy chrome into the paper content area. */
+.torn-divider {
+  width: 100%;
+  height: 22px;
+  background-color: var(--navbar-bg);
+  position: relative;
+  z-index: 9;
+  clip-path: polygon(
+    0% 100%, 0% 55%, 5% 15%, 10% 60%, 15% 10%, 20% 50%, 25% 5%,
+    30% 55%, 35% 15%, 40% 60%, 45% 10%, 50% 50%, 55% 5%, 60% 55%,
+    65% 15%, 70% 60%, 75% 10%, 80% 50%, 85% 5%, 90% 55%, 95% 15%,
+    100% 55%, 100% 100%
+  );
+}
+
+/* Shared post-card grid — used on Home, Browse, Post (related) and Search.
+   Defined globally (not per-page) so it applies regardless of which page
+   happens to mount first and inject its CSS. */
+.postsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sunburst motif — pure CSS, echoes the geometric sun/moon collage accents */
+.sun-motif {
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    var(--color-mustard) 0deg 9deg,
+    transparent 9deg 22.5deg
+  );
+  position: relative;
+}
+
+.sun-motif::after {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  border: 3px solid var(--border-color);
+}
 
 /* Responsive design utilities */
 @media (max-width: 768px) {
@@ -96,5 +332,3 @@ p, li {
     margin: 0 10px; /* Adjust space around the search on smaller screens */
   }
 }
-
-

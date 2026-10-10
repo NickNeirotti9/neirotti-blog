@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import blogPostsData from "../blogposts.json";
 import PostCard from "../components/PostCard";
 import "../assets/post.css";
+import { getCategorySlug } from "../data/categories";
 
 interface IPost {
   id: number;
@@ -309,7 +310,7 @@ const Post: React.FC = () => {
             <time dateTime={post.datePosted}>
               {new Date(post.datePosted).toLocaleDateString()}
             </time>
-            <span className="postCategory">
+            <span className={`tag tag-${getCategorySlug(post.subcategory)} postCategory`}>
               {post.subcategory} / {post.subject}
             </span>
           </div>
