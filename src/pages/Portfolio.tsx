@@ -1,23 +1,15 @@
 import React from "react";
 import styles from "../assets/Portfolio.module.css";
-import portfolioItems from "../portfolioItems.json";
+import { portfolioItems, parseDate } from "../lib/content";
+import { getPortfolioImage } from "../components/PortfolioArticle";
 import { useNavigate } from "react-router-dom";
-
-// Dynamically require images from src
-const getImage = (imageName: string) => {
-  try {
-    return require(`../assets/images/${imageName}`);
-  } catch {
-    return null;
-  }
-};
 
 const Portfolio: React.FC = () => {
   const navigate = useNavigate();
 
-  const sortedPortfolioItems = portfolioItems.sort((a, b) => {
-    const endDateA = a.dateTo ? new Date(a.dateTo) : new Date();
-    const endDateB = b.dateTo ? new Date(b.dateTo) : new Date();
+  const sortedPortfolioItems = [...portfolioItems].sort((a, b) => {
+    const endDateA = a.dateTo ? parseDate(a.dateTo) : new Date();
+    const endDateB = b.dateTo ? parseDate(b.dateTo) : new Date();
 
     // First sort by endDate (dateTo if it exists, or Present)
     if (endDateB.getTime() !== endDateA.getTime()) {
@@ -25,8 +17,8 @@ const Portfolio: React.FC = () => {
     }
 
     // If end dates are equal (both "Present"), fallback to dateFrom
-    const startDateA = new Date(a.dateFrom);
-    const startDateB = new Date(b.dateFrom);
+    const startDateA = parseDate(a.dateFrom);
+    const startDateB = parseDate(b.dateFrom);
 
     return startDateB.getTime() - startDateA.getTime();
   });
@@ -45,7 +37,7 @@ const Portfolio: React.FC = () => {
       </p>
       <div className={styles.itemsGrid}>
         {sortedPortfolioItems.map((item, index) => {
-          const imageSrc = item.image ? getImage(item.image) : null;
+          const imageSrc = getPortfolioImage(item.image);
 
           return (
             <div
@@ -71,14 +63,14 @@ const Portfolio: React.FC = () => {
 
               <p className={styles.portfolioDescription}>{item.description}</p>
               <p className={styles.itemDate}>
-                {new Date(item.dateFrom).toLocaleDateString("en-US", {
+                {parseDate(item.dateFrom).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "short",
                   day: "numeric",
                 })}{" "}
                 –{" "}
                 {item.dateTo
-                  ? new Date(item.dateTo).toLocaleDateString("en-US", {
+                  ? parseDate(item.dateTo).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",

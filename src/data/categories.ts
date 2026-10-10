@@ -1,26 +1,18 @@
+import categoriesData from "./categories.json";
+
 export interface CategoryDef {
   name: string;
   slug: "stem" | "health" | "mind";
   subcategories: string[];
 }
 
-export const categories: CategoryDef[] = [
-  {
-    name: "STEM",
-    slug: "stem",
-    subcategories: ["Science", "Technology", "Engineering", "Mathematics"],
-  },
-  {
-    name: "HEALTH",
-    slug: "health",
-    subcategories: ["Nutrition", "Fitness", "Lifestyle", "Body Systems"],
-  },
-  {
-    name: "MIND",
-    slug: "mind",
-    subcategories: ["Philosophy", "Psychology", "Consciousness", "Reflections"],
-  },
-];
+// The list itself lives in categories.json so the content build script
+// (scripts/content-lib.cjs) can validate post headers against the same data.
+export const categories: CategoryDef[] = categoriesData as CategoryDef[];
+
+export const allSubcategories: string[] = categories.flatMap(
+  (c) => c.subcategories
+);
 
 // Maps a post's subcategory (e.g. "Philosophy") to its parent category slug
 // (e.g. "mind") so tags/badges can be color-coded consistently everywhere.

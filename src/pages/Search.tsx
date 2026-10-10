@@ -1,48 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import PostCard from "../components/PostCard";
 import "../assets/search.css";
 import Pagination from "../components/Pagination";
-import blogPostsData from "../blogposts.json";
-
-// Assuming you have a type for your posts
-interface Post {
-  id: number;
-  title: string;
-  hook: string;
-  youtubeID: string;
-  subcategory: string;
-  subject: string;
-  datePosted: string;
-  featured: boolean;
-}
+import { posts, BlogPost } from "../lib/content";
+import { plainText } from "../lib/markup";
 
 const Search: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const [searchResults, setSearchResults] = useState<Post[]>([]);
+  const [searchResults, setSearchResults] = useState<BlogPost[]>([]);
   const searchQuery = searchParams.get("query") || "";
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
 
+  // Searchable text per post, built once: title, category, hook and body.
+  const index = useMemo(
+    () =>
+      posts.map((post) => ({
+        post,
+        text: [post.title, post.subcategory, post.subject, post.hook, plainText(post.body)]
+          .join(" ")
+          .toLowerCase(),
+      })),
+    []
+  );
+
   useEffect(() => {
-    // Perform the search
-    const filteredPosts = searchQuery
-      ? blogPostsData.filter(
-          (post) =>
-            post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.subcategory
-              .toLowerCase()
-              .includes(searchQuery.toLowerCase()) ||
-            post.hook.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.subject.toLowerCase().includes(searchQuery.toLowerCase())
-        )
+    const query = searchQuery.trim().toLowerCase();
+    const filteredPosts = query
+      ? index.filter((entry) => entry.text.includes(query)).map((entry) => entry.post)
       : [];
 
     setSearchResults(filteredPosts);
 
     // Reset to first page on new search
     setCurrentPage(1);
-  }, [searchQuery]);
+  }, [searchQuery, index]);
 
   // Calculate the number of pages every time searchResults changes
   useEffect(() => {

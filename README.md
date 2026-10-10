@@ -1,3 +1,18 @@
+# existnchill.com
+
+The site is a Create React App project. Blog posts and portfolio items are
+Markdown files in `content/`; see [content/README.md](content/README.md) for
+the format and for the built-in editor at <http://localhost:3000/editor>.
+
+## Scripts
+
+- `npm start` converts `content/` and runs the site at <http://localhost:3000>.
+- `npm run build` converts `content/` (drafts left out) and builds `build/`.
+- `npm run content` converts `content/` by hand (`src/generated/`).
+- `npm run deploy` syncs `build/` to S3.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

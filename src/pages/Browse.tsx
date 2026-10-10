@@ -1,22 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import PostCard from "../components/PostCard";
-import blogPostsData from "../blogposts.json";
+import { posts as blogPostsData, BlogPost } from "../lib/content";
 import Pagination from "../components/Pagination";
 import "../assets/index.css";
 import "../assets/browse.css";
 import { categories } from "../data/categories";
 
-interface Post {
-  id: number;
-  title: string;
-  hook: string;
-  youtubeID: string;
-  subcategory: string;
-  subject: string;
-  datePosted: string;
-  featured: boolean;
-}
+type Post = BlogPost;
 
 // Type for the groupings
 type PostGroup = Record<string, Post[]>;

@@ -2,20 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/postcard.css";
 import { getCategorySlug } from "../data/categories";
+import { BlogPost, formatDate } from "../lib/content";
 
-interface Post {
-  id: number;
-  title: string;
-  hook: string;
-  youtubeID: string;
-  subcategory: string;
-  subject: string;
-  datePosted: string;
-  featured: boolean;
-}
+export type PostCardData = Pick<
+  BlogPost,
+  "id" | "title" | "hook" | "youtubeID" | "subcategory" | "subject" | "datePosted"
+> &
+  Partial<Pick<BlogPost, "featured" | "draft">>;
 
 interface PostCardProps {
-  post: Post;
+  post: PostCardData;
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
@@ -57,11 +53,10 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         <span className={`tag tag-${getCategorySlug(post.subcategory)}`}>
           {post.subcategory} / {post.subject}
         </span>
+        {post.draft && <span className="draftBadge">Draft</span>}
         <h2>{post.title}</h2>
         <p className="hook-margin">{post.hook}</p>
-        <p className="postCardDate">
-          {new Date(post.datePosted).toLocaleDateString()}
-        </p>
+        <p className="postCardDate">{formatDate(post.datePosted)}</p>
       </div>
     </div>
   );

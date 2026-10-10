@@ -13,6 +13,13 @@ import Post from "./pages/Post";
 import Search from "./pages/Search";
 import ScrollToTop from "./components/ScrollToTop";
 
+// The post editor only exists while developing (npm start). The condition is a
+// build-time constant, so the editor code is left out of the production bundle.
+const EditorPage =
+  process.env.NODE_ENV === "development"
+    ? React.lazy(() => import("./editor/EditorPage"))
+    : null;
+
 const App: React.FC = () => {
   return (
     <div id="page-container">
@@ -29,6 +36,16 @@ const App: React.FC = () => {
             <Route path="/portfolio/:slug" element={<PortfolioPost />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            {EditorPage && (
+              <Route
+                path="/editor"
+                element={
+                  <React.Suspense fallback={<div style={{ padding: 24 }}>Loading editor…</div>}>
+                    <EditorPage />
+                  </React.Suspense>
+                }
+              />
+            )}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

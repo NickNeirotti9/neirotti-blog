@@ -1,0 +1,17 @@
+[
+  {
+    "name": "STEM",
+    "slug": "stem",
+    "subcategories": ["Science", "Technology", "Engineering", "Mathematics"]
+  },
+  {
+    "name": "HEALTH",
+    "slug": "health",
+    "subcategories": ["Nutrition", "Fitness", "Lifestyle", "Body Systems"]
+  },
+  {
+    "name": "MIND",
+    "slug": "mind",
+    "subcategories": ["Philosophy", "Psychology", "Consciousness", "Reflections"]
+  }
+]

@@ -257,3 +257,100 @@ padding-bottom: 25px;
       height: 300px;
     }
   }
+
+/* ------------------------------------------------------------------ */
+/* Body content rendered from Markdown (src/lib/markup.ts)             */
+/* ------------------------------------------------------------------ */
+
+.postPage .postDetailedContent h3.sectionHeading,
+.postPage .postDetailedContent h4.sectionHeading {
+  color: var(--text-color);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.postPage .postDetailedContent h2.sectionHeading { font-size: 38px; }
+.postPage .postDetailedContent h3.sectionHeading { font-size: 32px; }
+.postPage .postDetailedContent h4.sectionHeading { font-size: 26px; }
+
+.postPage .postDetailedContent h3.sectionHeading::after,
+.postPage .postDetailedContent h4.sectionHeading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 6px;
+  background-color: var(--color-mustard);
+  margin-top: 6px;
+}
+
+.postPage .postDetailedContent p.indent {
+  text-indent: 2em;
+}
+
+.postPage .postDetailedContent .center {
+  text-align: center;
+}
+
+.postPage .postDetailedContent ul,
+.postPage .postDetailedContent ol {
+  margin-bottom: 10px;
+}
+
+.postPage .postDetailedContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+}
+
+.postPage .postHeroImage {
+  width: 100%;
+  display: block;
+  border: 3px solid var(--border-color);
+  box-shadow: 8px 8px 0 var(--shadow-color);
+}
+
+.postPage .postDetailedContent .tableWrapper {
+  overflow-x: auto;
+}
+
+.postPage .postDetailedContent .equation {
+  margin: 16px 0;
+  overflow-x: auto;
+  font-size: 18px;
+}
+
+.postPage .postDetailedContent pre {
+  overflow-x: auto;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background-color: var(--surface-color);
+  border: 3px solid var(--border-color);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.postPage .postDetailedContent code {
+  font-family: "Consolas", "Menlo", monospace;
+  font-size: 0.95em;
+}
+
+.postPage .postDetailedContent hr {
+  border: 0;
+  border-top: 3px solid var(--border-color);
+  margin: 24px 0;
+}
+
+.draftBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #c0392b;
+  border: 2px solid var(--border-color);
+}

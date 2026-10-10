@@ -2,21 +2,18 @@ import React from "react";
 import styles from "../assets/home.module.css";
 import { Link } from "react-router-dom";
 import PostCard from "../components/PostCard";
-import blogPostsData from "../blogposts.json";
+import { posts, postsByDate, formatDate } from "../lib/content";
 import { getCategorySlug } from "../data/categories";
 
 const Home: React.FC = () => {
-  const mostRecentPost = blogPostsData.sort(
-    (a, b) =>
-      new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime(),
-  )[0];
+  const mostRecentPost = postsByDate()[0];
 
   // Construct the iframe src URL using the most recent post's youtubeID
   const iframeSrc = `https://www.youtube.com/embed/${mostRecentPost.youtubeID}?autoplay=0&rel=0`;
 
   const featuredPosts = React.useMemo(() => {
     // Filter posts to only include those marked as featured
-    const featured = blogPostsData.filter((post) => post.featured === true);
+    const featured = posts.filter((post) => post.featured === true);
     return featured;
   }, []);
 
@@ -75,7 +72,7 @@ const Home: React.FC = () => {
             ></iframe>
           </div>
           <div className={styles.infoContainer}>
-            <p>{new Date(mostRecentPost.datePosted).toLocaleDateString()}</p>
+            <p>{formatDate(mostRecentPost.datePosted)}</p>
             <Link
               to={`/browse?filter=${encodeURIComponent(
                 mostRecentPost.subcategory,
