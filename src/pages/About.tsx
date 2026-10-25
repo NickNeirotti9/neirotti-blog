@@ -30,8 +30,8 @@ const About: React.FC = () => {
           for learning and teaching. I believe that education is a fundamental
           force that shapes our identities and societies, making its
           accessibility crucial for everyone's well-being. Here, I strive to
-          inspire empathy, rationality, and open-mindedness. I hope your
-          experience reflects that vision.
+          challenge assumptions and spark curiosity. I hope your experience
+          reflects that vision.
         </p>
         {/* <Link to="/portfolio" className={styles.learnMoreButton}>
           My Portfolio
@@ -52,14 +52,6 @@ const About: React.FC = () => {
             aria-label="Spotify"
           >
             <FontAwesomeIcon icon={faSpotify} size="2x" />
-          </a>
-          <a
-            href="https://letterboxd.com/nert118"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FontAwesomeIcon icon={faLetterboxd} size="2x" />
           </a>
           <a
             href="https://venmo.com/nert118"
